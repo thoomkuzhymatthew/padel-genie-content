@@ -8,7 +8,7 @@ export function numericTokens(text: string): number[] {
 }
 
 export type Rejection = { index: number; id: string | null; reasons: string[]; atom: unknown };
-export function verifyAtoms(candidates: readonly unknown[], sourceText: string) {
+export function verifyAtoms(candidates: readonly unknown[], sourceText: string, metadata: { date: string | null } = { date: null }) {
   const verified: Atom[] = [];
   const rejected: Rejection[] = [];
   const ids = new Set<string>();
@@ -29,8 +29,12 @@ export function verifyAtoms(candidates: readonly unknown[], sourceText: string) 
       if (!quotedNumbers.includes(entry.value)) reasons.push(`values.${i}.value_not_in_quote`);
       if (entry.compare !== null && !quotedNumbers.includes(entry.compare)) reasons.push(`values.${i}.compare_not_in_quote`);
       if (numericTokens(entry.unit).some(n => !quotedNumbers.includes(n))) reasons.push(`values.${i}.unit_number_not_in_quote`);
-      // Periods often contain years; those must also be present in the quote.
-      if (entry.period !== null && numericTokens(entry.period).some(n => !quotedNumbers.includes(n))) {
+      // Metadata is a separate provenance channel for the period only, never values.
+      if (entry.period_source === 'metadata') {
+        if (!metadata.date || !entry.period || entry.period !== metadata.date) {
+          reasons.push(`values.${i}.period_not_in_metadata`);
+        }
+      } else if (entry.period !== null && numericTokens(entry.period).some(n => !quotedNumbers.includes(n))) {
         reasons.push(`values.${i}.period_number_not_in_quote`);
       }
     }

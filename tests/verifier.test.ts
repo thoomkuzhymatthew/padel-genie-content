@@ -103,3 +103,31 @@ it('checks numeric denominators inside units', () => {
 it('does not accept fragments of malformed grouped numbers', () => {
   expect(numericTokens('1,23 or 1.2.3')).toEqual([]);
 });
+
+describe('publication metadata periods', () => {
+  const source = 'The UK now has 3,061 padel courts open across 891 clubs.';
+  const headline = atom({ claim: source, source_quote: source, values: [
+    { value: 3061, compare: null, unit: 'courts', period: '2026-10-25', period_source: 'metadata' },
+    { value: 891, compare: null, unit: 'clubs', period: '2026-10-25', period_source: 'metadata' },
+  ] });
+  it('accepts a metadata period absent from the quote', () => {
+    expect(verifyAtoms([headline], source, { date: '2026-10-25' }).verified).toHaveLength(1);
+  });
+  it('rejects missing metadata, invented dates and inferred reporting ranges', () => {
+    expect(verifyAtoms([headline], source).verified).toHaveLength(0);
+    for (const period of ['2025-10-25', '12 months to October 2026', null]) {
+      expect(verifyAtoms([{ ...headline, values: [{ ...headline.values[0], period }] }], source, { date: '2026-10-25' }).verified).toHaveLength(0);
+    }
+  });
+  it('never uses metadata to verify statistics or comparisons', () => {
+    for (const patch of [{ value: 2026 }, { compare: 25 }]) {
+      expect(verifyAtoms([{ ...headline, values: [{ ...headline.values[0], ...patch }] }], source, { date: '2026-10-25' }).verified).toHaveLength(0);
+    }
+  });
+  it('does not allow metadata dates to bypass numeric claim verification', () => {
+    expect(verifyAtoms([{ ...headline, claim: '2026 courts opened.' }], source, { date: '2026-10-25' }).verified).toHaveLength(0);
+  });
+  it('keeps quote-based periods subject to quote verification', () => {
+    expect(verifyAtoms([{ ...headline, values: [{ ...headline.values[0], period_source: 'quote' }] }], source, { date: '2026-10-25' }).verified).toHaveLength(0);
+  });
+});

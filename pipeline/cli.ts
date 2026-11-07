@@ -39,7 +39,7 @@ async function main() {
     await json('atoms.candidates.json', candidates);
     await json('extract.trace.json', trace);
     await writeFile(join(directory, 'extract.prompt.md'), prompt);
-    const result = verifyAtoms(candidates, source.text);
+    const result = verifyAtoms(candidates, source.text, { date: source.date });
     await json('atoms.verified.json', result.verified);
     await json('atoms.rejected.json', result.rejected);
     await json('verification.json', { ...result.totals, source_sha256: source.text_sha256, verifier_sha256: sha256(await readFile(new URL('./verify.ts', import.meta.url), 'utf8')) });
