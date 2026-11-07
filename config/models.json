@@ -1,0 +1,6 @@
+{
+  "extract": { "provider": "openai", "model": "gpt-5.4-mini", "notes": "Efficient structured extraction; every atom must pass deterministic verification." },
+  "ideate": { "provider": "openai", "model": "gpt-5.4", "notes": "Editorial judgement and distinctive, evidence-backed angles." },
+  "copy": { "provider": "openai", "model": "gpt-5.4", "notes": "Concise British English, hooks and brand voice." },
+  "learn": { "provider": "openai", "model": "gpt-5.4", "notes": "Evidence-backed feedback patterns and playbook diffs." }
+}

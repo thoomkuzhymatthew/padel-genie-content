@@ -1,0 +1,10 @@
+{
+  "userAgent": "PadelGenieContentTrial/0.1 (manual editorial pipeline)",
+  "requestTimeoutMs": 30000,
+  "maxSourceBytes": 5000000,
+  "maxSourceCharacters": 180000,
+  "demoSources": [
+    "https://padelgenie.io/blog/uk-passes-3000-padel-courts/",
+    "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/"
+  ]
+}
