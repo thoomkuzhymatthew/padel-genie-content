@@ -1,8 +1,8 @@
 # Padel Genie social intern
 
-Private Solved trial, Part 2. Milestone 2 implements source ingestion, structured
-fact extraction and deterministic verification. The review inbox, ideation,
-rendering and learning loop are later milestones, not implemented yet.
+Private Solved trial, Part 2. Milestones 2–3 implement ingestion, structured fact extraction, deterministic
+verification, the v1 playbook, a descriptor-only template catalogue and ideation.
+The review inbox, rendering and learning loop are later milestones.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ an existing run without requesting the website again:
 npm run pipeline -- --source runs/<run-id>/source.json
 ```
 
-The current command ends after verification. The final stages 1–6 command will
+The pipeline command ends after verification; ideation is a separate explicit review step. The final stages 1–6 command will
 be completed in later approved milestones. It does not yet render or queue posts.
 `npm run build` checks TypeScript and builds a minimal, noindex web shell; it is
 not the authenticated inbox and exposes no source data or credentials.
@@ -55,7 +55,10 @@ Model changes are confined to `config/models.json`; prompts live in `pipeline/pr
 
 A quote must occur verbatim in the saved canonical text, after ingestion has
 normalised HTML spacing. Every numeric value and comparison must appear as a
-complete numeric token in that quote; numeric years in periods are checked too.
+complete numeric token in that quote; numeric years in quote-based periods are checked too. A value may instead use
+`period_source: "metadata"` with its period exactly equal to the publication date.
+This exception applies only to the period, never numeric statistics or comparisons.
+It is a publication snapshot label, not proof of an event date.
 Comma and non-breaking-space thousands separators do not change magnitude.
 No substring matches, implicit `k`/million conversions, derived figures or rounded
 values are accepted. Numeric claims must declare their numbers in structured fields.
@@ -75,9 +78,33 @@ and pipeline settings. `templates/`, `playbook/`, `proposed_templates/`,
 `web/` is the separate Vite/React root, with generated assets eventually served
 from `web/public/outputs/`. Pipeline modules are never imported into browser code.
 
-Next: playbook and dynamic prompt assembly, then about eight ideas per source for
-human review. Templates/rendering follow that approval; Supabase schema, RLS and
-the login-protected inbox are milestone 5. No database changes have been made.
+## Ideation and human review
+
+```sh
+npm run ideate -- --run runs/<run-id>
+```
+
+The command reverifies the atom handoff, loads `playbook/playbook.md`, discovers
+`templates/*/template.json`, and adds `playbook/learnings.md` fresh each run. It
+records the playbook version and content hashes for all prompt inputs. The model
+sees source metadata and verified atoms, not unchecked article facts. Catalogue
+formats are `stat`, `carousel`, `ranked-bars` and `comparison`; template names are
+separate identifiers. Descriptors define fields/limits only, with no HTML yet.
+
+Outputs include `ideas.json`, original candidates/rejections, the assembled system
+prompt and user input, and `ideate.trace.json`. A deterministic gate checks atom
+references, template/format pairs, score bounds and numerical provenance from the
+selected atoms' values, comparisons and verified periods. One bounded repair pass
+may replace rejected ideas; it cannot bypass verification. Fewer valid ideas are
+preferred to unsupported ones. Scores are editorial judgement, not measured engagement.
+
+The final October and August ideas and their complete source/atom/prompt bundles
+are in [the milestone 3 review](reports/milestone-3/README.md), including confirmation
+that October's headline court count now passes. These are proposals awaiting human
+review. No copy, template HTML or graphics are generated before that review.
+
+Next: select ideas, then milestone 4's copy and rendering. Supabase schema, RLS and
+the login-protected inbox remain milestone 5. No database changes have been made.
 
 ## Intended system
 

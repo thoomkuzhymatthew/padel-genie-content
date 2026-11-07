@@ -1,0 +1,67 @@
+[
+  {
+    "index": 2,
+    "id": "a3",
+    "reasons": [
+      "quote_not_in_source"
+    ],
+    "atom": {
+      "id": "a3",
+      "claim": "Councils approved 85% of the new padel schemes they decided in the last year.",
+      "values": [
+        {
+          "value": 85,
+          "unit": "%",
+          "compare": null,
+          "period": "the last year",
+          "period_source": "quote"
+        }
+      ],
+      "place": "UK",
+      "source_quote": "Councils approved 85% of the new padel schemes they decided in the last year."
+    }
+  },
+  {
+    "index": 8,
+    "id": "a9",
+    "reasons": [
+      "quote_not_in_source"
+    ],
+    "atom": {
+      "id": "a9",
+      "claim": "Wales has 110 courts across 30 clubs, about 3.5 per 100,000 people.",
+      "values": [
+        {
+          "value": 110,
+          "unit": "courts",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 30,
+          "unit": "clubs",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 3.5,
+          "unit": "courts per 100,000 people",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 100000,
+          "unit": "people",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": "Wales",
+      "source_quote": "Wales has 110 courts across 30 clubs, about 3.5 per 100,000 people."
+    }
+  }
+]

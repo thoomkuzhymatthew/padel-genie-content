@@ -1,0 +1,493 @@
+[
+  {
+    "id": "a1",
+    "claim": "The UK now has 3,061 padel courts open across 891 clubs.",
+    "values": [
+      {
+        "value": 3061,
+        "unit": "courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 891,
+        "unit": "clubs",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "The UK now has 3,061 padel courts open across 891 clubs."
+  },
+  {
+    "id": "a2",
+    "claim": "At least 1,266 courts were approved in the last 12 months, and at least 1,082 more are awaiting a decision.",
+    "values": [
+      {
+        "value": 1266,
+        "unit": "courts",
+        "compare": null,
+        "period": "last 12 months",
+        "period_source": "quote"
+      },
+      {
+        "value": 1082,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "At least 1,266 courts were approved in the last 12 months, and at least 1,082 more are awaiting a decision."
+  },
+  {
+    "id": "a4",
+    "claim": "Hertsmere has 26 courts per 100,000 people.",
+    "values": [
+      {
+        "value": 26,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Hertsmere",
+    "source_quote": "Hertsmere has 26 courts per 100,000 people."
+  },
+  {
+    "id": "a5",
+    "claim": "38 councils with more than 100,000 residents have none inside their boundary.",
+    "values": [
+      {
+        "value": 38,
+        "unit": "councils",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "residents",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "38 councils with more than 100,000 residents have none inside their boundary."
+  },
+  {
+    "id": "a6",
+    "claim": "London is underserved. At 3.8 courts per 100,000 people, it is the lowest of any English region.",
+    "values": [
+      {
+        "value": 3.8,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "London",
+    "source_quote": "London is underserved. At 3.8 courts per 100,000 people, it is the lowest of any English region."
+  },
+  {
+    "id": "a7",
+    "claim": "Northern Ireland is the surprise. At 6.5 courts per 100,000 people, it is level with the North West as the best-served part of the UK.",
+    "values": [
+      {
+        "value": 6.5,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Northern Ireland",
+    "source_quote": "Northern Ireland is the surprise. At 6.5 courts per 100,000 people, it is level with the North West as the best-served part of the UK."
+  },
+  {
+    "id": "a8",
+    "claim": "Scotland has 112 courts across 40 clubs, just 2.1 per 100,000 people and less than half the GB average.",
+    "values": [
+      {
+        "value": 112,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 40,
+        "unit": "clubs",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 2.1,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Scotland",
+    "source_quote": "Scotland has 112 courts across 40 clubs, just 2.1 per 100,000 people and less than half the GB average."
+  },
+  {
+    "id": "a10",
+    "claim": "The average UK club has 3.4 courts, and the median is 3.",
+    "values": [
+      {
+        "value": 3.4,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 3,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "The average UK club has 3.4 courts, and the median is 3."
+  },
+  {
+    "id": "a11",
+    "claim": "The largest is Carbon Padel Club in Manchester with 17 courts.",
+    "values": [
+      {
+        "value": 17,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Manchester",
+    "source_quote": "The largest is Carbon Padel Club in Manchester with 17 courts."
+  },
+  {
+    "id": "a12",
+    "claim": "Nearly half of UK courts (48%) are fully indoor, 16% are covered with open sides, and 35% are outdoor.",
+    "values": [
+      {
+        "value": 48,
+        "unit": "%",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 16,
+        "unit": "%",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 35,
+        "unit": "%",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Nearly half of UK courts (48%) are fully indoor, 16% are covered with open sides, and 35% are outdoor."
+  },
+  {
+    "id": "a13",
+    "claim": "Behind the 3,061 open courts, at least 2,348 more courts are either approved or awaiting a planning decision.",
+    "values": [
+      {
+        "value": 3061,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 2348,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Behind the 3,061 open courts, at least 2,348 more courts are either approved or awaiting a planning decision."
+  },
+  {
+    "id": "a14",
+    "claim": "Our modelling shows there will be at least 4,000 courts open by this time next year.",
+    "values": [
+      {
+        "value": 4000,
+        "unit": "courts",
+        "compare": null,
+        "period": "this time next year",
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Our modelling shows there will be at least 4,000 courts open by this time next year."
+  },
+  {
+    "id": "a15",
+    "claim": "Announced and coming soon covers 47 clubs and 226 courts.",
+    "values": [
+      {
+        "value": 47,
+        "unit": "clubs",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 226,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Announced and coming soon | 47 clubs | 226 |"
+  },
+  {
+    "id": "a16",
+    "claim": "Approved in the last 12 months covers 569 new schemes and at least 1,266 courts.",
+    "values": [
+      {
+        "value": 569,
+        "unit": "schemes",
+        "compare": null,
+        "period": "the last 12 months",
+        "period_source": "quote"
+      },
+      {
+        "value": 1266,
+        "unit": "courts",
+        "compare": null,
+        "period": "the last 12 months",
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Approved in the last 12 months | 569 new schemes | at least 1,266 |"
+  },
+  {
+    "id": "a17",
+    "claim": "Awaiting a planning decision covers 449 new schemes and at least 1,082 courts.",
+    "values": [
+      {
+        "value": 449,
+        "unit": "schemes",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 1082,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Awaiting a planning decision | 449 new schemes | at least 1,082 |"
+  },
+  {
+    "id": "a18",
+    "claim": "Councils approved 85% of the new padel schemes they decided in the last 12 months: 569 approvals against 99 refusals.",
+    "values": [
+      {
+        "value": 85,
+        "unit": "%",
+        "compare": null,
+        "period": "the last 12 months",
+        "period_source": "quote"
+      },
+      {
+        "value": 569,
+        "unit": "approvals",
+        "compare": null,
+        "period": "the last 12 months",
+        "period_source": "quote"
+      },
+      {
+        "value": 99,
+        "unit": "refusals",
+        "compare": null,
+        "period": "the last 12 months",
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Councils approved 85% of the new padel schemes they decided in the last 12 months: 569 approvals against 99 refusals."
+  },
+  {
+    "id": "a19",
+    "claim": "A further 67 were withdrawn.",
+    "values": [
+      {
+        "value": 67,
+        "unit": "schemes",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "A further 67 were withdrawn."
+  },
+  {
+    "id": "a20",
+    "claim": "The median new scheme took 105 days from validation to decision.",
+    "values": [
+      {
+        "value": 105,
+        "unit": "days",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "The median new scheme took 105 days from validation to decision."
+  },
+  {
+    "id": "a21",
+    "claim": "The middle half took between 64 and 164 days.",
+    "values": [
+      {
+        "value": 64,
+        "unit": "days",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 164,
+        "unit": "days",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "The middle half took between 64 and 164 days."
+  },
+  {
+    "id": "a22",
+    "claim": "Across Great Britain there are 4.5 courts for every 100,000 people.",
+    "values": [
+      {
+        "value": 4.5,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Great Britain",
+    "source_quote": "Across Great Britain there are 4.5 courts for every 100,000 people,"
+  },
+  {
+    "id": "a23",
+    "claim": "The North West leads Great Britain with 6.5 courts per 100,000 people.",
+    "values": [
+      {
+        "value": 6.5,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 100000,
+        "unit": "people",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "North West",
+    "source_quote": "The North West leads Great Britain with 6.5 courts per 100,000 people."
+  },
+  {
+    "id": "a24",
+    "claim": "Across 593 clubs we track occupancy and court revenue for, courts were 70% booked at peak times and 31% off-peak between 24th September and 23rd October 2026.",
+    "values": [
+      {
+        "value": 593,
+        "unit": "clubs",
+        "compare": null,
+        "period": "24th September and 23rd October 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 70,
+        "unit": "%",
+        "compare": null,
+        "period": "24th September and 23rd October 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 31,
+        "unit": "%",
+        "compare": null,
+        "period": "24th September and 23rd October 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Across 593 clubs we track occupancy and court revenue for, courts were 70% booked at peak times and 31% off-peak between 24th September and 23rd October 2026."
+  }
+]

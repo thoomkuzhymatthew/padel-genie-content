@@ -1,0 +1,102 @@
+[
+  {
+    "id": "idea_1",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "The shape of UK padel approvals changed: the small end rose from 88 approvals to 201.",
+    "atoms": [
+      "a11"
+    ],
+    "hold_back": "Padel Genie shows where those approvals sit, with venue and planning records behind each one.",
+    "why_it_works": "It gives away one clean structural shift in the market, then points readers to the local detail that matters.",
+    "score": 9
+  },
+  {
+    "id": "idea_2",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Covered and indoor schemes average 3.18 courts; outdoor schemes average 2.51.",
+    "atoms": [
+      "a12"
+    ],
+    "hold_back": "Use Padel Genie to see which local approvals are covered or outdoor and how scheme shape varies by place.",
+    "why_it_works": "It is simple, specific and useful for operators, suppliers and planners thinking about format, not just volume.",
+    "score": 8.8
+  },
+  {
+    "id": "idea_3",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Change of use reached 29% of new-court submissions, up from 22% in the year to August 2025.",
+    "atoms": [
+      "a14"
+    ],
+    "hold_back": "Padel Genie lets you inspect the planning records behind those submissions and the places they are happening.",
+    "why_it_works": "It shows a clear market behaviour change without overselling what it means.",
+    "score": 8.7
+  },
+  {
+    "id": "idea_4",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Conversions out of industrial, warehouse and retail stock went from 50 applications to 151.",
+    "atoms": [
+      "a15"
+    ],
+    "hold_back": "The map and planning records show where conversion-led growth is appearing and what has been filed nearby.",
+    "why_it_works": "It is a sharp, memorable number that proves the data sees beneath headline court growth.",
+    "score": 9.1
+  },
+  {
+    "id": "idea_5",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "The covered share of approvals rose from 31% to 38%.",
+    "atoms": [
+      "a13"
+    ],
+    "hold_back": "Padel Genie helps readers trace which places are approving more covered schemes and which are not.",
+    "why_it_works": "It turns a subtle market shift into a clean before-and-after visual with practical relevance.",
+    "score": 8.4
+  },
+  {
+    "id": "idea_6",
+    "format": "carousel",
+    "template": "carousel-basic",
+    "story": "The August report says UK growth is not just more padel; it is smaller schemes, more covered courts and more conversions.",
+    "atoms": [
+      "a11",
+      "a12",
+      "a13",
+      "a14",
+      "a15"
+    ],
+    "hold_back": "The report gives the national picture; Padel Genie shows the venues, applications and catchments behind it.",
+    "why_it_works": "A carousel suits this because the insight is a pattern made of several distinct shifts, not one stat.",
+    "score": 9.3
+  },
+  {
+    "id": "idea_7",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "The year to date showed 945 courts approved, up from 456.",
+    "atoms": [
+      "a4"
+    ],
+    "hold_back": "Padel Genie shows which approvals make up that total and where they sit on the UK map.",
+    "why_it_works": "It is the clearest headline growth stat in the source and sets up the subtler follow-on stories well.",
+    "score": 8.2
+  },
+  {
+    "id": "idea_8",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "In August, 48 applications were lodged, with about 110 projected for the full month.",
+    "atoms": [
+      "a18"
+    ],
+    "hold_back": "For the August report context, Padel Genie tracks the underlying planning records rather than just the monthly headline.",
+    "why_it_works": "It gives a timely monthly pulse while keeping the provisional caveat intact.",
+    "score": 7.8
+  }
+]

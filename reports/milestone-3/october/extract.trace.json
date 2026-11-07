@@ -1,0 +1,22 @@
+{
+  "stage": "extract",
+  "provider": "openai",
+  "requested_model": "gpt-5.4-mini",
+  "returned_model": "gpt-5.4-mini-2026-03-17",
+  "response_id": "resp_080f5b89fb84b32e016aefb1759f5887d2b280dd44c0ecdc67",
+  "usage": {
+    "input_tokens": 4784,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 0
+    },
+    "output_tokens": 2723,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 7507
+  },
+  "system_prompt_sha256": "3bcc96551a97effc402b803667385b97ad76c7a03a30bff3e7b0bd87f98c2eea",
+  "input_sha256": "2a22ccd170a7cbe9a644705d2dd327126a5bcd90e84539181ca116a63428650f",
+  "created_at": "2026-11-07T23:17:19.954Z"
+}

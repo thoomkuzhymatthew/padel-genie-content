@@ -1,0 +1,93 @@
+{
+  "name": "comparison",
+  "purpose": "Two comparable places or periods side by side using matching units and explicit evidence.",
+  "format": "comparison",
+  "width": 1080,
+  "height": 1350,
+  "slides": {
+    "min": 1,
+    "max": 1
+  },
+  "fields": [
+    {
+      "name": "wordmark",
+      "type": "string",
+      "required": true,
+      "max_characters": 24,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "source_line",
+      "type": "string",
+      "required": true,
+      "max_characters": 80,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "headline",
+      "type": "string",
+      "required": true,
+      "max_characters": 80,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "left.label",
+      "type": "string",
+      "required": true,
+      "max_characters": 40,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "left.hero",
+      "type": "string",
+      "required": true,
+      "max_characters": 18,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "left.context",
+      "type": "string",
+      "required": true,
+      "max_characters": 90,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "right.label",
+      "type": "string",
+      "required": true,
+      "max_characters": 40,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "right.hero",
+      "type": "string",
+      "required": true,
+      "max_characters": 18,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "right.context",
+      "type": "string",
+      "required": true,
+      "max_characters": 90,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "hold_back",
+      "type": "string",
+      "required": true,
+      "max_characters": 110,
+      "max_items": null,
+      "min_items": null
+    }
+  ]
+}

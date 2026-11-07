@@ -1,0 +1,93 @@
+{
+  "name": "ranked-bars",
+  "purpose": "Rank five explicitly comparable named items from verified figures; never invent missing ranks.",
+  "format": "ranked-bars",
+  "width": 1080,
+  "height": 1350,
+  "slides": {
+    "min": 1,
+    "max": 1
+  },
+  "fields": [
+    {
+      "name": "wordmark",
+      "type": "string",
+      "required": true,
+      "max_characters": 24,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "source_line",
+      "type": "string",
+      "required": true,
+      "max_characters": 80,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "headline",
+      "type": "string",
+      "required": true,
+      "max_characters": 80,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "unit",
+      "type": "string",
+      "required": true,
+      "max_characters": 40,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "items",
+      "type": "array",
+      "required": true,
+      "max_characters": null,
+      "max_items": 5,
+      "min_items": 5
+    },
+    {
+      "name": "items[].label",
+      "type": "string",
+      "required": true,
+      "max_characters": 36,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "items[].value",
+      "type": "number",
+      "required": true,
+      "max_characters": null,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "average",
+      "type": "number",
+      "required": false,
+      "max_characters": null,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "context",
+      "type": "string",
+      "required": true,
+      "max_characters": 100,
+      "max_items": null,
+      "min_items": null
+    },
+    {
+      "name": "hold_back",
+      "type": "string",
+      "required": true,
+      "max_characters": 110,
+      "max_items": null,
+      "min_items": null
+    }
+  ]
+}

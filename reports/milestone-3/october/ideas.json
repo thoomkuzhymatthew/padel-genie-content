@@ -1,0 +1,110 @@
+[
+  {
+    "id": "idea_1",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "3,061 courts open is the headline. The more telling number is at least 2,348 more already approved or awaiting a decision.",
+    "atoms": [
+      "a1",
+      "a13"
+    ],
+    "hold_back": "Use Padel Genie to see which clubs are open now and which approved or pending schemes sit behind the next wave.",
+    "why_it_works": "It rebuts the bubble angle with 3,061 open courts and at least 2,348 more already in the pipeline.",
+    "score": 9.5
+  },
+  {
+    "id": "idea_2",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "London has 3.8 courts per 100,000 people. The North West has 6.5. The gap is not about national hype. It is local supply.",
+    "atoms": [
+      "a6",
+      "a23"
+    ],
+    "hold_back": "Open the live map to inspect borough and catchment detail behind London’s 3.8 versus the North West’s 6.5.",
+    "why_it_works": "A clean regional comparison makes the story concrete and useful for operators, players and suppliers.",
+    "score": 9
+  },
+  {
+    "id": "idea_3",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "38 councils with more than 100,000 residents still have no padel courts inside their boundary.",
+    "atoms": [
+      "a5"
+    ],
+    "hold_back": "Padel Genie shows which councils these are, alongside nearby venues and planning records for local context.",
+    "why_it_works": "One stark count gives away the story fast and proves there is still white space without overclaiming demand.",
+    "score": 9.2
+  },
+  {
+    "id": "idea_4",
+    "format": "carousel",
+    "template": "carousel-basic",
+    "story": "Planning is not the brake people think it is: 85% of decided schemes were approved in the last 12 months.",
+    "atoms": [
+      "a16",
+      "a17",
+      "a18",
+      "a19",
+      "a20",
+      "a21"
+    ],
+    "hold_back": "The platform shows each planning record, scheme status and local history behind the 569 approvals, 99 refusals and 67 withdrawals.",
+    "why_it_works": "It turns scattered planning stats into one sharp point: the bottleneck is not simple council resistance.",
+    "score": 9.4
+  },
+  {
+    "id": "idea_5",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Scotland has 2.1 courts per 100,000 people. Great Britain overall has 4.5. That is a very different stage of market development.",
+    "atoms": [
+      "a8",
+      "a22"
+    ],
+    "hold_back": "Check Padel Genie for the 112 courts, 40 clubs and the local gaps behind Scotland’s lower supply.",
+    "why_it_works": "The side-by-side framing is simple, named and useful without implying anything stronger than a supply gap.",
+    "score": 8.8
+  },
+  {
+    "id": "idea_6",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Northern Ireland is level with the North West at 6.5 courts per 100,000 people. That is not where many people expect the UK leader board to land.",
+    "atoms": [
+      "a7",
+      "a23"
+    ],
+    "hold_back": "Use the live map and planning records to see how Northern Ireland reached 6.5 and where the next schemes sit.",
+    "why_it_works": "It is genuinely surprising, regionally specific and shows Padel Genie has data beyond the obvious big-city narrative.",
+    "score": 8.7
+  },
+  {
+    "id": "idea_7",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "The median new padel scheme took 105 days from validation to decision.",
+    "atoms": [
+      "a20",
+      "a21"
+    ],
+    "hold_back": "Padel Genie lets you dig into the planning records behind the 105-day median and the 64 to 164 day middle range.",
+    "why_it_works": "A single timing stat is practical for operators and suppliers planning projects, with enough evidence to feel distinctive.",
+    "score": 8.4
+  },
+  {
+    "id": "idea_8",
+    "format": "carousel",
+    "template": "carousel-basic",
+    "story": "The average UK club has 3.4 courts, the median has 3, and the largest single club has 17.",
+    "atoms": [
+      "a10",
+      "a11",
+      "a1"
+    ],
+    "hold_back": "Explore club-by-club venue detail in Padel Genie to see where operators are building small formats and where larger sites already exist.",
+    "why_it_works": "It gives a clear picture of what a typical club looks like, then uses the 17-court outlier to add texture.",
+    "score": 8.3
+  }
+]

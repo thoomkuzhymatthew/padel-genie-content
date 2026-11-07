@@ -10,7 +10,8 @@
     "pipeline": "tsx pipeline/cli.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "build": "npm run typecheck && vite build --config vite.config.ts"
+    "build": "npm run typecheck && vite build --config vite.config.ts",
+    "ideate": "tsx pipeline/ideate.ts"
   },
   "dependencies": {
     "cheerio": "^1.1.2",
