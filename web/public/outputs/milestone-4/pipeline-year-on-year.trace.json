@@ -1,0 +1,36 @@
+{
+  "draft_id": "pipeline-year-on-year",
+  "format": "comparison",
+  "atoms": [
+    "a1",
+    "a3",
+    "a4",
+    "a5",
+    "a9",
+    "a49"
+  ],
+  "source_url": "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "3892192f26c4745c124619e45483d2da15542ae34c292bcc182387eb21c87d46",
+  "content_sha256": "bd7244425e990e392508584bb5b590d5822f8ebdd091efce78c68e51ec9cccfe",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "overflow": []
+    }
+  ],
+  "assets": [
+    "/outputs/milestone-4/pipeline-year-on-year.png"
+  ],
+  "caption": "Year to August, as reported: applications approved 312 → 649; applications lodged 629 → 1,150; courts approved 456 → 945. The latest totals include provisional August and are floors. Padel Genie’s planning map updates as councils publish.",
+  "content_origin": "assistant_editorial_draft",
+  "copy_generation": null,
+  "renderer_sha256": "6fb361ff105f89ed3f3da3f792ec9f0a7851bff68f82f58eb75bb95763297c4b",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}

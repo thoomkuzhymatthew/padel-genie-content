@@ -1,0 +1,19 @@
+{
+  "id": "councils-with-no-court",
+  "template": "stat-card",
+  "source_bundle": "reports/playbook-v2/october",
+  "atoms": [
+    "a6",
+    "a40"
+  ],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, October 2026",
+    "hero": "38",
+    "headline": "Big populations.\nNo padel court.",
+    "context": "councils with over 100,000 residents",
+    "comparison": "No open court inside their boundary.",
+    "hold_back": "See every open court on the free live map."
+  },
+  "caption": "38 councils with more than 100,000 residents have no open padel court inside their boundary, as reported in October. Check nearby courts and the planning-pipeline preview on Padel Genie’s live map."
+}

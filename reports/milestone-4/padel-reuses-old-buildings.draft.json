@@ -1,0 +1,47 @@
+{
+  "id": "padel-reuses-old-buildings",
+  "template": "carousel-basic",
+  "source_bundle": "reports/playbook-v2/august",
+  "atoms": [
+    "a20",
+    "a21",
+    "a22",
+    "a25",
+    "a26",
+    "a49",
+    "a51"
+  ],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, August 2026",
+    "hook": "Padel is moving\ninto old buildings.",
+    "hook_hero": "151",
+    "hook_body": "applications to convert industrial,\nwarehouse and retail space",
+    "hook_note": "Up from 50 in the previous period.",
+    "content_slides": [
+      {
+        "headline": "Reuse is taking\na bigger share.",
+        "hero": "29%",
+        "body": "of new-court submissions\nwere change of use.",
+        "note": "Previously 22%."
+      },
+      {
+        "headline": "From DIY store\nto padel scheme.",
+        "hero": "10",
+        "body": "courts approved at the former Homebase\non Finchley Road, Camden.",
+        "note": "All-weather canopy. Temporary consent."
+      },
+      {
+        "headline": "An industrial unit.\nA different future.",
+        "hero": "12",
+        "body": "courts approved at Merlin Way,\nNorth Shields.",
+        "note": "Former B2 industrial unit.\nDecision: December 2025."
+      }
+    ],
+    "closing_headline": "The story is here.\nThe site detail is inside.",
+    "closing_hero": "47",
+    "closing_body": "approvals of five courts or more",
+    "hold_back": "Addresses. Decision dates. Court counts. Former building use. Explore the full list in Padel Genie."
+  },
+  "caption": "Conversions out of industrial, warehouse and retail stock rose from 50 applications to 151. The former Homebase on Finchley Road: 10 courts approved under an all-weather canopy. Merlin Way, North Shields: 12 courts approved in a former industrial unit. See all 47 approvals of five courts or more, with addresses, decision dates, court counts and former building use in Padel Genie. Source: August report."
+}

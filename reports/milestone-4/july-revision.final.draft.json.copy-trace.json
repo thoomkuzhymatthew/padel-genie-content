@@ -1,0 +1,35 @@
+{
+  "playbook_version": "v3",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "learnings_sha256": "a0d8364dd92c563b4e1153d14f90f417b752b19c7f6aafe6544f7d3b6a98ec11",
+  "catalogue_sha256": "8ab3451f0925dec200652d580294a924e559289e4590b8e916840b4db702ed33",
+  "atoms_sha256": "588f80f19d9613f929ab3cfb54c1ed6b305f4165d7a716eab6c83a64d52ed453",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "system_prompt_sha256": "3bcb190f1c7effcae20cf1881afb6a4707cf3ffd0d17db8eb608ceaa121023fc",
+  "input_sha256": "dff4ed9a9472af36841f68c8bb3271357c1eaf77ad51d8d4459518ba1fee7117",
+  "stage": "copy",
+  "provider": "openai",
+  "requested_model": "gpt-5.4",
+  "returned_model": "gpt-5.4-2026-03-05",
+  "response_id": "resp_08b5a2f0be2cd7d4016aefc3864ac487d2a150b1b651c121e8",
+  "usage": {
+    "input_tokens": 4822,
+    "input_tokens_details": {
+      "cache_write_tokens": 0,
+      "cached_tokens": 3840
+    },
+    "output_tokens": 127,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4949
+  },
+  "created_at": "2026-11-08T00:34:16.771Z",
+  "context_input_sha256": "75bc127927e273e1a867bd6b8fb4b16150e3555467aab14c684d535aeeccdffb",
+  "editable_paths": [
+    "headline",
+    "context",
+    "hold_back"
+  ],
+  "status": "draft_not_approved"
+}

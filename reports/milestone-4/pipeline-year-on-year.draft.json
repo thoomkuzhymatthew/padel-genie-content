@@ -1,0 +1,46 @@
+{
+  "id": "pipeline-year-on-year",
+  "template": "comparison",
+  "source_bundle": "reports/playbook-v2/august",
+  "atoms": [
+    "a1",
+    "a3",
+    "a4",
+    "a5",
+    "a9",
+    "a49"
+  ],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, August 2026",
+    "headline": "The planning pipeline\nhas doubled.",
+    "left": {
+      "label": "Year to August 2025",
+      "hero": "312",
+      "context": "Applications approved"
+    },
+    "right": {
+      "label": "Year to August 2026",
+      "hero": "649",
+      "context": "Applications approved"
+    },
+    "comparison_atom_id": "a3",
+    "rows": [
+      {
+        "label": "Applications lodged",
+        "before": 629,
+        "after": 1150,
+        "atom_id": "a4"
+      },
+      {
+        "label": "Courts approved",
+        "before": 456,
+        "after": 945,
+        "atom_id": "a5"
+      }
+    ],
+    "context": "August is provisional. Latest totals are floors.",
+    "hold_back": "Explore the planning application map, updated as councils publish."
+  },
+  "caption": "Year to August, as reported: applications approved 312 → 649; applications lodged 629 → 1,150; courts approved 456 → 945. The latest totals include provisional August and are floors. Padel Genie’s planning map updates as councils publish."
+}

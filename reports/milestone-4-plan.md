@@ -14,9 +14,11 @@
 
 | Post | Source | Status |
 | --- | --- | --- |
-| 3,061 courts across 891 clubs | October | First style preview |
-| 38 councils with over 100,000 residents and no court | October | Awaiting style approval |
-| All regions ranked, GB-average reference | October | Awaiting style approval |
-| Approvals 312→649; lodged 629→1,150; courts 456→945 | August | Awaiting style approval; retain caveat |
-| Reuse carousel: Homebase, Merlin Way, 47-approval list | August | Awaiting style approval |
-| July revision / A2 | August | Reserve |
+| 3,061 courts across 891 clubs | October | Rendered; style approved |
+| 38 councils with over 100,000 residents and no court | October | Rendered |
+| All regions ranked, GB-average reference | October | Rendered |
+| Approvals 312→649; lodged 629→1,150; courts 456→945 | August | Rendered; caveat retained |
+| Reuse carousel: Homebase, Merlin Way, 47-approval list | August | Rendered |
+| July revision / A2 | August | Rendered as reserve |
+
+The user approved the first stat-card style. All five selected posts and reserve A2 are now rendered; source and date lines appear on every graphic.

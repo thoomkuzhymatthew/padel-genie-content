@@ -1,0 +1,34 @@
+{
+  "draft_id": "regional-court-supply",
+  "format": "ranked-bars",
+  "atoms": [
+    "a29",
+    "a30",
+    "a31",
+    "a40"
+  ],
+  "source_url": "https://padelgenie.io/blog/uk-passes-3000-padel-courts/",
+  "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "083ff200a2b9395d7fe2f1aec5fc3679ca024e2bc3ec626d1258391cb3d6ab0a",
+  "content_sha256": "6b51ae6492445f18e2987036f48736a301e201b605e38b874eba791fb1a12454",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "overflow": []
+    }
+  ],
+  "assets": [
+    "/outputs/milestone-4/regional-court-supply.png"
+  ],
+  "caption": "Northern Ireland: 6.52 courts per 100,000 people. Scotland: 2.06. All regions and nations from the October report, ranked on the same measure, with the Great Britain average of 4.5 as a reference. Supply per head is context, not a measure of demand.",
+  "content_origin": "assistant_editorial_draft",
+  "copy_generation": null,
+  "renderer_sha256": "6fb361ff105f89ed3f3da3f792ec9f0a7851bff68f82f58eb75bb95763297c4b",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}

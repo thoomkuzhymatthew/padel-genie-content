@@ -35,3 +35,13 @@
 - The selected milestone 4 batch is two October stat cards, all-region ranked bars with the GB average, the August year-on-year pipeline comparison, and a Homebase/Merlin Way reuse carousel; July's revision is reserve.
 - Render only the 3,061-court stat card first, then wait for visual-style approval before implementing the other templates or posts, as requested.
 - The August comparison is explicitly selected by the user despite the earlier rule against provisional hero figures; retain its provisional-August caveat when it is built.
+
+## Milestone 4 — approved style extended
+
+- The user approved the first stat card; carry its typography, forest/cream blocks and terracotta accents through the remaining formats. Its original PNG remains pixel-identical.
+- The ranked chart includes all 11 published regions/nations, retaining the source's Midlands grouping and a separate GB-average line; do not invent a different geographic split or round the published values.
+- Bind regional labels to their quoted values and comparison rows to their units and before/after atom pairs; numeric presence alone would not catch swapped labels or years.
+- Use a five-slide reuse carousel: conversion trend, change-of-use share, Homebase, Merlin Way, and the concrete 47-approval hold-back; describe schemes as approvals rather than open courts.
+- Keep the user-selected August comparison's provisional caveat on the graphic and in its caption. Its selection is explicit and does not silently change the general playbook rule.
+- Add the optional July-revision reserve through the configured copy model; retain fixed factual fields and trace the actual generation input separately from the evidence-context input.
+- Primary example copy is assistant-curated and explicitly tagged that way; do not fabricate configured-model calls or publication approvals.

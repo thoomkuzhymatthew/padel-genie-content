@@ -1,0 +1,21 @@
+{
+  "id": "july-revision-reserve",
+  "template": "stat-card",
+  "source_bundle": "reports/playbook-v2/august",
+  "atoms": [
+    "a27",
+    "a29",
+    "a30",
+    "a49"
+  ],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, August 2026",
+    "hero": "93",
+    "headline": "July looked quiet.\nThen the portal caught up.",
+    "context": "applications lodged in July, confirmed in later council portal updates",
+    "comparison": "Revised from 63, as reported in August.",
+    "hold_back": "Explore Padel Genie’s planning application map, updated daily as councils publish."
+  },
+  "caption": "July’s lodged applications were revised from 63 to 93, as reported in August. The source also says councils publish to planning portals about 16 days late on average. Track every UK padel planning application on Padel Genie’s daily-updated map."
+}

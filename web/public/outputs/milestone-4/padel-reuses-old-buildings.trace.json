@@ -1,0 +1,57 @@
+{
+  "draft_id": "padel-reuses-old-buildings",
+  "format": "carousel",
+  "atoms": [
+    "a20",
+    "a21",
+    "a22",
+    "a25",
+    "a26",
+    "a49",
+    "a51"
+  ],
+  "source_url": "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "a92694fa6705c3cfbcf92d35671ecac1fba903d8e25d699f252a0cf0c00d50a8",
+  "content_sha256": "be8526c9ab985042534ed5819cc35d59e7c9b51f59998659b6349b7c32bcc34d",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "overflow": []
+    },
+    {
+      "fonts_ready": true,
+      "overflow": []
+    },
+    {
+      "fonts_ready": true,
+      "overflow": []
+    },
+    {
+      "fonts_ready": true,
+      "overflow": []
+    },
+    {
+      "fonts_ready": true,
+      "overflow": []
+    }
+  ],
+  "assets": [
+    "/outputs/milestone-4/padel-reuses-old-buildings-01.png",
+    "/outputs/milestone-4/padel-reuses-old-buildings-02.png",
+    "/outputs/milestone-4/padel-reuses-old-buildings-03.png",
+    "/outputs/milestone-4/padel-reuses-old-buildings-04.png",
+    "/outputs/milestone-4/padel-reuses-old-buildings-05.png"
+  ],
+  "caption": "Conversions out of industrial, warehouse and retail stock rose from 50 applications to 151. The former Homebase on Finchley Road: 10 courts approved under an all-weather canopy. Merlin Way, North Shields: 12 courts approved in a former industrial unit. See all 47 approvals of five courts or more, with addresses, decision dates, court counts and former building use in Padel Genie. Source: August report.",
+  "content_origin": "assistant_editorial_draft",
+  "copy_generation": null,
+  "renderer_sha256": "6fb361ff105f89ed3f3da3f792ec9f0a7851bff68f82f58eb75bb95763297c4b",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}

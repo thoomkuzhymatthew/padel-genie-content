@@ -2,7 +2,7 @@
 
 Private Solved trial, Part 2. Milestones 2–3 implement ingestion, structured fact extraction, deterministic
 verification, the versioned playbook (currently v3), a descriptor-only template catalogue and ideation.
-The review inbox, rendering and learning loop are later milestones.
+Rendering is implemented; the review inbox and learning loop are later milestones.
 
 ## Run locally
 
@@ -163,3 +163,14 @@ The user-selected five-post batch is recorded in `reports/milestone-4-plan.md`.
 Only the first stat card is rendered, pending visual approval. Reproduce it with
 `npm run render -- --draft reports/milestone-4/first-stat.draft.json`.
 See `reports/milestone-4/README.md` for output paths and verification details.
+
+## Milestone 4 outputs
+
+The five selected posts are rendered in the approved style, plus reserve A2.
+[View the examples](examples/README.md) or [download PNGs and captions](examples/selected-posts.zip).
+`npm run render:examples -- --reserve` reproduces the selected batch and reserve
+without new LLM calls. `npm run write -- --draft <seed.json> --output <new.json>`
+uses the configured copy model for editorial text while preserving numerical fields.
+The remaining three templates now have HTML/CSS, including all published regions
+with a GB-average line, paired year-on-year metrics and a five-slide carousel.
+See `reports/milestone-4/README.md` for provenance, commands and validation.

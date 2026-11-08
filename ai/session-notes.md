@@ -41,3 +41,12 @@ user approvals; a full exported transcript can be added at submission.
 - First preview: 3,061 courts / 891 clubs, 1080×1350, source/date line, cream/forest/terracotta tokens. Inspected the actual PNG and checked font readiness, bounds and numerical provenance.
 - The August comparison is an explicit user selection; retain the article's provisional-August caveat when built.
 - Stop after showing the first PNG. Other templates and selected posts remain queued for style approval.
+
+## Milestone 4 — style approved and batch rendered
+
+- User approved the visual style. Built the remaining four selected posts using the same brand system, then rendered the optional A2 reserve.
+- Added the shared frame, all-region ranked-bars, paired-metric comparison and five-slide carousel HTML/CSS. Every graphic has its source/date footer.
+- Extended nested field validation, escaping and source checks to catch swapped regional labels, wrong averages, missing regions, inverted comparisons, mismatched units and removed provisional caveats.
+- Implemented the configured SDK copy stage; exercised it on the reserve while preserving factual fields. Primary copies remain honestly tagged as assistant-curated.
+- Verified all PNG dimensions and inspected the actual outputs. The approved first stat remained byte-identical.
+- Exported examples, captions, traces, a selected-post ZIP and contact sheet. No database, inbox or posting actions were performed.

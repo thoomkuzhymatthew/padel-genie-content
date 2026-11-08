@@ -1,0 +1,78 @@
+{
+  "id": "regional-court-supply",
+  "template": "ranked-bars",
+  "source_bundle": "reports/playbook-v2/october",
+  "atoms": [
+    "a29",
+    "a30",
+    "a31",
+    "a40"
+  ],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, October 2026",
+    "headline": "Padel is local.\nHere’s the spread.",
+    "unit": "Courts per 100,000 people",
+    "items": [
+      {
+        "label": "Northern Ireland",
+        "value": 6.52,
+        "atom_id": "a31"
+      },
+      {
+        "label": "North West",
+        "value": 6.48,
+        "atom_id": "a30"
+      },
+      {
+        "label": "South West",
+        "value": 5.07,
+        "atom_id": "a31"
+      },
+      {
+        "label": "North East",
+        "value": 5.02,
+        "atom_id": "a31"
+      },
+      {
+        "label": "Yorkshire and the Humber",
+        "value": 5.02,
+        "atom_id": "a31"
+      },
+      {
+        "label": "East of England",
+        "value": 4.86,
+        "atom_id": "a31"
+      },
+      {
+        "label": "South East",
+        "value": 4.61,
+        "atom_id": "a31"
+      },
+      {
+        "label": "Midlands",
+        "value": 4.31,
+        "atom_id": "a31"
+      },
+      {
+        "label": "London",
+        "value": 3.8,
+        "atom_id": "a30"
+      },
+      {
+        "label": "Wales",
+        "value": 3.54,
+        "atom_id": "a31"
+      },
+      {
+        "label": "Scotland",
+        "value": 2.06,
+        "atom_id": "a31"
+      }
+    ],
+    "average": 4.5,
+    "context": "All regions and nations in the published chart.",
+    "hold_back": "Explore every open court on the free live map."
+  },
+  "caption": "Northern Ireland: 6.52 courts per 100,000 people. Scotland: 2.06. All regions and nations from the October report, ranked on the same measure, with the Great Britain average of 4.5 as a reference. Supply per head is context, not a measure of demand."
+}
