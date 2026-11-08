@@ -45,3 +45,16 @@
 - Keep the user-selected August comparison's provisional caveat on the graphic and in its caption. Its selection is explicit and does not silently change the general playbook rule.
 - Add the optional July-revision reserve through the configured copy model; retain fixed factual fields and trace the actual generation input separately from the evidence-context input.
 - Primary example copy is assistant-curated and explicitly tagged that way; do not fabricate configured-model calls or publication approvals.
+
+## Milestone 5 — authenticated review
+
+- User explicitly selected the content project in this repo's `.env` and CLI-only operations; the Part 1 MCP/project is never a migration or queue target.
+- Only `REVIEWER_TEST_EMAIL` / `REVIEWER_TEST_PASSWORD` are used for login testing; existing reviewer passwords are never reset.
+- Queue all six selected/rendered posts as proposed with idempotent slugs, complete evidence/render/model traces and the originating playbook hash/version.
+- All review writes use a transactional RPC with the authenticated actor, optimistic version check and server-computed before/after diff; direct client writes are revoked.
+- Editing artwork marks it stale and blocks approval/posting; caption-only edits retain current images. Editing an approved/rejected draft returns it to proposed for review.
+- Per the user's approval, Playwright re-rendering runs locally with `npm run render -- --post <id>`, never on Vercel.
+- A re-render stays stale until its versioned image files are deployed and `npm run render:confirm -- --post <id>` verifies their hashes at `INBOX_URL`; this prevents old or missing images masquerading as updated artwork.
+- Only the public Supabase URL and anon key are configured for Vercel's browser build. Queue/admin/test credentials stay local and are never shipped.
+- Use HTTP 409 for optimistic review conflicts rather than a database serialization error, so an expected stale-edit conflict is not retried as a transient database fault.
+- Test live actions on a temporary verification post using the configured test account, then remove that fixture and its events; the six real drafts remain proposed without synthetic feedback polluting the learning history.

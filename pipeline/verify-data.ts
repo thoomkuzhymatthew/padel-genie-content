@@ -1,0 +1,39 @@
+import {createClient} from '@supabase/supabase-js';
+import {randomUUID} from 'node:crypto';
+import {adminClient} from './db/client.js';
+import {requireEnv} from './env.js';
+const admin=adminClient();
+const anon=createClient(requireEnv('SUPABASE_URL'),requireEnv('SUPABASE_ANON_KEY'),{auth:{persistSession:false,autoRefreshToken:false}});
+const check=(ok:unknown,message:string)=>{if(!ok)throw new Error(message);console.log('PASS '+message);};
+const settings=await fetch(requireEnv('SUPABASE_URL')+'/auth/v1/settings',{headers:{apikey:requireEnv('SUPABASE_ANON_KEY')}}).then(r=>r.json());
+check(settings.disable_signup===true,'public sign-ups disabled');check(settings.external.email===true,'email/password auth enabled');
+const blocked=await anon.from('posts').select('id');check(Boolean(blocked.error),'anonymous table reads denied');
+const login=await anon.auth.signInWithPassword({email:requireEnv('REVIEWER_TEST_EMAIL'),password:requireEnv('REVIEWER_TEST_PASSWORD')});
+check(!login.error&&login.data.user,'configured test account signs in');
+const user=login.data.user!;
+const profiles=await anon.from('reviewers').select('*');check(!profiles.error&&profiles.data?.length===2,'both reviewer profiles readable after login');
+const base=await admin.from('posts').select('*').eq('slug','uk-court-count').single();if(base.error)throw new Error('Missing base post');
+const{id:_id,render_stale:_stale,created_at:_created,updated_at:_updated,...copy}=base.data;
+const id=randomUUID();let version=1;
+const fixture=await admin.from('posts').insert({...copy,id,slug:'verification-'+id,run_id:'verification-fixture',status:'proposed',version:1,content_version:1,rendered_version:1});if(fixture.error)throw new Error(fixture.error.message);
+try{
+ const direct=await anon.from('posts').update({status:'posted'}).eq('id',id);check(Boolean(direct.error),'direct client writes denied');
+ const rpc=(action:string,extra:Record<string,unknown>={})=>anon.rpc('review_post',{p_post_id:id,p_action:action,p_expected_version:version,...extra}).retry(false).abortSignal(AbortSignal.timeout(20000));
+ const noReason=await rpc('reject');check(Boolean(noReason.error),'rejection needs a reason');
+ const unsupported=await rpc('edit',{p_caption:'987654321 courts.',p_content:copy.content});check(Boolean(unsupported.error),'unverified edit numbers rejected');
+ const edit=await rpc('edit',{p_caption:copy.caption+' Verification copy.',p_content:copy.content,p_note:'Verification note'});
+ if(edit.error)throw new Error(edit.error.message);version=edit.data.version;check(edit.data.render_stale===false,'caption-only edit preserves artwork');
+ const graphic=structuredClone(copy.content);graphic.headline='The UK padel\ncount is in. Reviewed.';
+ const changed=await rpc('edit',{p_caption:edit.data.caption,p_content:graphic,p_note:'Artwork check'});if(changed.error)throw new Error(changed.error.message);version=changed.data.version;check(changed.data.render_stale===true,'artwork edit marks preview stale');
+ const stale=await rpc('approve');check(Boolean(stale.error),'stale artwork cannot be approved');
+ const reset=await admin.from('posts').update({rendered_version:changed.data.content_version}).eq('id',id);if(reset.error)throw new Error(reset.error.message);
+ const approved=await rpc('approve');if(approved.error)throw new Error(approved.error.message);version=approved.data.version;check(approved.data.status==='approved','approve transition works');
+ const conflict=await anon.rpc('review_post',{p_post_id:id,p_action:'posted',p_expected_version:1}).retry(false).abortSignal(AbortSignal.timeout(20000));check(conflict.error?.code==='PT409','stale concurrent version rejected');
+ const posted=await rpc('posted');if(posted.error)throw new Error(posted.error.message);version=posted.data.version;check(posted.data.status==='posted','mark-as-posted transition works');
+ const immutable=await rpc('edit',{p_caption:'Changed',p_content:graphic});check(Boolean(immutable.error),'posted content is read only');
+ const events=await admin.from('post_events').select('*').eq('post_id',id);check(events.data?.length===4&&events.data.every(event=>event.actor_id===user.id),'all successful actions attributed to the test account');
+ check(events.data?.some(event=>event.type==='edit'&&event.note==='Artwork check'&&event.diff.some((item:{path:string})=>item.path==='content.headline')),'server-generated field diff and note persisted');
+}finally{
+ await admin.from('post_events').delete().eq('post_id',id);await admin.from('posts').delete().eq('id',id);await anon.auth.signOut();
+}
+const final=await admin.from('posts').select('status');check(final.data?.length===6&&final.data.every(post=>post.status==='proposed'),'verification fixture removed; six real drafts remain proposed');

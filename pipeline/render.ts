@@ -66,7 +66,7 @@ export function checkGraphicEvidence(template: string, content: JsonRecord, atom
     if (atoms.some(atom => atom.certainty === 'provisional') && !/provisional/i.test(String(content.context))) throw new Error('Comparison must retain provisional caveat');
   }
 }
-export async function renderDraft(filename: string) {
+export async function renderDraft(filename: string, options: { outputSubdir?: string } = {}) {
   const draft = DraftSchema.parse(JSON.parse(await readFile(filename, 'utf8')));
   const bundle = resolve(projectRoot, draft.source_bundle);
   const source = JSON.parse(await readFile(join(bundle, 'source.json'), 'utf8')) as Source;
@@ -113,7 +113,9 @@ export async function renderDraft(filename: string) {
     ].map((view, index, all) => ({ ...view, page_label: `${String(index + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}` }));
   }
   if (views.length < template.slides.min || views.length > template.slides.max) throw new Error('Slide count outside template limits');
-  const output = join(projectRoot, 'web/public/outputs/milestone-4');
+  const outputSubdir = options.outputSubdir || 'milestone-4';
+  if (!/^[a-z0-9/-]+$/.test(outputSubdir) || outputSubdir.includes('..')) throw new Error('Invalid output directory');
+  const output = join(projectRoot, 'web/public/outputs', outputSubdir);
   await mkdir(output, { recursive: true });
   const browser = await chromium.launch();
   const assets: string[] = [], pageChecks: unknown[] = [];
@@ -135,7 +137,7 @@ export async function renderDraft(filename: string) {
       const basename = draft.id + (views.length > 1 ? '-' + String(index + 1).padStart(2, '0') : '');
       await page.screenshot({ path: join(output, basename + '.png'), type: 'png' });
       await writeFile(join(output, basename + '.html'), html);
-      assets.push('/outputs/milestone-4/' + basename + '.png'); pageChecks.push(checks);
+      assets.push('/outputs/' + outputSubdir + '/' + basename + '.png'); pageChecks.push(checks);
     }
   } finally { await browser.close(); }
   let copyGeneration: unknown = null;
@@ -153,8 +155,11 @@ export async function renderDraft(filename: string) {
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   try {
-    const { values } = parseArgs({ options: { draft: { type: 'string' } }, strict: true });
-    if (!values.draft) throw new Error('Usage: npm run render -- --draft <draft.json>');
-    await renderDraft(resolve(values.draft));
+    const { values } = parseArgs({ options: { draft: { type: 'string' }, post: { type: 'string' } }, strict: true });
+    if (values.post && !values.draft) {
+      const { renderQueuedPost } = await import('./render-post.js');
+      await renderQueuedPost(values.post, renderDraft);
+    } else if (values.draft && !values.post) await renderDraft(resolve(values.draft));
+    else throw new Error('Usage: npm run render -- --draft <draft.json> OR --post <id>');
   } catch (error) { console.error(error instanceof Error ? error.message : 'Render failed'); process.exitCode = 1; }
 }
