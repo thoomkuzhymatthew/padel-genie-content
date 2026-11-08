@@ -5,3 +5,5 @@ concrete source-backed hold-backs, merged duplicate angles, ranked-bars for regi
 forced ranking with a real score spread, an improvement line per idea, and no
 provisional/projected hero stories. This is explicit editorial feedback, not an
 engagement-derived finding. No performance-based learning has been inferred.
+
+Second human steer: merge true duplicates, but always return 6–8 distinct ideas. V2 over-pruned valid angles; breadth is required alongside distinctness.

@@ -10,5 +10,5 @@ export const IdeaSchema = z.strictObject({
   score: z.number().min(0).max(10), rank: z.number().int().min(1).max(8),
   improve: z.string().min(1).max(240),
 });
-export const IdeasSchema = z.strictObject({ ideas: z.array(IdeaSchema).max(8) });
+export const IdeasSchema = z.strictObject({ ideas: z.array(IdeaSchema).min(6).max(8) });
 export type Idea = z.infer<typeof IdeaSchema>;

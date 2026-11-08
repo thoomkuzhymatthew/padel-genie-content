@@ -103,7 +103,7 @@ describe('ideation evidence gate', () => {
     const playbook = await readFile('playbook/playbook.md', 'utf8');
     const marker = '<!-- LOCKED: the learning loop must never edit anything below this line -->';
     expect(playbook.slice(playbook.indexOf(marker)).trim()).toBe(baseline.slice(baseline.indexOf(marker)).trim());
-    expect(playbook).toContain('playbook v2');
+    expect(playbook).toContain('playbook v3');
     expect(playbook).toContain('First human steer');
   });});
 

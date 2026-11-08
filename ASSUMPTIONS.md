@@ -11,3 +11,5 @@
 - Publication metadata remains a separate period-only provenance channel in v2; narrative extraction never turns it into evidence for statistical values.
 - The first human steer is stored separately from engagement learning and applied only above the playbook's unchanged LOCKED block.
 - Ranking is within each source batch; score/rank and requested improvements are editorial judgements, not claimed source statistics.
+- The user's latest instruction authorises the milestone 4 plan and first stat-card build in this turn; all remaining templates/posts wait for explicit visual-style approval.
+- A fixed assistant-authored first draft establishes the visual style; it is tagged as a style preview, not presented as approved copy or an LLM-generated production draft.

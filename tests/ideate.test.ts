@@ -19,11 +19,12 @@ const idea = { id: 'i1', story: '151 applications.', atoms: ['a1'], format: 'sta
 const response = (ideas: unknown[]) => ({ data: { ideas }, trace: { requested_model: 'offline-test' } });
 it('repairs rejected ideas once, preserves initial evidence and revalidates replacements', async () => {
   const directory = await fixture();
-  generate.mockResolvedValueOnce(response([idea, { ...idea, id: 'i2', rank: 2, score: 6, angle: 'other', story: '999 applications.' }]))
-    .mockResolvedValueOnce(response([{ ...idea, id: 'i2', rank: 2, score: 6, angle: 'other', story: 'Applications reached 151.' }]));
+  const accepted = Array.from({ length: 5 }, (_, i) => ({ ...idea, id: `valid${i}`, rank: i + 1, score: 9 - i * .7, angle: `angle${i}` }));
+  generate.mockResolvedValueOnce(response([...accepted, { ...idea, id: 'i2', rank: 6, score: 5, angle: 'other', story: '999 applications.' }]))
+    .mockResolvedValueOnce(response([{ ...idea, id: 'i2', rank: 6, score: 5, angle: 'other', story: 'Applications reached 151.' }]));
   const result = await ideateRun(directory);
   expect(generate).toHaveBeenCalledTimes(2);
-  expect(result.verified).toHaveLength(2);
+  expect(result.verified).toHaveLength(6);
   expect(JSON.parse(await readFile(join(directory, 'ideas.initial.rejected.json'), 'utf8'))).toHaveLength(1);
   expect(JSON.parse(await readFile(join(directory, 'ideate.trace.json'), 'utf8')).attempts).toHaveLength(2);
   expect(await readFile(join(directory, 'ideate.repair.input.json'), 'utf8')).toContain('unsupported_number');

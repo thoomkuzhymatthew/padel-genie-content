@@ -71,7 +71,7 @@ export async function ideateRun(directory: string) {
   const schema = IdeasSchema.extend({ ideas: z.array(IdeaSchema.extend({
     template: z.enum(assembled.catalogue.map(item => item.name) as [string, ...string[]]),
     format: z.enum([...new Set(assembled.catalogue.map(item => item.format))] as [string, ...string[]]),
-  })).max(8) });
+  })).min(6).max(8) });
   const result = await generateJson('ideate', schema, assembled.system, assembled.input);
   let candidates: unknown[] = result.data.ideas;
   let checked = validateIdeas(candidates, assembled.atoms, assembled.catalogue);
@@ -87,7 +87,8 @@ export async function ideateRun(directory: string) {
       instruction: 'Return replacements ONLY for rejected ideas, preserving their IDs. Keep distinct ranks, scores and angles, including a score spread of at least 2.5 when proposing four or more. Fix validation reasons using exact supported numbers and valid catalogue formats. Do not round 3061 to 3000 or convert spelled-out source numbers into unsupported digits. Do not repeat accepted ideas. Fewer ideas are allowed if evidence is insufficient.',
     });
     await writeFile(join(directory, 'ideate.repair.input.json'), repairInput + '\n');
-    const repair = await generateJson('ideate', schema, assembled.system, repairInput);
+    const repairSchema = schema.extend({ ideas: z.array(schema.shape.ideas.element).max(8) });
+    const repair = await generateJson('ideate', repairSchema, assembled.system, repairInput);
     attempts.push(repair.trace);
     await json('ideas.repair.candidates.json', repair.data.ideas);
     candidates = [...checked.verified, ...repair.data.ideas.slice(0, 8 - checked.verified.length)];
@@ -103,6 +104,7 @@ export async function ideateRun(directory: string) {
   console.log(`Ideation: ${checked.verified.length} accepted, ${checked.rejected.length} rejected. ${directory}`);
   for (const rejection of checked.rejected) console.log(JSON.stringify(rejection));
   if (!checked.verified.length) throw new Error('No valid ideas; human review required before proceeding');
+  if (checked.verified.length < 6) throw new Error('Second steer requires 6–8 distinct verified ideas; revise this batch before proceeding');
   return checked;
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

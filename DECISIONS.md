@@ -28,3 +28,10 @@
 - Retain raw model shortlists and record assistant merges/tightenings in ideas.curation.json; assistant editorial work is never logged as a human approval or reviewer event.
 - For this replay, merge council/region density variants into one ranked-bars idea and combine Homebase reuse/covered-scheme variants into one carousel; return three distinct ideas per source rather than pad the batch.
 - Narrative count words require lexical quote evidence; do not convert a written “two” or “ten” into an unquoted digit value.
+
+## Second human steer — breadth and milestone 4 selection
+
+- Human editorial feedback: “Merge true duplicates, but always return 6–8 distinct ideas”; v2 over-pruned strong distinct angles, so the current playbook is v3 and the shorter historical v2 shortlist remains an audit artifact.
+- The selected milestone 4 batch is two October stat cards, all-region ranked bars with the GB average, the August year-on-year pipeline comparison, and a Homebase/Merlin Way reuse carousel; July's revision is reserve.
+- Render only the 3,061-court stat card first, then wait for visual-style approval before implementing the other templates or posts, as requested.
+- The August comparison is explicitly selected by the user despite the earlier rule against provisional hero figures; retain its provisional-August caveat when it is built.
