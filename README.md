@@ -1,7 +1,7 @@
 # Padel Genie social intern
 
 Private Solved trial, Part 2. Milestones 2–3 implement ingestion, structured fact extraction, deterministic
-verification, the versioned playbook (currently v2), a descriptor-only template catalogue and ideation.
+verification, the versioned playbook (currently v3), a descriptor-only template catalogue and ideation.
 The review inbox, rendering and learning loop are later milestones.
 
 ## Run locally
@@ -155,3 +155,11 @@ The assistant-curated shortlist retains `ideas.model.json` and a separate
 `ideas.curation.json` change log. These merges/tightenings are proposals, not human
 approval or a fabricated reviewer event. Rendering waits for the user's choices.
 Native inbox preview formats are specified in section 9 for milestone 5 only.
+
+## Milestone 4 style checkpoint
+
+The second human steer requires 6–8 distinct ideas after merging true duplicates.
+The user-selected five-post batch is recorded in `reports/milestone-4-plan.md`.
+Only the first stat card is rendered, pending visual approval. Reproduce it with
+`npm run render -- --draft reports/milestone-4/first-stat.draft.json`.
+See `reports/milestone-4/README.md` for output paths and verification details.

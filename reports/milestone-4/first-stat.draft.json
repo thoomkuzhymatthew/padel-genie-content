@@ -1,0 +1,16 @@
+{
+  "id": "uk-court-count",
+  "template": "stat-card",
+  "source_bundle": "reports/playbook-v2/october",
+  "atoms": ["a1", "a40"],
+  "content": {
+    "wordmark": "Padel Genie",
+    "source_line": "Source: Padel Genie, October 2026",
+    "hero": "3,061",
+    "headline": "The UK padel\ncount is in.",
+    "context": "courts open across the UK",
+    "comparison": "Across 891 clubs.",
+    "hold_back": "Find every club on the free live map."
+  },
+  "caption": "3,061 open courts across 891 clubs. The UK court count, as reported in October. Explore the open-court map and planning-pipeline preview in Padel Genie."
+}

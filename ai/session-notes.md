@@ -32,3 +32,12 @@ user approvals; a full exported transcript can be added at submission.
 - Re-extracted cached October/August sources with 37/46 verified atoms. Added readable SVG text boundaries for chart evidence.
 - Original model shortlists contained overlapping angles. Assistant merged/tightened them to three proposals per source and recorded those changes separately without claiming human approval.
 - Added native-format preview requirements to section 9 for milestone 5 only. No preview components or milestone 4 assets were built.
+
+## Milestone 4 — first visual checkpoint
+
+- User supplied the second steer: merge true duplicates but always return 6–8 distinct ideas. Added playbook v3, logged the steer and updated ideation's prompt/schema/count gate.
+- User selected five posts and A2 as reserve, with an explicit PNG style checkpoint before other templates.
+- Implemented only stat-card HTML/CSS and the source-verified Playwright renderer, using local Bricolage Grotesque/Inter fonts with licenses.
+- First preview: 3,061 courts / 891 clubs, 1080×1350, source/date line, cream/forest/terracotta tokens. Inspected the actual PNG and checked font readiness, bounds and numerical provenance.
+- The August comparison is an explicit user selection; retain the article's provisional-August caveat when built.
+- Stop after showing the first PNG. Other templates and selected posts remain queued for style approval.

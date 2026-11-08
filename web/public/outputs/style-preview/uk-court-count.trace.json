@@ -1,0 +1,20 @@
+{
+  "draft_id": "uk-court-count",
+  "atoms": [
+    "a1",
+    "a40"
+  ],
+  "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "c57523876d5d8a5127d484c07b737a0a61551540dbb7462645d62db268c07d8a",
+  "content_sha256": "b0a21efc0823aa2a7ad63b1a9220234370cb8db4f86e3000394fc65cc03ed2f8",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": {
+    "fonts_ready": true,
+    "overflow": []
+  },
+  "status": "awaiting_style_approval"
+}
