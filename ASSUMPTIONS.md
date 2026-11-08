@@ -13,3 +13,5 @@
 - Ranking is within each source batch; score/rank and requested improvements are editorial judgements, not claimed source statistics.
 - The user's latest instruction authorises the milestone 4 plan and first stat-card build in this turn; all remaining templates/posts wait for explicit visual-style approval.
 - A fixed assistant-authored first draft establishes the visual style; it is tagged as a style preview, not presented as approved copy or an LLM-generated production draft.
+
+- Milestone 6: Resend delivery is limited to Matthew’s Resend account address until a sending domain is verified; no James delivery is claimed.

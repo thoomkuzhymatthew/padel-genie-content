@@ -1,4 +1,5 @@
 import { chromium } from 'playwright';
+import {checkLayout,assertLayout} from './layout.js';
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -125,15 +126,8 @@ export async function renderDraft(filename: string, options: { outputSubdir?: st
       const html = fillTemplate(htmlTemplate.replace('{{style}}', css), view);
       await page.setContent(html, { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
-      const checks = await page.evaluate(() => ({
-        fonts_ready: document.fonts.check('600 100px Bricolage') && document.fonts.check('400 30px Inter'),
-        overflow: [...document.querySelectorAll('h1,.hero,.context,.comparison,.hold-back,.source,.row-label,.metric-label,.slide-body,.slide-note')].filter(element => {
-          const box = element.getBoundingClientRect();
-          const parent = element.closest('section,footer,header')?.getBoundingClientRect();
-          return box.left < -1 || box.right > 1081 || box.top < -1 || box.bottom > 1351 || element.scrollWidth > element.clientWidth + 1 || (parent ? box.top < parent.top - 1 || box.bottom > parent.bottom + 1 : false);
-        }).map(element => element.className || element.tagName),
-      }));
-      if (!checks.fonts_ready || checks.overflow.length) throw new Error('Render layout/font checks failed: ' + JSON.stringify(checks));
+      const checks = await checkLayout(page);
+      assertLayout(checks);
       const basename = draft.id + (views.length > 1 ? '-' + String(index + 1).padStart(2, '0') : '');
       await page.screenshot({ path: join(output, basename + '.png'), type: 'png' });
       await writeFile(join(output, basename + '.html'), html);

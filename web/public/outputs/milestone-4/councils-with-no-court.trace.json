@@ -8,7 +8,7 @@
   "source_url": "https://padelgenie.io/blog/uk-passes-3000-padel-courts/",
   "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2",
   "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
-  "template_sha256": "931401121c94432dd76dabc751642ad6d92ecf6291b52b31bac04b33019d655b",
+  "template_sha256": "809c20df24d071cc2f9121f344439d039f64b44ddbf6219f9e20d8078341ce9d",
   "content_sha256": "88cbc8f19523fc811c73070432b2f7d7cf5aa58816be9e70adba317548b0a9c4",
   "size": {
     "width": 1080,
@@ -17,7 +17,10 @@
   "checks": [
     {
       "fonts_ready": true,
-      "overflow": []
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 10
     }
   ],
   "assets": [
@@ -26,7 +29,7 @@
   "caption": "38 councils with more than 100,000 residents have no open padel court inside their boundary, as reported in October. Check nearby courts and the planning-pipeline preview on Padel Genie’s live map.",
   "content_origin": "assistant_editorial_draft",
   "copy_generation": null,
-  "renderer_sha256": "6fb361ff105f89ed3f3da3f792ec9f0a7851bff68f82f58eb75bb95763297c4b",
+  "renderer_sha256": "fcd4a7f7b308fe2d8fd44869a21b8af5eda1a97ba9f470acb92d9e403828fcf3",
   "style_approved": true,
   "status": "rendered_for_review"
 }

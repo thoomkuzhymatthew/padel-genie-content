@@ -21,7 +21,10 @@
   "checks": [
     {
       "fonts_ready": true,
-      "overflow": []
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 13
     }
   ],
   "assets": [
@@ -30,7 +33,7 @@
   "caption": "Year to August, as reported: applications approved 312 → 649; applications lodged 629 → 1,150; courts approved 456 → 945. The latest totals include provisional August and are floors. Padel Genie’s planning map updates as councils publish.",
   "content_origin": "assistant_editorial_draft",
   "copy_generation": null,
-  "renderer_sha256": "6fb361ff105f89ed3f3da3f792ec9f0a7851bff68f82f58eb75bb95763297c4b",
+  "renderer_sha256": "fcd4a7f7b308fe2d8fd44869a21b8af5eda1a97ba9f470acb92d9e403828fcf3",
   "style_approved": true,
   "status": "rendered_for_review"
 }

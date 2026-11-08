@@ -1,0 +1,37 @@
+{
+  "draft_id": "july-revision-reserve",
+  "format": "stat",
+  "atoms": [
+    "a27",
+    "a30",
+    "a49",
+    "a29"
+  ],
+  "source_url": "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "809c20df24d071cc2f9121f344439d039f64b44ddbf6219f9e20d8078341ce9d",
+  "content_sha256": "fcc4dd56fd80d54d2e7561bf15dc9713197d54d6d5d71adc0d57aaa2e98fa78c",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 10
+    }
+  ],
+  "assets": [
+    "/outputs/inbox/db54769c-8d47-4f63-a64a-c563bbce735c/v2/july-revision-reserve.png"
+  ],
+  "caption": "July’s lodged applications were revised from 63 to 93, as reported in August. The source also says councils publish to planning portals about 16 days late on average. Track every UK padel planning application on Padel Genie’s daily-updated map.",
+  "content_origin": "assistant_editorial_draft",
+  "copy_generation": null,
+  "renderer_sha256": "fcd4a7f7b308fe2d8fd44869a21b8af5eda1a97ba9f470acb92d9e403828fcf3",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}
