@@ -218,3 +218,63 @@ uses only the configured test account and temporary posts, removed afterwards.
 Add a “Request changes” action for mobile: a short reviewer note prompts a revised
 draft, with the note and before/after diff stored as an edit event and the result
 returned for approval. Deferred to keep milestone 6 focused on the verified learning loop.
+
+## Milestone 6: learning and notifications
+
+`npm run learn` runs weekly (Monday 08:00 UTC) and manually through GitHub Actions.
+The authenticated **Learning → Update intern** button dispatches that workflow via
+`/api/learn`. The server verifies the reviewer session; `GITHUB_DISPATCH_TOKEN`
+never enters the browser. The inbox shows queued, running, done or failed state,
+the persisted report, exact suggested changes, PR link and source replay comparison.
+There is no merge button or auto-merge path.
+
+The job loads the last seven days of real edit/rejection events, preserving exact
+notes and diffs. Findings route to post-specific, template/layout, recurring
+editorial or data/fact. Reviewer text edits are preserved; note-only local wording
+requests are applied only to that post and re-rendered. Layout findings require a
+template-code fix and passing render checks for all affected posts; they never
+become editorial playbook suggestions. Data/fact findings flag linked atoms and
+block approval until review. Each note's classification and resolution appear in
+the inbox history. The first divider-overlap issue is fixed and resolved.
+
+Suggestions must cite real recurring-editorial event IDs and replace exact text
+above the LOCKED marker. A code guard preserves every byte from that marker
+onwards. With no justified editorial change, the proposal is a report-only PR.
+Replay re-ideates both source snapshots and rewrites one selected story per source,
+keeping the evidence and template fixed. If the playbook is unchanged, both columns
+show the same generated control; otherwise each side regenerates independently.
+Proposals affect future runs only after a human merges their PR.
+
+`pipeline/metrics/adapter.ts` defines the metrics interface. The deterministic mock
+adapter writes **mock** rows only for posted items; carousel performance is varied
+for demonstration. No engagement recommendation is eligible below 20 posted items
+per format (configurable in the guard). Even eligible mock rows are demonstration
+signals, not live evidence. Instagram and LinkedIn adapters remain explicit stubs:
+they need authorised platform access/app review or a CSV import.
+
+Settings manages notification recipients and three independent toggles. Resend
+sends new-draft, learning-report and replay-ready emails with links into the inbox.
+Email delivery has its own deduplicated log and never determines job success.
+For this trial only Matthew's Resend account address can receive delivery; verify
+a sending domain before notifying James. API acceptance is recorded separately
+from inbox delivery; no claim of recipient-open tracking is made.
+
+Runtime configuration (values remain private):
+
+- Vercel: public `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`; server-only
+  `GITHUB_DISPATCH_TOKEN` with repository Actions read/write permission.
+- Actions: `SUPABASE_URL`, `SUPABASE_SECRET_KEY`, `OPENAI_API_KEY`,
+  `RESEND_API_KEY`, `RESEND_FROM`; GitHub's job token has contents/PR write
+  permission and the repo allows Actions to create pull requests.
+- Local `.env`: the same pipeline credentials, `INBOX_URL`, plus test-account
+  credentials for verification. Never add test credentials to Actions or Vercel.
+
+The existing GitHub/Vercel connection deploys replay assets committed by the job.
+The job checks deployed hashes before marking replay ready. All DB additions use
+reviewer-only RLS; only service jobs mutate reports, metrics and classifications.
+The daily URL-ingestion workflow and a URL-generation box remain deferred stretch.
+
+Autonomy is a future policy, not implemented publishing: a format could earn
+limited automatic posting after >90% approval without edits across 30 posts,
+with spot checks. New formats, factual flags and locked-rule changes always need
+human review. Today every draft and every playbook proposal needs human sign-off.

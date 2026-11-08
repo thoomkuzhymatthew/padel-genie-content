@@ -4,7 +4,8 @@ export async function checkLayout(page: Page) {
  return page.evaluate(() => {
   const failures:string[]=[];
   const selectors='h1,.hero,.context,.comparison,.hold-back,.source,.row-label,.bar-value,.metric-label,.slide-body,.slide-note,.unit,.chart-context,.wordmark,.edition,.issue,.periods,.primary-pair,.secondary-pair,.legend,.carousel-navigation,.divider';
-  const elements=[...document.querySelectorAll<HTMLElement>(selectors)];
+  const textElements=[...document.body.querySelectorAll<HTMLElement>('*')].filter(el=>[...el.childNodes].some(n=>n.nodeType===Node.TEXT_NODE&&n.textContent?.trim()));
+  const elements=[...new Set([...document.querySelectorAll<HTMLElement>(selectors),...textElements])];
   const boxes=elements.map(el=>({el,box:el.getBoundingClientRect(),name:el.className||el.tagName}));
   for(const{el,box,name}of boxes){
    const region=el.closest('section,footer,header')?.getBoundingClientRect();

@@ -12,6 +12,7 @@ const login=await anon.auth.signInWithPassword({email:requireEnv('REVIEWER_TEST_
 check(!login.error&&login.data.user,'configured test account signs in');
 const user=login.data.user!;
 const profiles=await anon.from('reviewers').select('*');check(!profiles.error&&profiles.data?.length===2,'both reviewer profiles readable after login');
+const baseline=await admin.from('posts').select('id,status');
 const base=await admin.from('posts').select('*').eq('slug','uk-court-count').single();if(base.error)throw new Error('Missing base post');
 const{id:_id,render_stale:_stale,created_at:_created,updated_at:_updated,...copy}=base.data;
 const id=randomUUID();let version=1;
@@ -25,7 +26,7 @@ try{
  const renderWrite=await anon.rpc('complete_post_render',{p_post_id:id,p_content_version:1,p_assets:copy.asset_paths,p_render_trace:{}}).retry(false);check(renderWrite.error?.code==='42501','reviewer cannot confirm artwork through admin RPC');
  const noReason=await rpc('reject');check(Boolean(noReason.error),'rejection needs a reason');
  const unsupported=await rpc('edit',{p_caption:'987654321 courts.',p_content:copy.content});check(Boolean(unsupported.error),'unverified edit numbers rejected');
- const edit=await rpc('edit',{p_caption:copy.caption+' Verification copy.',p_content:copy.content,p_note:'Verification note'});
+ const edit=await rpc('edit',{p_caption:copy.caption+' Verification copy.',p_content:copy.content,p_note:'Caption wording check'});
  if(edit.error)throw new Error(edit.error.message);version=edit.data.version;check(edit.data.render_stale===false,'caption-only edit preserves artwork');
  const graphic=structuredClone(copy.content);graphic.headline='The UK padel\ncount is in. Reviewed.';
  const changed=await rpc('edit',{p_caption:edit.data.caption,p_content:graphic,p_note:'Artwork check'});if(changed.error)throw new Error(changed.error.message);version=changed.data.version;check(changed.data.render_stale===true,'artwork edit marks preview stale');
@@ -38,6 +39,6 @@ try{
  const events=await admin.from('post_events').select('*').eq('post_id',id);check(events.data?.length===4&&events.data.every(event=>event.actor_id===user.id),'all successful actions attributed to the test account');
  check(events.data?.some(event=>event.type==='edit'&&event.note==='Artwork check'&&event.diff.some((item:{path:string})=>item.path==='content.headline')),'server-generated field diff and note persisted');
 }finally{
- await admin.from('post_events').delete().eq('post_id',id);await admin.from('posts').delete().eq('id',id);await anon.auth.signOut({scope:'local'});
+ await admin.from('atom_reviews').delete().eq('post_id',id);await admin.from('feedback_findings').delete().eq('post_id',id);await admin.from('post_events').delete().eq('post_id',id);await admin.from('posts').delete().eq('id',id);await anon.auth.signOut({scope:'local'});
 }
-const final=await admin.from('posts').select('status');check(final.data?.length===6&&final.data.every(post=>post.status==='proposed'),'verification fixture removed; six real drafts remain proposed');
+const final=await admin.from('posts').select('id,status');check(final.data?.length===baseline.data?.length&&final.data?.every(post=>baseline.data?.some(before=>before.id===post.id&&before.status===post.status)),'verification fixture removed; real review decisions preserved');

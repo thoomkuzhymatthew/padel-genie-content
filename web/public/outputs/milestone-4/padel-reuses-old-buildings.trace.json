@@ -25,35 +25,35 @@
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 9
+      "checked_elements": 13
     },
     {
       "fonts_ready": true,
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 9
+      "checked_elements": 13
     },
     {
       "fonts_ready": true,
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 9
+      "checked_elements": 13
     },
     {
       "fonts_ready": true,
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 9
+      "checked_elements": 13
     },
     {
       "fonts_ready": true,
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 9
+      "checked_elements": 13
     }
   ],
   "assets": [
@@ -66,7 +66,7 @@
   "caption": "Conversions out of industrial, warehouse and retail stock rose from 50 applications to 151. The former Homebase on Finchley Road: 10 courts approved under an all-weather canopy. Merlin Way, North Shields: 12 courts approved in a former industrial unit. See all 47 approvals of five courts or more, with addresses, decision dates, court counts and former building use in Padel Genie. Source: August report.",
   "content_origin": "assistant_editorial_draft",
   "copy_generation": null,
-  "renderer_sha256": "fcd4a7f7b308fe2d8fd44869a21b8af5eda1a97ba9f470acb92d9e403828fcf3",
+  "renderer_sha256": "946e77542048c80247c9f1d20cb1899c86ba6ebd464ed57a1a15181059109456",
   "style_approved": true,
   "status": "rendered_for_review"
 }

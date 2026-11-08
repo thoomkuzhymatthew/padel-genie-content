@@ -15,7 +15,7 @@ export async function notify(type:Type,key:string,title:string,body:string,tab='
    const response=await fetch('https://api.resend.com/emails',{method:'POST',headers:{Authorization:'Bearer '+requireEnv('RESEND_API_KEY'),'Content-Type':'application/json','Idempotency-Key':dedupe},body:JSON.stringify({from:requireEnv('RESEND_FROM'),to:[recipient.email],subject:title,html}),signal:AbortSignal.timeout(15000)});
    const result=await response.json();if(!response.ok)throw Error('Resend HTTP '+response.status);
    await db.from('notification_deliveries').update({status:'sent',response_id:result.id}).eq('id',claim.data.id);
-  }catch{await db.from('notification_deliveries').update({status:'failed',error:'Delivery failed; job continued.'}).eq('id',claim.data.id);console.warn('Email failed; job continues.');}
+  }catch(error){await db.from('notification_deliveries').update({status:'failed',error:error instanceof Error&&/^Resend HTTP \d+$/.test(error.message)?error.message:'Delivery failed; job continued.'}).eq('id',claim.data.id);console.warn('Email failed; job continues.');}
  }
  }catch{console.warn('Notification unavailable; job continues.');}
 }

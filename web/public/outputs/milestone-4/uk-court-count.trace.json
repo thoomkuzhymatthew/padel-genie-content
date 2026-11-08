@@ -20,7 +20,7 @@
       "failures": [],
       "minimum_margin": 60,
       "minimum_text_size": 20,
-      "checked_elements": 10
+      "checked_elements": 13
     }
   ],
   "assets": [
@@ -29,7 +29,7 @@
   "caption": "3,061 open courts across 891 clubs. The UK court count, as reported in October. Explore the open-court map and planning-pipeline preview in Padel Genie.",
   "content_origin": "assistant_editorial_draft",
   "copy_generation": null,
-  "renderer_sha256": "fcd4a7f7b308fe2d8fd44869a21b8af5eda1a97ba9f470acb92d9e403828fcf3",
+  "renderer_sha256": "946e77542048c80247c9f1d20cb1899c86ba6ebd464ed57a1a15181059109456",
   "style_approved": true,
   "status": "rendered_for_review"
 }
