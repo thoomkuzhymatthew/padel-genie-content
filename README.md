@@ -282,3 +282,7 @@ human review. Today every draft and every playbook proposal needs human sign-off
 To retry failed learning/replay emails without regenerating the report, use
 `npm run notify:retry -- <learning-run-uuid>`, or dispatch `learn.yml` with that
 `learning_run_id` and `notifications_only: true`. Sent messages are skipped.
+
+The first verified run uses five real approvals and one layout rejection, proposes
+no editorial playbook change, and opens [report-only PR #1](https://github.com/thoomkuzhymatthew/padel-genie-content/pull/1).
+See [live verification evidence](reports/milestone-6.md) and the Learning tab.

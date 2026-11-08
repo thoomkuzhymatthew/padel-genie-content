@@ -1,0 +1,29 @@
+{
+  "origin": "https://padel-genie-content.vercel.app",
+  "id": "ba139e8b-2d33-4e83-9e15-1f5fb90d5907",
+  "checks": [
+    "learning trigger rejects anonymous access",
+    "test account reaches live Learning and Settings navigation",
+    "Settings add and per-type toggle persist",
+    "Settings removes notification recipients",
+    "real Update intern click dispatches GitHub Actions",
+    "active workflow disables duplicate trigger",
+    "learning trigger rejects anonymous access",
+    "test account reaches live Learning and Settings navigation",
+    "real inbox-triggered workflow completed",
+    "original rejection displays template/layout classification",
+    "corrected reserve image is live in its original rejected post",
+    "Learning tab links to actual proposal PR",
+    "both sources have current/proposed replay drafts",
+    "live replay PNG loads at full resolution",
+    "live replay PNG loads at full resolution",
+    "live replay PNG loads at full resolution",
+    "live replay PNG loads at full resolution",
+    "latest report is the persisted workflow report",
+    "Learning view has no mobile horizontal overflow",
+    "no browser runtime errors",
+    "learning and replay emails accepted by Resend"
+  ],
+  "pr_url": "https://github.com/thoomkuzhymatthew/padel-genie-content/pull/1",
+  "email_verification_pending": false
+}

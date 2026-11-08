@@ -40,6 +40,7 @@ were checked against the production deployment before the run became done.
 - latest report is the persisted workflow report.
 - Learning view has no mobile horizontal overflow.
 - no browser runtime errors.
+- learning and replay emails accepted by Resend.
 
 ## Additional checks
 
@@ -54,10 +55,12 @@ were checked against the production deployment before the run became done.
 
 ## Notifications
 
-The new-draft notification was accepted by Resend for the provider-confirmed
-Resend account address. The Actions run finished successfully despite two failed
-email attempts: its RESEND_API_KEY resolved empty. The independent, idempotent
-notification retry workflow is ready; Actions email verification is pending the
-repository secret correction. No recipient-open or inbox-delivery claim is made.
+All three notification types were accepted by Resend for the provider-confirmed
+Resend account address. The initial Actions run completed successfully despite
+its missing email key. After the repository secret was corrected, the independent
+[notification retry workflow](https://github.com/thoomkuzhymatthew/padel-genie-content/actions/runs/42475200450)
+completed successfully and both failed deliveries became sent. No reports or
+replays were regenerated, and sent emails are not retried. No recipient-open or
+inbox-delivery claim is made.
 
 “Request changes” for mobile and URL-to-drafts remain documented next steps.
