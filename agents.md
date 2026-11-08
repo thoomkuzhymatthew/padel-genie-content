@@ -231,6 +231,16 @@ A small, polished web app where the intern "messages" the reviewer. It should fe
 - Mobile-friendly, in Padel Genie's brand (same tokens and fonts as the templates).
 - Show who acted on each draft ("Edited by James · 14:02").
 
+### Native-format draft previews (build in milestone 5)
+
+- Choose the preview viewer from the post's `format` field through an extensible
+  viewer registry, so a new format can add its own viewer later.
+- Single-image drafts appear at **4:5**.
+- Carousels appear as **swipeable 4:5 slides**, with pagination dots and a slide counter.
+- Videos appear in a **9:16 looping player** with play/pause and mute controls.
+- Place every preview inside a simple mock social post frame, with its caption beneath.
+- These are milestone 5 inbox requirements. Do not build preview components in milestone 3 or 4.
+
 ### Access: internal only, two named reviewers
 
 - Use **Supabase Auth with email and password**. I'll create **two accounts in the Supabase dashboard, one for James and one for Matthew**, each with their own password, and **disable public sign-ups**.

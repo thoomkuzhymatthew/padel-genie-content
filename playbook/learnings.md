@@ -1,3 +1,7 @@
-# Latest merged learnings
+# Latest human-approved learnings
 
-No merged learning report yet. Playbook v1 is the baseline; no engagement or reviewer preferences have been inferred.
+The first human steer is applied in playbook v2: hero number plus named example,
+concrete source-backed hold-backs, merged duplicate angles, ranked-bars for regions,
+forced ranking with a real score spread, an improvement line per idea, and no
+provisional/projected hero stories. This is explicit editorial feedback, not an
+engagement-derived finding. No performance-based learning has been inferred.

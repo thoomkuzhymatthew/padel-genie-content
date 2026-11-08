@@ -13,3 +13,18 @@
 - Discover descriptor-only template folders before rendering exists; catalogue-constrained JSON enums prevent invented template/format labels.
 - Reverify atom handoffs before prompt assembly and check idea numbers against selected atom values, comparisons and verified periods.
 - Preserve first ideation attempts locally; save final review bundles in the private repository so the requested atom references and traces are reviewable on GitHub.
+
+## First human steer — playbook v2
+
+- Human editorial feedback: pair a hero number with a source-supported named example because scale earns credibility and names make it memorable and shareable.
+- Human editorial feedback: hold-backs must name a concrete product item, with supporting evidence; generic promises such as “records behind the total” are insufficient.
+- Human editorial feedback: merge near-duplicate ideas and use ranked-bars for multi-region comparisons so the batch contains distinct stories.
+- Human editorial feedback: force unique ranks and distinct scores with at least a 2.5-point spread for four or more ideas; include a specific improvement line to make the ranking useful.
+- Human editorial feedback: provisional, projected and forecast figures cannot lead a post; confirmed historical revisions can be discussed as reported, without invented finality.
+- Extract narrative atoms with exact named-entity evidence and unchanged numeric checks; neutral factual business descriptions take priority over copying a source's criticism.
+- Preserve SVG text boundaries during ingestion so published chart labels and values can be verified without reading hidden JavaScript or guessing ranks.
+- Record native-format previews in section 9 for milestone 5 only; select an extensible viewer from post.format and display it in a social frame with caption beneath.
+- Promote extraction from gpt-5.4-mini to gpt-5.4 via model config after repeated mini runs dropped the exact quotes for Homebase, the 47-approval list and regional chart evidence; completeness of verified narrative examples outweighs the small prototype cost saving.
+- Retain raw model shortlists and record assistant merges/tightenings in ideas.curation.json; assistant editorial work is never logged as a human approval or reviewer event.
+- For this replay, merge council/region density variants into one ranked-bars idea and combine Homebase reuse/covered-scheme variants into one carousel; return three distinct ideas per source rather than pad the batch.
+- Narrative count words require lexical quote evidence; do not convert a written “two” or “ten” into an unquoted digit value.
