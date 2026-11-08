@@ -6,7 +6,7 @@ import {VideoViewer,previewViewers} from '../web/src/components/Preview.js';
 import type{Post}from'../web/src/lib/types.js';
 it('edits nested slide text immutably while keeping source/brand/data references fixed',()=>{
  const content={wordmark:'Padel Genie',source_line:'Source line',hero:'38',content_slides:[{headline:'Before',body:'Body',atom_id:'a1'}]};
- const fields=editableFields(content);expect(fields.map(field=>field.path)).toEqual(['hero','content_slides.0.headline','content_slides.0.body']);
+ const fields=editableFields(content);expect(fields.map(field=>field.path)).toEqual(['content_slides.0.headline','content_slides.0.body']);
  const next=updateContent(content,'content_slides.0.headline','After');
  expect((next.content_slides as {headline:string}[])[0].headline).toBe('After');expect(content.content_slides[0].headline).toBe('Before');
 });

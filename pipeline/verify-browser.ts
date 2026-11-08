@@ -1,0 +1,71 @@
+import { chromium } from 'playwright';
+import { parseArgs } from 'node:util';
+import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
+import { join } from 'node:path';
+import { randomUUID } from 'node:crypto';
+import { adminClient } from './db/client.js';
+import { projectRoot, requireEnv } from './env.js';
+const{values}=parseArgs({options:{url:{type:'string'},phase:{type:'string'}},strict:true});
+const phase=values.phase||'prepare';const origin=values.url||requireEnv('INBOX_URL');
+const directory=join(projectRoot,'runs/verification');await mkdir(directory,{recursive:true});
+const stateFile=join(directory,'live-state.json');const admin=adminClient();
+const browser=await chromium.launch();let stage='initialise';
+const checks:string[]=[];const check=(ok:unknown,label:string)=>{if(!ok)throw new Error(label);checks.push(label);console.log('PASS '+label);};
+let fixtureId='';
+try{
+ const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
+ const page=await context.newPage();const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+ stage='open live login';const response=await page.goto(origin);await page.getByRole('heading',{name:'Welcome back.'}).waitFor();
+ check((await page.locator('meta[name=robots]').getAttribute('content'))?.includes('noindex'),'login has noindex metadata');
+ if(new URL(origin).hostname!=='127.0.0.1')check(response?.headers()['x-robots-tag']?.includes('noindex'),'live response has noindex header');
+ check(await page.locator('[data-post-id]').count()===0,'signed-out browser cannot see inbox posts');
+ await page.screenshot({path:join(directory,'live-login-mobile.png')});
+ stage='test account login';await page.getByLabel('Email',{exact:true}).fill(requireEnv('REVIEWER_TEST_EMAIL'));await page.getByLabel('Password',{exact:true}).fill(requireEnv('REVIEWER_TEST_PASSWORD'));await page.getByRole('button',{name:'Sign in',exact:true}).click();
+ await page.getByRole('heading',{name:'Ready when you are.'}).waitFor();await page.locator('[data-post-id]').first().waitFor();check(true,'test-account login reaches live inbox');
+ const me=await admin.auth.admin.listUsers();const testUser=me.data.users.find(user=>user.email?.toLowerCase()===requireEnv('REVIEWER_TEST_EMAIL').toLowerCase());if(!testUser)throw new Error('Test user not found');
+ const profile=await admin.from('reviewers').select('display_name').eq('user_id',testUser.id).single();if(profile.error)throw profile.error;
+ const name=profile.data.display_name;
+ const card=(id:string)=>page.locator(`[data-post-id="${id}"]`);
+ if(phase==='prepare'){
+  const originals=await admin.from('posts').select('*').eq('run_id','milestone-4');check(originals.data?.length===6,'six queued original posts present');
+  const source=originals.data!.find(post=>post.slug==='uk-court-count');const{id:_id,render_stale:_stale,created_at:_created,updated_at:_updated,...copy}=source;
+  fixtureId=randomUUID();const inserted=await admin.from('posts').insert({...copy,id:fixtureId,slug:'browser-verification-'+fixtureId,run_id:'browser-verification',version:1,content_version:1,rendered_version:1,status:'proposed',trace:{...source.trace,intern_message:'A temporary draft for checking the review flow.'}});if(inserted.error)throw inserted.error;
+  await writeFile(stateFile,JSON.stringify({id:fixtureId,origin,test_user_id:testUser.id,checks},null,2)+'\n');
+  await page.getByRole('button',{name:'Refresh inbox'}).click();await card(fixtureId).waitFor();
+  stage='native previews';
+  const ratio=await card(fixtureId).locator('.image-viewer').evaluate(element=>{const r=element.getBoundingClientRect();return r.height/r.width;});check(Math.abs(ratio-1.25)<.01,'single image uses 4:5 aspect ratio');
+  const carouselId=originals.data!.find(post=>post.format==='carousel').id;
+  const carousel=card(carouselId);await carousel.getByRole('button',{name:'Next slide',exact:true}).click();await carousel.getByText('2 / 5',{exact:true}).waitFor();check(true,'carousel next control and counter work');
+  await carousel.getByRole('button',{name:'Go to slide 5',exact:true}).click();await carousel.getByText('5 / 5',{exact:true}).waitFor();check(true,'carousel dots navigate to chosen slide');
+  await carousel.locator('.carousel-viewer').scrollIntoViewIfNeeded();
+  const box=await carousel.locator('.carousel-viewer').boundingBox();if(!box)throw new Error('Carousel has no bounds');
+  const client=await context.newCDPSession(page);const y=Math.max(180,Math.min(650,box.y+box.height/2));
+  await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+box.width*.2,y,id:1}]});
+  for(let i=1;i<=6;i++){await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:box.x+box.width*(.2+.1*i),y,id:1}]});await new Promise(resolve=>setTimeout(resolve,30));}
+  await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+  await page.waitForFunction(id=>document.querySelector(`[data-post-id="${id}"] .slide-counter`)?.textContent?.trim()!=='5 / 5',carouselId,{timeout:5000});check(true,'touch swipe changes carousel slide');
+  stage='caption edit';await card(fixtureId).getByRole('button',{name:'Edit',exact:true}).click();await card(fixtureId).getByLabel('Edit caption',{exact:true}).fill(copy.caption+' Reviewed in live verification.');await card(fixtureId).getByLabel('Edit note',{exact:true}).fill('Live caption verification');await card(fixtureId).getByRole('button',{name:'Save changes',exact:true}).click();await card(fixtureId).getByText(new RegExp('Edited by '+name)).waitFor();check(true,'caption edit saves and shows reviewer attribution');
+  stage='artwork edit';await card(fixtureId).getByRole('button',{name:'Edit',exact:true}).click();await card(fixtureId).locator('summary').click();await card(fixtureId).getByLabel('Edit headline',{exact:true}).fill('The UK padel\ncount, reviewed.');await card(fixtureId).getByLabel('Edit note',{exact:true}).fill('Live artwork verification');await card(fixtureId).getByRole('button',{name:'Save changes',exact:true}).click();await card(fixtureId).getByRole('heading',{name:'Artwork needs refreshing'}).waitFor();check(await card(fixtureId).getByRole('button',{name:'Approve',exact:true}).isDisabled(),'artwork edit hides old PNG and blocks approval');
+  check(!(await page.evaluate(()=>document.body.scrollWidth>innerWidth)),'mobile page has no horizontal overflow');
+  const event=await admin.from('post_events').select('*').eq('post_id',fixtureId).eq('note','Live artwork verification').single();check(!event.error&&event.data.actor_id===testUser.id&&event.data.diff.some((entry:{path:string})=>entry.path==='content.headline'),'artwork before/after diff and test actor persisted');
+  await page.screenshot({path:join(directory,'live-stale-artwork.png')});
+  await writeFile(stateFile,JSON.stringify({id:fixtureId,origin,test_user_id:testUser.id,checks},null,2)+'\n');
+  console.log('Prepared live re-render fixture. State saved locally; no credentials stored.');
+ }else if(phase==='finish'){
+  const saved=JSON.parse(await readFile(stateFile,'utf8'));fixtureId=saved.id;
+  await card(fixtureId).waitFor();check(await card(fixtureId).locator('.stale-preview').count()===0,'deployed re-render replaces stale placeholder');
+  const image=card(fixtureId).locator('.image-viewer img');await image.scrollIntoViewIfNeeded();await image.evaluate(img=>(img as HTMLImageElement).decode());check(await image.evaluate(img=>(img as HTMLImageElement).naturalWidth===1080),'new live PNG loads at full resolution');
+  stage='reject';await card(fixtureId).getByRole('button',{name:'Reject',exact:true}).click();check(await card(fixtureId).getByRole('button',{name:'Reject draft',exact:true}).isDisabled(),'reject submit disabled without a reason');await card(fixtureId).getByRole('button',{name:'Wrong angle',exact:true}).click();await card(fixtureId).getByLabel('Rejection reason',{exact:true}).fill('Live rejection verification');await card(fixtureId).getByRole('button',{name:'Reject draft',exact:true}).click();await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Rejected/}).click();await card(fixtureId).getByText(new RegExp('Rejected by '+name)).waitFor();check(true,'reject saves reason and moves draft to Rejected');
+  stage='resubmit';await card(fixtureId).getByRole('button',{name:'Edit & resubmit',exact:true}).click();await card(fixtureId).getByLabel('Edit note',{exact:true}).fill('Live resubmission verification');await card(fixtureId).getByRole('button',{name:'Save changes',exact:true}).click();await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Proposed/}).click();await card(fixtureId).waitFor();check(true,'edit resubmits a rejected draft to Proposed');
+  stage='approve';await card(fixtureId).getByRole('button',{name:'Approve',exact:true}).click();await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Approved/}).click();await card(fixtureId).getByText(new RegExp('Approved by '+name)).waitFor();check(true,'approve moves draft to Approved with actor');
+  stage='posted';await card(fixtureId).getByRole('button',{name:'Mark as posted',exact:true}).click();await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Posted/}).click();await card(fixtureId).getByText(new RegExp('Marked as posted by '+name)).waitFor();check(true,'mark-as-posted moves draft to Posted with actor');
+  await page.reload();await card(fixtureId).waitFor({state:'attached',timeout:3000}).catch(async()=>{await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Posted/}).click();await card(fixtureId).waitFor();});check(true,'posted status persists across reload');
+  const events=await admin.from('post_events').select('*').eq('post_id',fixtureId);check(!events.error&&events.data.every(event=>event.actor_id===testUser.id)&&['edit','reject','approve','posted'].every(type=>events.data.some(event=>event.type===type)),'all live action types and test-account attribution persisted');
+  await page.getByRole('button',{name:'Sign out',exact:true}).click();await page.getByRole('heading',{name:'Welcome back.'}).waitFor();check(await page.locator('[data-post-id]').count()===0,'sign-out removes the feed');
+  await admin.from('post_events').delete().eq('post_id',fixtureId);await admin.from('posts').delete().eq('id',fixtureId);
+  await writeFile(join(directory,'live-result.json'),JSON.stringify({origin,checks:[...saved.checks,...checks],console_errors:errors.length,test_fixture_removed:true},null,2)+'\n');
+  check(errors.length===0,'no browser runtime errors');
+  const final=await admin.from('posts').select('status');check(final.data?.length===6&&final.data.every(post=>post.status==='proposed'),'six real drafts remain proposed after cleanup');
+ }else throw new Error('Phase must be prepare or finish');
+} catch(error){console.error('Live browser verification failed at '+stage+': '+(error instanceof Error?error.message:'unknown error'));process.exitCode=1;}
+finally{await browser.close();}

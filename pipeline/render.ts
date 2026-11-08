@@ -130,7 +130,7 @@ export async function renderDraft(filename: string, options: { outputSubdir?: st
         overflow: [...document.querySelectorAll('h1,.hero,.context,.comparison,.hold-back,.source,.row-label,.metric-label,.slide-body,.slide-note')].filter(element => {
           const box = element.getBoundingClientRect();
           const parent = element.closest('section,footer,header')?.getBoundingClientRect();
-          return box.left < -1 || box.right > 1081 || box.top < -1 || box.bottom > 1351 || element.scrollWidth > element.clientWidth + 1 || (parent ? box.bottom > parent.bottom + 1 : false);
+          return box.left < -1 || box.right > 1081 || box.top < -1 || box.bottom > 1351 || element.scrollWidth > element.clientWidth + 1 || (parent ? box.top < parent.top - 1 || box.bottom > parent.bottom + 1 : false);
         }).map(element => element.className || element.tagName),
       }));
       if (!checks.fonts_ready || checks.overflow.length) throw new Error('Render layout/font checks failed: ' + JSON.stringify(checks));

@@ -19,7 +19,8 @@
     "queue": "tsx pipeline/queue.ts",
     "dev": "vite --config vite.config.ts --host 127.0.0.1",
     "render:confirm": "tsx pipeline/render-confirm.ts",
-    "verify:data": "tsx pipeline/verify-data.ts"
+    "verify:data": "tsx pipeline/verify-data.ts",
+    "verify:browser": "tsx pipeline/verify-browser.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

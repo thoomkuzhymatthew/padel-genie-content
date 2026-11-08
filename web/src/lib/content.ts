@@ -1,6 +1,6 @@
 import type { Content } from './types';
 export type EditableField = {path:string;label:string;value:string};
-const fixed = new Set(['wordmark','source_line','atom_id','comparison_atom_id']);
+const fixed = new Set(['wordmark','source_line','atom_id','comparison_atom_id','hero','hook_hero','closing_hero']);
 export function editableFields(content:Content):EditableField[] {
  const result:EditableField[]=[];
  const walk=(node:unknown,path:string)=>{

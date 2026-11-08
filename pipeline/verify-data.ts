@@ -34,6 +34,6 @@ try{
  const events=await admin.from('post_events').select('*').eq('post_id',id);check(events.data?.length===4&&events.data.every(event=>event.actor_id===user.id),'all successful actions attributed to the test account');
  check(events.data?.some(event=>event.type==='edit'&&event.note==='Artwork check'&&event.diff.some((item:{path:string})=>item.path==='content.headline')),'server-generated field diff and note persisted');
 }finally{
- await admin.from('post_events').delete().eq('post_id',id);await admin.from('posts').delete().eq('id',id);await anon.auth.signOut();
+ await admin.from('post_events').delete().eq('post_id',id);await admin.from('posts').delete().eq('id',id);await anon.auth.signOut({scope:'local'});
 }
 const final=await admin.from('posts').select('status');check(final.data?.length===6&&final.data.every(post=>post.status==='proposed'),'verification fixture removed; six real drafts remain proposed');
