@@ -1,0 +1,7 @@
+project_id = "padel-genie-content"
+
+[auth]
+enable_signup = false
+
+[auth.email]
+enabled = true

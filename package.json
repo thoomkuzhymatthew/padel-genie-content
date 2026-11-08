@@ -14,15 +14,23 @@
     "ideate": "tsx pipeline/ideate.ts",
     "render": "tsx pipeline/render.ts",
     "write": "tsx pipeline/write.ts",
-    "render:examples": "tsx pipeline/render-batch.ts"
+    "render:examples": "tsx pipeline/render-batch.ts",
+    "db:migrate": "tsx pipeline/db/cli.ts migrate",
+    "queue": "tsx pipeline/queue.ts",
+    "dev": "vite --config vite.config.ts --host 127.0.0.1",
+    "render:confirm": "tsx pipeline/render-confirm.ts",
+    "verify:data": "tsx pipeline/verify-data.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "@tailwindcss/vite": "^4.3.5",
     "cheerio": "^1.1.2",
     "csv-parse": "^7.0.3",
     "dotenv": "^17.2.3",
     "openai": "^6.9.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.5",
     "zod": "^4.1.12"
   },
   "devDependencies": {

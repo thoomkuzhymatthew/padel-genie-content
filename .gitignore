@@ -7,3 +7,7 @@ coverage/
 runs/
 .DS_Store
 *.tsbuildinfo
+.vercel
+.env*
+supabase/.temp/
+.vercel/
