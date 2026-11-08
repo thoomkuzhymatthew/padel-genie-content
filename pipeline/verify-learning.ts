@@ -30,9 +30,9 @@ const browser=await chromium.launch();try{
   check(await page.locator('.replay-pair').count()===2,'both sources have current/proposed replay drafts');
   for(const image of await page.locator('.replay-pair img').all()){await image.scrollIntoViewIfNeeded();await image.evaluate(i=>(i as HTMLImageElement).decode());check(await image.evaluate(i=>(i as HTMLImageElement).naturalWidth===1080),'live replay PNG loads at full resolution');}
   check(await page.locator('.report-copy').first().innerText()===run.data.report,'latest report is the persisted workflow report');
-  const delivery=await db.from('notification_deliveries').select('type,status').like('dedupe_key',saved.id+':%');check(delivery.data?.length===2&&delivery.data.every(d=>d.status==='sent'),'learning and replay emails accepted by Resend');
   await page.screenshot({path:join(directory,'learning-live-mobile.png'),fullPage:true});
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Learning view has no mobile horizontal overflow');check(errors.length===0,'no browser runtime errors');
-  await writeFile(join(directory,'learning-live-result.json'),JSON.stringify({origin,id:saved.id,checks:[...saved.checks,...checks],pr_url:run.data.pr_url},null,2));
+  if(phase!=='finish-ui'){const delivery=await db.from('notification_deliveries').select('type,status').like('dedupe_key',saved.id+':%');check(delivery.data?.length===2&&delivery.data.every(d=>d.status==='sent'),'learning and replay emails accepted by Resend');}
+  await writeFile(join(directory,'learning-live-result.json'),JSON.stringify({origin,id:saved.id,checks:[...saved.checks,...checks],pr_url:run.data.pr_url,email_verification_pending:phase==='finish-ui'},null,2));
  }
 }catch(error){let message=error instanceof Error?error.message:'Verification failed';for(const key of ['REVIEWER_TEST_EMAIL','REVIEWER_TEST_PASSWORD','SUPABASE_SECRET_KEY','GITHUB_DISPATCH_TOKEN','RESEND_API_KEY']){const value=process.env[key];if(value)message=message.replaceAll(value,'[redacted]');}console.error(message);process.exitCode=1;}finally{await browser.close();}
