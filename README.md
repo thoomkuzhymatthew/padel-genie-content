@@ -248,7 +248,7 @@ Proposals affect future runs only after a human merges their PR.
 `pipeline/metrics/adapter.ts` defines the metrics interface. The deterministic mock
 adapter writes **mock** rows only for posted items; carousel performance is varied
 for demonstration. No engagement recommendation is eligible below 20 posted items
-per format (configurable in the guard). Even eligible mock rows are demonstration
+per format (configured in `config/learning.json`). Even eligible mock rows are demonstration
 signals, not live evidence. Instagram and LinkedIn adapters remain explicit stubs:
 they need authorised platform access/app review or a CSV import.
 

@@ -1,0 +1,5 @@
+{
+  "period_days": 7,
+  "minimum_posted_items": 20,
+  "metrics_adapter": "mock"
+}

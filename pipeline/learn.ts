@@ -21,12 +21,13 @@ try{
  const existing=await db.from('learning_runs').select('id,status').eq('id',id).maybeSingle();if(existing.data?.status==='done'||existing.data?.status==='running')process.exit(0);
  if(!existing.data){const r=await db.from('learning_runs').insert({id,status:'queued'});if(r.error)throw Error('Another learning run is active');}
  await update({status:'running',stage:'Reading real feedback',workflow_url:process.env.GITHUB_RUN_ID?`https://github.com/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`:null});
- const since=new Date(Date.now()-7*86400000).toISOString();
+ const settings=z.object({period_days:z.number().int().min(1).max(90),minimum_posted_items:z.number().int().min(1),metrics_adapter:z.literal('mock')}).parse(JSON.parse(await readFile(join(projectRoot,'config/learning.json'),'utf8')));
+ const since=new Date(Date.now()-settings.period_days*86400000).toISOString();
  const p=await db.from('posts').select('*').not('run_id','in','(verification-fixture,browser-verification)');const e=await db.from('post_events').select('*').in('post_id',(p.data||[]).map(post=>post.id)).gte('created_at',since).order('created_at');if(p.error||e.error)throw Error('Could not read feedback');const posts=p.data,events=e.data;
  const classified=await triage(events,posts);
  const rerenders=await applyPostFeedback(classified.findings,events,posts);
  const metrics=await mock.fetchMetrics(posts,since);if(metrics.length){const r=await db.from('post_metrics').upsert(metrics);if(r.error)throw Error('Could not save metrics');}
- const engagement=Object.fromEntries([...new Set(posts.map(p=>p.format))].map(format=>{const count=posts.filter(p=>p.format===format&&p.status==='posted').length;return[format,{posted_count:count,eligible:engagementAllowed(count),conclusion:engagementAllowed(count)?'Mock demonstration only; no live performance evidence':'not enough data yet'}];}));
+ const engagement=Object.fromEntries([...new Set(posts.map(p=>p.format))].map(format=>{const count=posts.filter(p=>p.format===format&&p.status==='posted').length;return[format,{posted_count:count,eligible:engagementAllowed(count,settings.minimum_posted_items),conclusion:engagementAllowed(count,settings.minimum_posted_items)?'Mock demonstration only; no live performance evidence':'not enough data yet'}];}));
  const current=await readFile(join(projectRoot,'playbook/playbook.md'),'utf8');const folder=join(projectRoot,'runs/learning',id);await mkdir(folder,{recursive:true});
  const evidence={since,events,posts:posts.map(({trace,...p})=>({...p,atom_ids:trace.atoms.map((a:any)=>a.id)})),triage:classified.findings,metrics,metrics_adapter:'mock',engagement};
  await writeFile(join(folder,'evidence.json'),JSON.stringify(evidence,null,2));
