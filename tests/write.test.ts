@@ -31,3 +31,7 @@ it.each(['number', 'hero'] as const)('rejects unsafe %s copy', async mode => {
   stub(mode); const output = await destination();
   await expect(writeDraft('reports/milestone-4/july-revision.seed.json', output)).rejects.toThrow();
 });
+it('repairs one unsafe copy attempt and still verifies the replacement',async()=>{
+ let attempt=0;generate.mockImplementation(async(_stage,_schema,_system,input:string)=>{const payload=JSON.parse(input);return{data:{fields:payload.editable_fields,caption:attempt++===0?'999 new courts.':payload.selected_draft.caption},trace:{stage:'copy',input_sha256:sha256(input)}};});
+ const output=await destination();await writeDraft('reports/milestone-4/july-revision.seed.json',output,{repair:true});expect(generate).toHaveBeenCalledTimes(2);const trace=JSON.parse(await readFile(output+'.copy-trace.json','utf8'));expect(trace.attempts).toHaveLength(2);expect(JSON.parse(await readFile(output,'utf8')).caption).not.toContain('999');
+});

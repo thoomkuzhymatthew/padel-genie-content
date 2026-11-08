@@ -17,13 +17,14 @@ export async function triage(events:any[],posts:any[]){
   }
  }
  // Replace only pending initial routes. Resolved classifications and evidence remain an audit trail.
- for(const event of feedback)await db.from('feedback_findings').delete().eq('event_id',event.id).eq('status','pending');
+ for(const event of feedback)await db.from('feedback_findings').delete().eq('event_id',event.id).eq('status','pending').neq('category','data/fact');
  for(const item of findings){const saved=await db.from('feedback_findings').upsert(item,{onConflict:'event_id,category',ignoreDuplicates:true}).select('*');if(saved.error)throw Error('Could not save feedback triage');
   if(item.category==='data/fact'){
    const post=posts.find(p=>p.id===item.post_id);const finding=await db.from('feedback_findings').select('id').eq('event_id',item.event_id).eq('category',item.category).single();
    const flag=await db.from('atom_reviews').upsert({finding_id:finding.data?.id,post_id:post.id,atom_ids:post.trace.atoms.map((a:any)=>a.id)},{onConflict:'finding_id',ignoreDuplicates:true});if(flag.error)throw Error('Could not flag atoms for factual review');
   }
  }
- return{findings,trace:result.trace};
+ const stored=await db.from('feedback_findings').select('*').in('event_id',feedback.map(e=>e.id));if(stored.error)throw Error('Could not load saved classifications');
+ return{findings:stored.data,trace:result.trace};
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){const db=adminClient();const p=await db.from('posts').select('*');const e=await db.from('post_events').select('*');console.log(JSON.stringify(await triage(e.data||[],p.data||[])));}

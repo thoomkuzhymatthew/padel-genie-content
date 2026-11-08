@@ -11,7 +11,7 @@ import { numericTokens } from './verify.js';
 import type { Source } from './ingest.js';
 import type { JsonRecord } from './template.js';
 const CopySchema = z.strictObject({ fields: z.array(z.strictObject({ path: z.string(), text: z.string() })), caption: z.string() });
-export async function writeDraft(inputFile: string, outputFile: string, options: {playbook?:string; instructions?:string} = {}) {
+export async function writeDraft(inputFile: string, outputFile: string, options: {playbook?:string; instructions?:string; repair?:boolean} = {}) {
   if (resolve(inputFile) === resolve(outputFile)) throw new Error('Write to a new file; do not overwrite the original draft');
   const draft = DraftSchema.parse(JSON.parse(await readFile(inputFile, 'utf8')));
   const source = JSON.parse(await readFile(join(projectRoot, draft.source_bundle, 'source.json'), 'utf8')) as Source;
@@ -26,17 +26,29 @@ export async function writeDraft(inputFile: string, outputFile: string, options:
   for (const [key, value] of Object.entries(draft.content)) {
     if (typeof value === 'string' && !['wordmark','source_line','hero','hook_hero','closing_hero','unit','comparison_atom_id'].includes(key) && !numericTokens(value).length) editable.push({ path: key, text: value });
   }
-  const generationInput = JSON.stringify({ evidence: JSON.parse(assembled.input), selected_draft: draft, editable_fields: editable, reviewer_instructions:options.instructions||null });
-  const result = await generateJson('copy', CopySchema, assembled.system, generationInput);
-  const paths = result.data.fields.map(field => field.path);
-  if (new Set(paths).size !== paths.length || paths.length !== editable.length || paths.some(path => !editable.some(field => field.path === path))) throw new Error('Copy output changed the editable field set');
-  for (const field of result.data.fields) draft.content[field.path] = field.text;
-  draft.caption = result.data.caption;
-  validateFields(draft.content, template);
   const allowed = assembled.atoms.flatMap(atom => atom.values.flatMap(value => [value.value, ...(value.compare === null ? [] : [value.compare]), ...numericTokens(value.period ?? '')]));
-  if ([...result.data.fields.map(field => field.text), draft.caption].some(text => numericTokens(text).some(number => !allowed.includes(number)))) throw new Error('Copy introduced an unverified number');
+  const baseInput={evidence:JSON.parse(assembled.input),selected_draft:draft,editable_fields:editable,reviewer_instructions:options.instructions||null,allowed_numeric_tokens:allowed};
+  let generationInput=JSON.stringify(baseInput);
+  let result=await generateJson('copy',CopySchema,assembled.system,generationInput);
+  const attempts=[];
+  for(let attempt=0;;attempt++){
+   attempts.push(result.trace);
+   await writeFile(outputFile+`.candidate-${attempt+1}.json`,JSON.stringify(result,null,2)+'\n');
+   let failure='';
+   const paths=result.data.fields.map(field=>field.path);
+   if(new Set(paths).size!==paths.length||paths.length!==editable.length||paths.some(path=>!editable.some(field=>field.path===path)))failure='Copy output changed the editable field set';
+   const candidate=structuredClone(draft);for(const field of result.data.fields)candidate.content[field.path]=field.text;candidate.caption=result.data.caption;
+   try{validateFields(candidate.content,template);}catch(error){failure=error instanceof Error?error.message:'Field validation failed';}
+   const unsupported=[...result.data.fields.map(field=>field.text),result.data.caption].flatMap(text=>numericTokens(text).filter(number=>!allowed.includes(number)));
+   if(unsupported.length)failure='Copy introduced an unverified number: '+[...new Set(unsupported)].join(', ');
+   if(!failure){draft.content=candidate.content;draft.caption=candidate.caption;break;}
+   if(!options.repair||attempt>=1)throw Error(failure);
+   generationInput=JSON.stringify({...baseInput,rejected:result.data,validation_error:failure,instruction:'Repair the exact field set and descriptor limits. Do not invent, round or convert numbers. Use only allowed_numeric_tokens; omit other numbers entirely.'});
+   result=await generateJson('copy',CopySchema,assembled.system,generationInput);
+  }
+  const paths=result.data.fields.map(field=>field.path);
   await writeFile(outputFile, JSON.stringify(draft, null, 2) + '\n');
-  await writeFile(outputFile + '.copy-trace.json', JSON.stringify({ ...assembled.provenance, ...result.trace, context_input_sha256: assembled.provenance.input_sha256, editable_paths: paths, status: 'draft_not_approved' }, null, 2) + '\n');
+  await writeFile(outputFile + '.copy-trace.json', JSON.stringify({ ...assembled.provenance, ...result.trace, context_input_sha256: assembled.provenance.input_sha256, attempts, editable_paths: paths, status: 'draft_not_approved' }, null, 2) + '\n');
   console.log('Wrote: ' + outputFile);
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {

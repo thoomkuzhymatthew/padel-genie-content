@@ -58,4 +58,4 @@ if(count.error) throw new Error('Queue count failed');
 console.log(`Queued ${count.count} posts. Existing posts and review decisions were preserved.`);
 console.log('Reviewer profiles: '+reviewers.map(user=>user.display_name).sort().join(', '));
 
-if(added)await notify('new_drafts','queue-'+[...manifest.selected,manifest.reserve].join('|'),'New drafts are ready.',`I’ve read Padel Genie’s reports and drafted ${added} posts. Take a look when you’re ready.`,'inbox',newAssets.slice(0,2));
+if(added)await notify('new_drafts','queue-'+sha256([...manifest.selected,manifest.reserve].join('|')),'New drafts are ready.',`I’ve read Padel Genie’s reports and drafted ${added} posts. Take a look when you’re ready.`,'inbox',newAssets.slice(0,2));

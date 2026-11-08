@@ -20,9 +20,9 @@ export async function replay(runId:string,current:string,proposed:string,posts:a
    const ideas=JSON.parse(await readFile(join(folder,'ideas.json'),'utf8'));
    const input=join(folder,'seed.json'),output=join(folder,'draft.json');
    await writeFile(input,JSON.stringify({id:`replay-${runId}-${index}-${side}`,template:seed.template,source_bundle:seed.trace.source_bundle,atoms:seed.trace.atoms.map((a:any)=>a.id),content:seed.content,caption:seed.caption}));
-   await writeDraft(input,output,{playbook});
+   await writeDraft(input,output,{playbook,repair:true,instructions:'Keep the headline to two short lines. Preserve the exact selected story and numeric fields. No additional statistics; the caption can stay number-free if needed.'});
    const trace=await renderDraft(output,{outputSubdir:`learning/${runId}`});const draft=JSON.parse(await readFile(output,'utf8'));
-   pair[side]={...seed,...draft,asset_paths:trace.assets,trace:{...seed.trace,render:trace},ideas,playbook_sha256:trace.playbook_sha256};
+   pair[side]={...seed,...draft,asset_paths:trace.assets,render_stale:false,trace:{render:trace,template_descriptor:seed.trace.template_descriptor},ideas,playbook_sha256:trace.playbook_sha256};
   }
   pairs.push(pair);
  }
