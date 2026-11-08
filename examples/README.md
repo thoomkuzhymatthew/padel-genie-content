@@ -24,3 +24,6 @@ The pipeline comparison retains the source's provisional-August caveat. The reus
 examples describe approvals, not operating courts; Merlin Way's decision predates
 August. The reserve revision is dated to its reporting context, without claiming a
 final July total. Source/date lines are on every image.
+
+Milestone 6 refresh: stat-card title clearance and the ranked-chart title now pass
+the shared collision, overflow, minimum-margin and minimum-text-size checks.

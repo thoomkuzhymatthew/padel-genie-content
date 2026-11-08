@@ -73,3 +73,8 @@
 - Generated replay previews are committed to the repository and verified at the live URL before the run is marked done.
 - Email sends are independently logged and idempotent; failed delivery never changes the result of a pipeline or learning job.
 - When the proposal leaves the playbook unchanged, replay shows the same generated control on both sides; do not manufacture differences from stochastic calls.
+- Human clarification: the first learning period contains five approvals and one layout rejection, with no genuine edits; report that evidence honestly and propose no editorial change.
+- With no recurring editorial findings, omit the proposal-generation schema entirely and produce an empty editorial diff in code.
+- The mobile “Request changes” action is documented as the next UX improvement; it is deferred to avoid derailing milestone 6 verification.
+- Resolve the trial email recipient against the Resend account restriction rather than assuming the reviewer test login uses the same address.
+- Failed notifications can be retried independently, using the same idempotency key and an atomic failed-to-sending claim; reports and replays are not regenerated.

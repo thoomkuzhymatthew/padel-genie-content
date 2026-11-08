@@ -9,6 +9,11 @@ on:
         description: Learning run UUID (blank creates a scheduled/manual run)
         required: false
         type: string
+      notifications_only:
+        description: Retry failed learning/replay notifications for an existing run
+        required: false
+        type: boolean
+        default: false
 permissions:
   contents: write
   pull-requests: write
@@ -31,12 +36,23 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - run: npm test
       - run: npm run learn
+        if: ${{ !inputs.notifications_only }}
         env:
           LEARNING_RUN_ID: ${{ inputs.learning_run_id }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          INBOX_URL: https://padel-genie-content.vercel.app
+      - name: Retry failed notifications
+        if: ${{ inputs.notifications_only }}
+        run: npm run notify:retry -- "$LEARNING_RUN_ID"
+        env:
+          LEARNING_RUN_ID: ${{ inputs.learning_run_id }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           INBOX_URL: https://padel-genie-content.vercel.app

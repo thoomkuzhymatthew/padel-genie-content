@@ -278,3 +278,7 @@ Autonomy is a future policy, not implemented publishing: a format could earn
 limited automatic posting after >90% approval without edits across 30 posts,
 with spot checks. New formats, factual flags and locked-rule changes always need
 human review. Today every draft and every playbook proposal needs human sign-off.
+
+To retry failed learning/replay emails without regenerating the report, use
+`npm run notify:retry -- <learning-run-uuid>`, or dispatch `learn.yml` with that
+`learning_run_id` and `notifications_only: true`. Sent messages are skipped.

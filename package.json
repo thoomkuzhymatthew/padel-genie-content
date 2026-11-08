@@ -23,7 +23,10 @@
     "verify:browser": "tsx pipeline/verify-browser.ts",
     "learn": "tsx pipeline/learn.ts",
     "replay": "tsx pipeline/replay.ts",
-    "triage": "tsx pipeline/triage.ts"
+    "triage": "tsx pipeline/triage.ts",
+    "notify:retry": "tsx pipeline/notify-retry.ts",
+    "verify:learning": "tsx pipeline/verify-learning.ts",
+    "verify:learning-data": "tsx pipeline/verify-learning-data.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

@@ -22,6 +22,9 @@ const browser=await chromium.launch();try{
   await writeFile(join(directory,'learning-live-state.json'),JSON.stringify({id:run.id,checks},null,2));console.log('Learning run '+run.id);
  }else{
   const saved=JSON.parse(await readFile(join(directory,'learning-live-state.json'),'utf8'));const run=await db.from('learning_runs').select('*').eq('id',saved.id).single();check(run.data?.status==='done','real inbox-triggered workflow completed');
+  await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Rejected/}).click();
+  await page.locator('.finding strong').filter({hasText:'template/layout'}).waitFor();check(true,'original rejection displays template/layout classification');
+  const corrected=page.locator('[data-post-id="db54769c-8d47-4f63-a64a-c563bbce735c"] img');await corrected.scrollIntoViewIfNeeded();await corrected.evaluate(i=>(i as HTMLImageElement).decode());check(await corrected.evaluate(i=>(i as HTMLImageElement).naturalWidth===1080),'corrected reserve image is live in its original rejected post');
   await page.getByRole('button',{name:'Learning',exact:true}).click();await page.getByRole('status').filter({hasText:/done/}).waitFor();
   check(await page.getByRole('link',{name:'Review proposal PR ↗'}).getAttribute('href')===run.data.pr_url,'Learning tab links to actual proposal PR');
   check(await page.locator('.replay-pair').count()===2,'both sources have current/proposed replay drafts');
