@@ -1,0 +1,86 @@
+{
+  "exported_at": "2026-11-08T12:10:40.565Z",
+  "approval_source": "Live Supabase review status; refreshed graphics re-approved by Matthew",
+  "posts": [
+    {
+      "slug": "pipeline-year-on-year",
+      "status": "approved",
+      "assets": [
+        {
+          "file": "slide-01.png",
+          "live_path": "/outputs/milestone-4/pipeline-year-on-year.png",
+          "sha256": "afefebcb72daa03a8adc20c76690b1eadf02e986b22336771ac21623a1dd0f6a"
+        }
+      ],
+      "caption": "Year to August, as reported: applications approved 312 → 649; applications lodged 629 → 1,150; courts approved 456 → 945. The latest totals include provisional August and are floors. Padel Genie’s planning map updates as councils publish."
+    },
+    {
+      "slug": "councils-with-no-court",
+      "status": "approved",
+      "assets": [
+        {
+          "file": "slide-01.png",
+          "live_path": "/outputs/inbox/c0301d0a-6765-40a7-9281-b671fd60e0f2/v2/councils-with-no-court.png",
+          "sha256": "16d400ccf1c687d29655033ffd356125d62189f99cc2b3a061eb44451b80a5a4"
+        }
+      ],
+      "caption": "38 councils with more than 100,000 residents have no open padel court inside their boundary, as reported in October. Check nearby courts and the planning-pipeline preview on Padel Genie’s live map."
+    },
+    {
+      "slug": "uk-court-count",
+      "status": "approved",
+      "assets": [
+        {
+          "file": "slide-01.png",
+          "live_path": "/outputs/inbox/f6da6372-4b39-4f44-a832-b981c5057dcc/v2/uk-court-count.png",
+          "sha256": "6bfd6d763c50a67c2900670aeda344c680461759c4970714731c7f5df4aed849"
+        }
+      ],
+      "caption": "3,061 open courts across 891 clubs. The UK court count, as reported in October. Explore the open-court map and planning-pipeline preview in Padel Genie."
+    },
+    {
+      "slug": "padel-reuses-old-buildings",
+      "status": "approved",
+      "assets": [
+        {
+          "file": "slide-01.png",
+          "live_path": "/outputs/milestone-4/padel-reuses-old-buildings-01.png",
+          "sha256": "46edcd0eb8bf0f1a69f23eaabddd64396155aa364717ec3ec630da3bba062e53"
+        },
+        {
+          "file": "slide-02.png",
+          "live_path": "/outputs/milestone-4/padel-reuses-old-buildings-02.png",
+          "sha256": "831f9a97ceca8cc6bbf19269bff34e2cd1a800b4feb333f0f6ae561079115e48"
+        },
+        {
+          "file": "slide-03.png",
+          "live_path": "/outputs/milestone-4/padel-reuses-old-buildings-03.png",
+          "sha256": "284c5fce8cd69fd0269ea76b569ffdc14b0a2a4fcf3f8cffa09aefa35237a221"
+        },
+        {
+          "file": "slide-04.png",
+          "live_path": "/outputs/milestone-4/padel-reuses-old-buildings-04.png",
+          "sha256": "33e52b1950410a2defad0daf476c3657e3bb04663e4626edfd952bb18939c611"
+        },
+        {
+          "file": "slide-05.png",
+          "live_path": "/outputs/milestone-4/padel-reuses-old-buildings-05.png",
+          "sha256": "e1fcfba33036b816abf64d20740f71a6087856109502e57f426238f28f6fa7d3"
+        }
+      ],
+      "caption": "Conversions out of industrial, warehouse and retail stock rose from 50 applications to 151. The former Homebase on Finchley Road: 10 courts approved under an all-weather canopy. Merlin Way, North Shields: 12 courts approved in a former industrial unit. See all 47 approvals of five courts or more, with addresses, decision dates, court counts and former building use in Padel Genie. Source: August report."
+    },
+    {
+      "slug": "regional-court-supply",
+      "status": "approved",
+      "assets": [
+        {
+          "file": "slide-01.png",
+          "live_path": "/outputs/inbox/7bff0c35-8b83-4653-8e03-019c990ca51a/v2/regional-court-supply.png",
+          "sha256": "7a78125c095880618b00c9377925713873dbe929b47e9bc575c3dfa5bfef5b8f"
+        }
+      ],
+      "caption": "Northern Ireland: 6.52 courts per 100,000 people. Scotland: 2.06. All regions and nations from the October report, ranked on the same measure, with the Great Britain average of 4.5 as a reference. Supply per head is context, not a measure of demand."
+    }
+  ]
+}

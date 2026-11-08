@@ -1,0 +1,20 @@
+{
+  "origin": "https://padel-genie-content.vercel.app",
+  "checked_at": "2026-11-08T12:11:39.041Z",
+  "checks": [
+    "five final posts approved after layout fixes",
+    "live noindex header",
+    "signed-out inbox hidden",
+    "test account signs in on mobile",
+    "inline edit and named attribution work on mobile",
+    "reject requires a reason",
+    "rejection moves fixture to Rejected",
+    "approval moves fixture to Approved",
+    "native carousel preview works",
+    "mark as posted works",
+    "actor, original note and server diff persisted",
+    "no mobile horizontal overflow",
+    "no browser runtime errors",
+    "temporary fixture removed; all real decisions preserved"
+  ]
+}

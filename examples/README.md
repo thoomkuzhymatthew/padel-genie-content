@@ -1,8 +1,8 @@
-# Padel Genie — finished example drafts
+# Padel Genie — approved final examples
 
 Five selected posts, nine PNGs, each 1080×1350. Each folder contains the full-size
-images, caption and source/atom/render trace. The design direction was approved;
-these outputs remain drafts for editorial review, not published social posts.
+images, caption and source/atom/render trace. All five are approved in the live inbox; Matthew re-approved the refreshed
+graphics after the layout fix. They have not been published to social platforms.
 
 - [Download all five selected posts](selected-posts.zip)
 - [Preview the whole batch](selected-posts-preview.png)
@@ -16,7 +16,7 @@ these outputs remain drafts for editorial review, not published social posts.
   [Merlin Way](padel-reuses-old-buildings/slide-04.png),
   [47-approval hold-back](padel-reuses-old-buildings/slide-05.png) ·
   [caption](padel-reuses-old-buildings/caption.txt)
-- Reserve A2: [July revision](july-revision-reserve/slide-01.png) · [caption](july-revision-reserve/caption.txt)
+The rejected reserve A2 is retained separately in [the historical export](../reports/milestone-4/reserve-export/) and is excluded from this approved set.
 
 The regional graphic reproduces all 11 regions/nations in the source chart,
 including the combined Midlands label. It does not invent a new geographic split.
@@ -27,3 +27,6 @@ final July total. Source/date lines are on every image.
 
 Milestone 6 refresh: stat-card title clearance and the ranked-chart title now pass
 the shared collision, overflow, minimum-margin and minimum-text-size checks.
+
+[Export manifest](manifest.json) records live asset paths and SHA-256 hashes; the
+PNGs and captions match the five approved inbox posts.

@@ -78,3 +78,10 @@
 - The mobile “Request changes” action is documented as the next UX improvement; it is deferred to avoid derailing milestone 6 verification.
 - Resolve the trial email recipient against the Resend account restriction rather than assuming the reviewer test login uses the same address.
 - Failed notifications can be retried independently, using the same idempotency key and an atomic failed-to-sending claim; reports and replays are not regenerated.
+
+## Milestone 8 — shipment
+
+- Matthew confirmed delivery of all three email types and re-approved the refreshed graphics; final exports mirror live approved assets and captions.
+- Keep the rejected reserve in the historical report archive, outside the five approved submission examples.
+- Export the locally available Part 2 session with credential/email redactions and no private reasoning; describe the snapshot cutoff instead of reconstructing missing dialogue.
+- Record the section 18 URL-to-inbox command and automatic pipeline notification as incomplete; the current pipeline command ends at verification, so shipping documentation must not claim otherwise.
