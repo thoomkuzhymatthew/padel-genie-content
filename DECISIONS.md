@@ -59,3 +59,16 @@
 - Use HTTP 409 for optimistic review conflicts rather than a database serialization error, so an expected stale-edit conflict is not retried as a transient database fault.
 - Test live actions on a temporary verification post using the configured test account, then remove that fixture and its events; the six real drafts remain proposed without synthetic feedback polluting the learning history.
 - Keep verified numeric fields fixed during inbox edits; reviewers can change wording, while factual figure changes require the evidence pipeline.
+
+## Milestone 6 — evidence-led learning
+
+- Route every human edit/rejection into explicit feedback findings; keep the original event and before/after diff immutable.
+- Divider/title collisions are template defects, fixed in CSS with failing render checks, never converted into playbook preferences.
+- Changed template artwork returns approved drafts to proposed for another look; rejected posts stay rejected and all original approvals/rejections remain in history.
+- Only recurring editorial evidence can support playbook replacements; exact quoted passages, valid event references and byte-identical LOCKED rules are enforced in code.
+- Mock metrics are deterministic and explicitly labelled; unposted items receive no performance rows and fewer than 20 posted items per format cannot support engagement suggestions.
+- A report-only PR is valid when the feedback justifies no editorial change; do not invent a playbook diff to make a demonstration look busy.
+- GitHub Actions runs learning and Playwright; an authenticated Vercel function holds the dispatch token, deduplicates requests and never merges a PR.
+- Replay retains both full idea catalogues and one controlled selected-story draft per source, regenerating copy on both sides; differences may include model variability.
+- Generated replay previews are committed to the repository and verified at the live URL before the run is marked done.
+- Email sends are independently logged and idempotent; failed delivery never changes the result of a pipeline or learning job.

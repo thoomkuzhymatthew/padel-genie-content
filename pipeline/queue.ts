@@ -4,6 +4,7 @@ import { adminClient } from './db/client.js';
 import { projectRoot } from './env.js';
 import { sha256, type Source } from './ingest.js';
 import { verifyAtoms, numericTokens } from './verify.js';
+import {notify} from './notifications.js';
 import { loadCatalogue } from './catalogue.js';
 const client = adminClient();
 const users = await client.auth.admin.listUsers();
@@ -17,6 +18,7 @@ const reviewers = users.data.users.map(user => {
 if (new Set(reviewers.map(user => user.display_name)).size !== 2) throw new Error('Reviewer mapping is ambiguous');
 const names = await client.from('reviewers').upsert(reviewers, { onConflict: 'user_id' });
 if (names.error) throw new Error('Could not initialise reviewer names: ' + names.error.message);
+const original=await client.from('posts').select('slug');if(original.error)throw Error('Could not read queue');const existingSlugs=new Set(original.data.map(p=>p.slug));const newAssets:string[]=[];let added=0;
 const catalogue = await loadCatalogue(join(projectRoot,'templates'));
 const manifest = JSON.parse(await readFile(join(projectRoot,'config/demo-posts.json'),'utf8')) as { selected: string[]; reserve: string };
 for (const file of [...manifest.selected,manifest.reserve]) {
@@ -49,8 +51,11 @@ for (const file of [...manifest.selected,manifest.reserve]) {
     format:template.format,template:draft.template,story,content:draft.content,caption,asset_paths:render.assets,trace,playbook_version:version+'@'+render.playbook_sha256.slice(0,12),status:'proposed',
   },{onConflict:'slug',ignoreDuplicates:true});
   if(result.error) throw new Error('Queue failed: '+result.error.message);
+  if(!existingSlugs.has(draft.id)){added++;newAssets.push(render.assets[0]);}
 }
 const count = await client.from('posts').select('id',{count:'exact',head:true});
 if(count.error) throw new Error('Queue count failed');
 console.log(`Queued ${count.count} posts. Existing posts and review decisions were preserved.`);
 console.log('Reviewer profiles: '+reviewers.map(user=>user.display_name).sort().join(', '));
+
+if(added)await notify('new_drafts','queue-'+[...manifest.selected,manifest.reserve].join('|'),'New drafts are ready.',`I’ve read Padel Genie’s reports and drafted ${added} posts. Take a look when you’re ready.`,'inbox',newAssets.slice(0,2));

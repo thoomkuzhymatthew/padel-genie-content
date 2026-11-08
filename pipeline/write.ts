@@ -11,14 +11,14 @@ import { numericTokens } from './verify.js';
 import type { Source } from './ingest.js';
 import type { JsonRecord } from './template.js';
 const CopySchema = z.strictObject({ fields: z.array(z.strictObject({ path: z.string(), text: z.string() })), caption: z.string() });
-export async function writeDraft(inputFile: string, outputFile: string) {
+export async function writeDraft(inputFile: string, outputFile: string, options: {playbook?:string; instructions?:string} = {}) {
   if (resolve(inputFile) === resolve(outputFile)) throw new Error('Write to a new file; do not overwrite the original draft');
   const draft = DraftSchema.parse(JSON.parse(await readFile(inputFile, 'utf8')));
   const source = JSON.parse(await readFile(join(projectRoot, draft.source_bundle, 'source.json'), 'utf8')) as Source;
   const all: JsonRecord[] = JSON.parse(await readFile(join(projectRoot, draft.source_bundle, 'atoms.verified.json'), 'utf8'));
   const selected = all.filter(atom => draft.atoms.includes(String(atom.id)));
   if (selected.length !== draft.atoms.length) throw new Error('Unknown selected atom');
-  const assembled = await assemblePrompt(source, selected, projectRoot, 'write');
+  const assembled = await assemblePrompt(source, selected, projectRoot, 'write', options.playbook);
   const template = assembled.catalogue.find(item => item.name === draft.template);
   if (!template) throw new Error('Unknown copy template');
   const editable: { path: string; text: string }[] = [];
@@ -26,7 +26,7 @@ export async function writeDraft(inputFile: string, outputFile: string) {
   for (const [key, value] of Object.entries(draft.content)) {
     if (typeof value === 'string' && !['wordmark','source_line','hero','hook_hero','closing_hero','unit','comparison_atom_id'].includes(key) && !numericTokens(value).length) editable.push({ path: key, text: value });
   }
-  const generationInput = JSON.stringify({ evidence: JSON.parse(assembled.input), selected_draft: draft, editable_fields: editable });
+  const generationInput = JSON.stringify({ evidence: JSON.parse(assembled.input), selected_draft: draft, editable_fields: editable, reviewer_instructions:options.instructions||null });
   const result = await generateJson('copy', CopySchema, assembled.system, generationInput);
   const paths = result.data.fields.map(field => field.path);
   if (new Set(paths).size !== paths.length || paths.length !== editable.length || paths.some(path => !editable.some(field => field.path === path))) throw new Error('Copy output changed the editable field set');

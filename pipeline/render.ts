@@ -138,7 +138,7 @@ export async function renderDraft(filename: string, options: { outputSubdir?: st
   try { copyGeneration = JSON.parse(await readFile(filename + '.copy-trace.json', 'utf8')); }
   catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
   const trace = { draft_id: draft.id, format: template.format, atoms: draft.atoms, source_url: source.url, source_sha256: source.text_sha256,
-    playbook_sha256: sha256(await readFile(join(projectRoot, 'playbook/playbook.md'), 'utf8')),
+    playbook_sha256: (copyGeneration as {playbook_sha256?:string}|null)?.playbook_sha256 ?? sha256(await readFile(join(projectRoot, 'playbook/playbook.md'), 'utf8')),
     template_sha256: sha256(htmlTemplate + css), content_sha256: sha256(JSON.stringify(draft.content)),
     size: { width: 1080, height: 1350 }, checks: pageChecks, assets, caption: draft.caption,
     content_origin: copyGeneration ? 'configured_copy_model' : 'assistant_editorial_draft', copy_generation: copyGeneration,

@@ -20,7 +20,10 @@
     "dev": "vite --config vite.config.ts --host 127.0.0.1",
     "render:confirm": "tsx pipeline/render-confirm.ts",
     "verify:data": "tsx pipeline/verify-data.ts",
-    "verify:browser": "tsx pipeline/verify-browser.ts"
+    "verify:browser": "tsx pipeline/verify-browser.ts",
+    "learn": "tsx pipeline/learn.ts",
+    "replay": "tsx pipeline/replay.ts",
+    "triage": "tsx pipeline/triage.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.119.0",

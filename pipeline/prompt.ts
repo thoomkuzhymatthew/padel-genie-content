@@ -5,11 +5,11 @@ import { loadCatalogue } from './catalogue.js';
 import { verifyAtoms } from './verify.js';
 import { sha256, type Source } from './ingest.js';
 
-export async function assemblePrompt(source: Source, candidates: readonly unknown[], root = projectRoot, stage: 'ideate' | 'write' = 'ideate') {
+export async function assemblePrompt(source: Source, candidates: readonly unknown[], root = projectRoot, stage: 'ideate' | 'write' = 'ideate', playbookOverride?: string) {
   if (sha256(source.text) !== source.text_sha256) throw new Error('Source text hash mismatch');
   const checked = verifyAtoms(candidates, source.text, { date: source.date });
   if (checked.rejected.length || !checked.verified.length) throw new Error('Prompt requires a non-empty, fully verified atom handoff');
-  const playbook = await readFile(join(root, 'playbook/playbook.md'), 'utf8');
+  const playbook = playbookOverride ?? await readFile(join(root, 'playbook/playbook.md'), 'utf8');
   const learnings = await readFile(join(root, 'playbook/learnings.md'), 'utf8');
   const catalogue = await loadCatalogue(join(root, 'templates'));
   const playbookVersion = playbook.match(/^# Padel Genie social intern — playbook (v\d+)\s*$/m)?.[1];

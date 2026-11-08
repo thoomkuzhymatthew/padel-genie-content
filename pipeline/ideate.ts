@@ -62,11 +62,11 @@ export function validateIdeas(candidates: readonly unknown[], atoms: Atom[], cat
   return { verified, rejected };
 }
 
-export async function ideateRun(directory: string) {
+export async function ideateRun(directory: string, playbookOverride?:string) {
   const source = JSON.parse(await readFile(join(directory, 'source.json'), 'utf8')) as Source;
   const atoms: unknown = JSON.parse(await readFile(join(directory, 'atoms.verified.json'), 'utf8'));
   if (!Array.isArray(atoms)) throw new Error('Invalid atom handoff');
-  const assembled = await assemblePrompt(source, atoms);
+  const assembled = await assemblePrompt(source, atoms, undefined, 'ideate', playbookOverride);
   const stagePrompt = await readFile(new URL('./prompts/ideate.md', import.meta.url), 'utf8');
   const schema = IdeasSchema.extend({ ideas: z.array(IdeaSchema.extend({
     template: z.enum(assembled.catalogue.map(item => item.name) as [string, ...string[]]),

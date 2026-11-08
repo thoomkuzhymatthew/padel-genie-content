@@ -6,5 +6,5 @@ export type Post = {
  status:Status;version:number;content_version:number;rendered_version:number;render_stale:boolean;created_at:string;updated_at:string;
 };
 export type Reviewer = {user_id:string;display_name:string};
-export type PostEvent = {id:string;post_id:string;actor_id:string;type:'approve'|'edit'|'reject'|'posted';note:string|null;reason:string|null;reason_tags:string[];created_at:string;diff:unknown[]};
+export type PostEvent = {id:string;post_id:string;actor_id:string;type:'approve'|'edit'|'reject'|'posted';note:string|null;reason:string|null;reason_tags:string[];created_at:string;diff:unknown[];feedback_findings?:{category:string;evidence:string;rationale:string;status:string;resolution:string|null}[]};
 export const reasonTags = ['Too dense','Not interesting','Off brand','Wrong angle','Needs verification'];
