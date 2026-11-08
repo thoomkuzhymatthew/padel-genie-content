@@ -12,7 +12,9 @@
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && vite build --config vite.config.ts",
     "ideate": "tsx pipeline/ideate.ts",
-    "render": "tsx pipeline/render.ts"
+    "render": "tsx pipeline/render.ts",
+    "write": "tsx pipeline/write.ts",
+    "render:examples": "tsx pipeline/render-batch.ts"
   },
   "dependencies": {
     "cheerio": "^1.1.2",

@@ -5,7 +5,7 @@ import { loadCatalogue } from './catalogue.js';
 import { verifyAtoms } from './verify.js';
 import { sha256, type Source } from './ingest.js';
 
-export async function assemblePrompt(source: Source, candidates: readonly unknown[], root = projectRoot) {
+export async function assemblePrompt(source: Source, candidates: readonly unknown[], root = projectRoot, stage: 'ideate' | 'write' = 'ideate') {
   if (sha256(source.text) !== source.text_sha256) throw new Error('Source text hash mismatch');
   const checked = verifyAtoms(candidates, source.text, { date: source.date });
   if (checked.rejected.length || !checked.verified.length) throw new Error('Prompt requires a non-empty, fully verified atom handoff');
@@ -18,7 +18,7 @@ export async function assemblePrompt(source: Source, candidates: readonly unknow
     playbook,
     '# Available template catalogue\n' + JSON.stringify(catalogue, null, 2),
     '# Latest merged learnings\n' + learnings,
-    '# Stage instructions\n' + await readFile(join(root, 'pipeline/prompts/ideate.md'), 'utf8'),
+    '# Stage instructions\n' + await readFile(join(root, `pipeline/prompts/${stage}.md`), 'utf8'),
   ].join('\n\n');
   // Full source is retained in the run, but only verified facts enter ideation.
   const input = JSON.stringify({ source: { title: source.title, url: source.url, date: source.date }, verified_atoms: checked.verified });
