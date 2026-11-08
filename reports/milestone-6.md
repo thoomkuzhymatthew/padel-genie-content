@@ -44,7 +44,7 @@ were checked against the production deployment before the run became done.
 ## Additional checks
 
 - Settings add/remove and per-email-type toggles persist across reload.
-- 102 automated tests pass; TypeScript and the production build pass.
+- 103 automated tests pass; TypeScript and the production build pass.
 - All six new tables reject anonymous reads; reviewer sessions cannot forge metrics or completed reports.
 - A factual edit note immediately flags linked atoms and blocks approval.
 - Render checks reject overflow, element collisions, unsafe margins and undersized text.

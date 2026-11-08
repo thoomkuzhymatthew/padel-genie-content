@@ -14,6 +14,7 @@ import {replay} from './replay.js';
 import {sha256} from './ingest.js';
 import {applyPostFeedback} from './learning/apply-feedback.js';
 import {confirmQueuedRender} from './render-post.js';
+import {periodPosts} from './learning/period.js';
 const db=adminClient();const id=process.argv[2]||process.env.LEARNING_RUN_ID||randomUUID();if(!/^[a-f0-9-]{36}$/.test(id))throw Error('Invalid learning run id');
 async function update(values:Record<string,unknown>){const r=await db.from('learning_runs').update({...values,updated_at:new Date().toISOString()}).eq('id',id);if(r.error)throw Error('Could not update workflow state');}
 const Schema=z.strictObject({findings:z.array(z.strictObject({text:z.string(),event_ids:z.array(z.string())})),suggestions:z.array(z.strictObject({event_ids:z.array(z.string()),before:z.string(),after:z.string(),rationale:z.string()}))});
@@ -50,12 +51,13 @@ try{
  const report=`# Intern learning report\n\nPeriod: ${since.slice(0,10)} onwards.\n\n${events.filter(e=>e.type==='approve').length} approvals; ${events.filter(e=>e.type==='edit').length} edits; ${events.filter(e=>e.type==='reject').length} rejections.\n\n## Feedback\n${generated.data.findings.map(f=>'- '+f.text+' (events: '+f.event_ids.join(', ')+')').join('\n')}\n\n## Routing\n${classified.findings.map(f=>'- '+f.category+': “'+f.evidence+'” — '+f.rationale+(f.resolution?' Resolution: '+f.resolution:'')+' (event '+f.event_id+')').join('\n')}\n\n## Metrics\nDeterministic MOCK adapter; ${metrics.length} posted-item rows. ${JSON.stringify(engagement)}. No live engagement conclusions.\n\n## Suggested playbook edits\n${diff}\n\nLOCKED section unchanged. Layout feedback is handled in template code; factual issues flag atoms for review.\n`;
  const reportPath=join(projectRoot,'reports','learning-'+id+'.md');await writeFile(reportPath,report);
  await update({report,diff,evidence,model_trace:{triage:classified.trace,learn:generated.trace,input_sha256:sha256(input)},stage:'Replaying both source reports'});
- const pairs=await replay(id,current,proposed,(await db.from('posts').select('*')).data||posts);
+ const latest=await db.from('posts').select('*').in('id',posts.map(post=>post.id));if(latest.error)throw Error('Could not load replay snapshot');
+ const pairs=await replay(id,current,proposed,periodPosts(latest.data,events,since));
  await writeFile(join(folder,'replay.json'),JSON.stringify(pairs,null,2));
  // Publish only report and generated graphics to main; the proposed playbook goes exclusively on its PR branch.
  if(process.env.GITHUB_ACTIONS==='true'){
   git('config','user.name','Padel Genie intern');git('config','user.email',git('log','-1','--format=%ae'));
-  git('add',reportPath,'web/public/outputs/learning/'+id,...(rerenders.length?['web/public/outputs/inbox']:[]));git('commit','-m','Publish learning report and replay previews '+id.slice(0,8));git('push','origin','HEAD:main');
+  git('add',reportPath,...(pairs.length?['web/public/outputs/learning/'+id]:[]),...(rerenders.length?['web/public/outputs/inbox']:[]));git('commit','-m','Publish learning report and replay previews '+id.slice(0,8));git('push','origin','HEAD:main');
  }
  await update({stage:'Waiting for deployed replay previews',replays:pairs});
  if(process.env.GITHUB_ACTIONS==='true'){
