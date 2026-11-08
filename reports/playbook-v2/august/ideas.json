@@ -1,0 +1,92 @@
+[
+  {
+    "id": "idea_1",
+    "format": "carousel",
+    "template": "carousel-basic",
+    "story": "Change of use is taking a bigger share of padel growth: 29% of new-court submissions were change of use, and the former Homebase on Finchley Road reached 10 courts.",
+    "atoms": [
+      "a20",
+      "a21",
+      "a25",
+      "a50",
+      "a51",
+      "a26",
+      "a49",
+      "a18"
+    ],
+    "main_atoms": [
+      "a20",
+      "a21",
+      "a50"
+    ],
+    "named_examples": [
+      "Former Homebase, 255 Finchley Road Camden"
+    ],
+    "hold_back_atoms": [
+      "a26",
+      "a49"
+    ],
+    "angle": "change-of-use-reuse-growth",
+    "hold_back": "See all 47 approvals of five courts or more from the last twelve months, with addresses, decision dates, court counts and former building type in Padel Genie.",
+    "why_it_works": "It gives one clear structural shift, proves it with a named scheme people will remember, and holds back the actionable list inside Padel Genie.",
+    "score": 9.1,
+    "rank": 1,
+    "improve": "Use the verified Merlin Way example alongside Homebase to show reuse across more than one place."
+  },
+  {
+    "id": "idea_2",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "July was revised from 63 lodged applications to 93 as reported in August, a reminder that council planning data arrives late rather than all at once.",
+    "atoms": [
+      "a27",
+      "a29",
+      "a30",
+      "a49"
+    ],
+    "main_atoms": [
+      "a27",
+      "a30"
+    ],
+    "named_examples": [
+      "July"
+    ],
+    "hold_back_atoms": [
+      "a49"
+    ],
+    "angle": "reporting-lag-revision-story",
+    "hold_back": "Use Padel Genie’s daily-updated planning application map to track new applications as councils publish.",
+    "why_it_works": "It turns a dry caveat into a useful industry point about how planning data behaves, backed by a clean before-and-after number.",
+    "score": 8.2,
+    "rank": 2,
+    "improve": "It would be better with a named council example showing the lag in practice, if a verified atom for one is available."
+  },
+  {
+    "id": "idea_4",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Two of August’s highest-revenue padel clubs: Carbon Padel Club and Rocks Lane Chiswick.",
+    "atoms": [
+      "a46",
+      "a48",
+      "a52"
+    ],
+    "main_atoms": [
+      "a46"
+    ],
+    "named_examples": [
+      "Carbon Padel Club",
+      "Rocks Lane Chiswick"
+    ],
+    "hold_back_atoms": [
+      "a48",
+      "a52"
+    ],
+    "angle": "top-club-revenue-august",
+    "hold_back": "Inspect Carbon Padel Club and Rocks Lane Chiswick in Club X-Ray: occupancy, price and estimated revenue.",
+    "why_it_works": "It broadens the batch beyond planning and gives operators a named benchmark while keeping the underlying club-by-club detail inside the product.",
+    "score": 6.3,
+    "rank": 3,
+    "improve": "Obtain verified revenue figures before making a quantitative revenue comparison; the source currently supports the reported ranking."
+  }
+]

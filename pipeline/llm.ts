@@ -18,7 +18,7 @@ export async function generateJson<T>(stage: Stage, schema: z.ZodType<T>, system
     response = await client.responses.parse({
       model: selected.model, store: false,
       input: [{ role: 'system', content: system }, { role: 'user', content: input }],
-      text: { format: zodTextFormat(schema, `${stage}_result`) }, max_output_tokens: 10000,
+      text: { format: zodTextFormat(schema, `${stage}_result`) }, max_output_tokens: stage === 'extract' ? 18000 : 10000,
     });
   } catch (error) {
     // SDK errors can include credentials/request contents: log safe metadata only.

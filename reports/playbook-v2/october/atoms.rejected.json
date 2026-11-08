@@ -1,0 +1,165 @@
+[
+  {
+    "index": 33,
+    "id": "a12",
+    "reasons": [
+      "quote_not_in_source"
+    ],
+    "atom": {
+      "id": "a12",
+      "claim": "Northern Ireland has 124 open courts, 26 open clubs, and 6.5 courts per 100,000 people.",
+      "kind": "numeric",
+      "entities": [
+        "Northern Ireland"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 124,
+          "unit": "open courts",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 26,
+          "unit": "open clubs",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 6.5,
+          "unit": "courts per 100,000 people",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 100000,
+          "unit": "people denominator",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        }
+      ],
+      "place": "Northern Ireland",
+      "source_quote": "Nation | Courts open | Clubs open | Courts per 100,000 people |\nNorthern Ireland | 124 | 26 | 6.5 |"
+    }
+  },
+  {
+    "index": 34,
+    "id": "a13",
+    "reasons": [
+      "quote_not_in_source"
+    ],
+    "atom": {
+      "id": "a13",
+      "claim": "The UK has 3,061 open courts, 891 open clubs, and 4.6 courts per 100,000 people.",
+      "kind": "numeric",
+      "entities": [
+        "UK"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 3061,
+          "unit": "open courts",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 891,
+          "unit": "open clubs",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 4.6,
+          "unit": "courts per 100,000 people",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 100000,
+          "unit": "people denominator",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        }
+      ],
+      "place": "UK",
+      "source_quote": "Nation | Courts open | Clubs open | Courts per 100,000 people |\nUK | 3,061 | 891 | 4.6 |"
+    }
+  },
+  {
+    "index": 36,
+    "id": "a32",
+    "reasons": [
+      "values.0.value_not_in_quote",
+      "values.0.compare_not_in_quote"
+    ],
+    "atom": {
+      "id": "a32",
+      "claim": "Four of the five councils with the most open courts are in the North: Cheshire East, North Yorkshire, Sheffield and Leeds, with Birmingham the other.",
+      "kind": "numeric",
+      "entities": [
+        "Cheshire East",
+        "North Yorkshire",
+        "Sheffield",
+        "Leeds",
+        "Birmingham"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 4,
+          "unit": "councils in the North among top five",
+          "compare": 5,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 57,
+          "unit": "open courts at Cheshire East",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 53,
+          "unit": "open courts at North Yorkshire",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 51,
+          "unit": "open courts at Sheffield",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 45,
+          "unit": "open courts at Leeds",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        },
+        {
+          "value": 48,
+          "unit": "open courts at Birmingham",
+          "compare": null,
+          "period": "2026-10-25",
+          "period_source": "metadata"
+        }
+      ],
+      "place": null,
+      "source_quote": "Four of the five councils with the most open courts are in the North: Cheshire East (57), North Yorkshire (53), Sheffield (51) and Leeds (45), with Birmingham (48) the other."
+    }
+  }
+]

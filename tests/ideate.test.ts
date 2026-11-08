@@ -15,12 +15,12 @@ async function fixture() {
   await writeFile(join(directory, 'atoms.verified.json'), JSON.stringify([{ id: 'a1', claim: source.text, source_quote: source.text, values: [{ value: 151, compare: null, unit: 'applications', period: null }], place: 'UK' }]));
   return directory;
 }
-const idea = { id: 'i1', story: '151 applications.', atoms: ['a1'], format: 'stat', template: 'stat-card', hold_back: 'Inspect the planning records.', why_it_works: 'A clear statistic.', score: 8 };
+const idea = { id: 'i1', story: '151 applications.', atoms: ['a1'], format: 'stat', template: 'stat-card', hold_back: 'Inspect the planning records.', why_it_works: 'A clear statistic.', score: 8, rank: 1, main_atoms: ['a1'], hold_back_atoms: ['a1'], named_examples: [], angle: 'pipeline', improve: 'Add a named example.' };
 const response = (ideas: unknown[]) => ({ data: { ideas }, trace: { requested_model: 'offline-test' } });
 it('repairs rejected ideas once, preserves initial evidence and revalidates replacements', async () => {
   const directory = await fixture();
-  generate.mockResolvedValueOnce(response([idea, { ...idea, id: 'i2', story: '999 applications.' }]))
-    .mockResolvedValueOnce(response([{ ...idea, id: 'i2', story: 'Applications reached 151.' }]));
+  generate.mockResolvedValueOnce(response([idea, { ...idea, id: 'i2', rank: 2, score: 6, angle: 'other', story: '999 applications.' }]))
+    .mockResolvedValueOnce(response([{ ...idea, id: 'i2', rank: 2, score: 6, angle: 'other', story: 'Applications reached 151.' }]));
   const result = await ideateRun(directory);
   expect(generate).toHaveBeenCalledTimes(2);
   expect(result.verified).toHaveLength(2);

@@ -1,0 +1,78 @@
+[
+  {
+    "index": 25,
+    "id": "a41",
+    "reasons": [
+      "negative_named_entity_claim"
+    ],
+    "atom": {
+      "id": "a41",
+      "claim": "Camden involved ten courts under an all-weather canopy in a dead Homebase on Finchley Road, on a temporary consent.",
+      "kind": "narrative",
+      "entities": [
+        "Camden",
+        "Homebase",
+        "Finchley Road"
+      ],
+      "certainty": "reported",
+      "values": [],
+      "place": "Camden",
+      "source_quote": "Camden is the one to watch. Ten courts under an all-weather canopy in a\ndead Homebase on Finchley Road, on a temporary consent"
+    }
+  },
+  {
+    "index": 44,
+    "id": "a45",
+    "reasons": [
+      "values.0.value_not_in_quote",
+      "values.0.compare_not_in_quote"
+    ],
+    "atom": {
+      "id": "a45",
+      "claim": "Three of the ten were warehouse or industrial conversions.",
+      "kind": "numeric",
+      "entities": [],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 3,
+          "unit": "warehouse or industrial conversions",
+          "compare": 10,
+          "period": "2026-08-31",
+          "period_source": "metadata"
+        }
+      ],
+      "place": null,
+      "source_quote": "Three of the ten were warehouse or industrial conversions"
+    }
+  },
+  {
+    "index": 45,
+    "id": "a47",
+    "reasons": [
+      "values.0.value_not_in_quote",
+      "values.0.compare_not_in_quote"
+    ],
+    "atom": {
+      "id": "a47",
+      "claim": "Carbon and Rocks Lane finished within a whisker of each other despite Carbon on seventeen courts and Rocks Lane on twelve.",
+      "kind": "numeric",
+      "entities": [
+        "Carbon",
+        "Rocks Lane"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 17,
+          "unit": "courts at Carbon",
+          "compare": 12,
+          "period": "August",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Carbon on seventeen courts, Rocks Lane on twelve."
+    }
+  }
+]

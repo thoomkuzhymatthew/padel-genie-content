@@ -1,0 +1,120 @@
+[
+  {
+    "id": "idea_1",
+    "format": "ranked-bars",
+    "template": "ranked-bars",
+    "story": "Court supply is not evenly spread. Hertsmere sits at 26 courts per 100,000 people, while the GB average is 4.5 and 38 councils with more than 100,000 residents still have none.",
+    "atoms": [
+      "a5",
+      "a6",
+      "a29",
+      "a35",
+      "a40"
+    ],
+    "main_atoms": [
+      "a35",
+      "a6"
+    ],
+    "named_examples": [
+      "Hertsmere",
+      "Preston",
+      "Mid Sussex",
+      "Welwyn Hatfield",
+      "Broadland"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "council-density-ranking",
+    "hold_back": "Use Padel Genie catchment analysis to filter any catchment for warehouses, sports clubs, schools, car parks and brownfield land.",
+    "why_it_works": "It gives one sharp local ranking with named councils, then widens the point with the zero-court count so the post feels useful rather than abstract.",
+    "score": 9.2,
+    "rank": 1,
+    "improve": "It would be better with a verified product atom confirming a saved view or list for the 38 councils with none, rather than only the catchment filters."
+  },
+  {
+    "id": "idea_2",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Northern Ireland and Scotland are worlds apart on supply density. Northern Ireland has 6.52 courts per 100,000 people; Scotland has 2.06, despite 112 courts across 40 clubs.",
+    "atoms": [
+      "a9",
+      "a31",
+      "a33",
+      "a40"
+    ],
+    "main_atoms": [
+      "a31",
+      "a9"
+    ],
+    "named_examples": [
+      "Northern Ireland",
+      "Scotland"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "nation-density-contrast",
+    "hold_back": "The free map shows every open court, plus a free preview of the planning pipeline and catchment analysis across all 4 nations.",
+    "why_it_works": "It pairs a clean two-place contrast with named nations and hard density figures, making the imbalance easy to grasp in one frame.",
+    "score": 8.3,
+    "rank": 2,
+    "improve": "It would be stronger with a verified atom naming specific Scottish or Northern Irish catchments available to inspect in the product."
+  },
+  {
+    "id": "idea_3",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Carbon Padel Club in Manchester has 17 courts. The average UK club has 3.4 and the median is 3, so the biggest sites are still outliers rather than the norm.",
+    "atoms": [
+      "a14",
+      "a15",
+      "a16",
+      "a40"
+    ],
+    "main_atoms": [
+      "a15",
+      "a14"
+    ],
+    "named_examples": [
+      "Carbon Padel Club",
+      "Manchester"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "club-size-outlier",
+    "hold_back": "Check the free map for club footprints, then use paid catchment analysis and planning details to assess where large-format sites may fit.",
+    "why_it_works": "It gives a memorable named club and a single standout number, then anchors it against the average and median so the scale is instantly clear.",
+    "score": 7.1,
+    "rank": 3,
+    "improve": "It would improve with a verified atom for a named Club X-Ray or club detail page so the hold-back could point to a specific product view, not just general analysis."
+  },
+  {
+    "id": "idea_4",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Planning is still moving. Councils approved 85% of new padel schemes decided in the last 12 months, with 569 approvals against 99 refusals.",
+    "atoms": [
+      "a23",
+      "a24",
+      "a25",
+      "a40"
+    ],
+    "main_atoms": [
+      "a23"
+    ],
+    "named_examples": [
+      "the last 12 months"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "planning-hit-rate",
+    "hold_back": "Use the free planning-pipeline preview, then paid planning details to inspect scheme-level records behind recent approvals and live applications.",
+    "why_it_works": "It turns a broad market claim into a concrete process stat with real volumes, which is useful to operators, suppliers and landlords alike.",
+    "score": 6.4,
+    "rank": 4,
+    "improve": "It would be better with a verified atom for a concrete planning list or named application set in Padel Genie, so the hold-back could promise a more specific record set."
+  }
+]

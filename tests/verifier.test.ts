@@ -131,3 +131,37 @@ describe('publication metadata periods', () => {
     expect(verifyAtoms([{ ...headline, values: [{ ...headline.values[0], period_source: 'quote' }] }], source, { date: '2026-10-25' }).verified).toHaveLength(0);
   });
 });
+
+describe('named narrative atoms', () => {
+  const source = 'The former Homebase on Finchley Road was granted temporary consent for covered courts.';
+  const narrative = atom({ kind: 'narrative', entities: ['Homebase', 'Finchley Road'], certainty: 'reported', claim: 'The former Homebase on Finchley Road has temporary consent for covered courts.', source_quote: source, values: [] });
+  it('accepts named factual claims without numbers', () => {
+    expect(verify(narrative, source).verified).toHaveLength(1);
+  });
+  it('rejects invented entity names and invented narrative quotes', () => {
+    expect(verify({ ...narrative, entities: ['Carlisle'] }, source).rejected[0].reasons).toContain('entity_not_in_quote:Carlisle');
+    expect(verify({ ...narrative, source_quote: 'Homebase became a hotel.' }, source).verified).toHaveLength(0);
+  });
+  it('requires numbers in narrative claims to be declared and quote-verified', () => {
+    const quote = 'July applications were revised from 63 to 93.';
+    const revision = { ...narrative, entities: ['July'], claim: quote, source_quote: quote, values: [{ value: 93, compare: 63, unit: 'applications', period: 'July', period_source: 'quote' }] };
+    expect(verify(revision, quote).verified).toHaveLength(1);
+    expect(verify({ ...revision, values: [] }, quote).verified).toHaveLength(0);
+    expect(verify({ ...revision, values: [{ ...revision.values[0], compare: 62 }] }, quote).verified).toHaveLength(0);
+  });
+});
+
+it('keeps named business descriptions neutral even when the source uses a negative adjective', () => {
+  const source = 'A dead Homebase on Finchley Road has temporary consent.';
+  const narrative = atom({ kind: 'narrative', entities: ['Homebase', 'Finchley Road'], values: [], source_quote: source, claim: source });
+  expect(verify(narrative, source).rejected[0].reasons).toContain('negative_named_entity_claim');
+  expect(verify({ ...narrative, claim: 'A former Homebase on Finchley Road has temporary consent.' }, source).verified).toHaveLength(1);
+});
+
+it('checks number words in narratives without converting them to numeric evidence', () => {
+  const source = 'Two clubs led revenue: Carbon Padel Club and Rocks Lane Chiswick.';
+  const narrative = atom({ kind: 'narrative', entities: ['Carbon Padel Club', 'Rocks Lane Chiswick'], values: [], source_quote: source, claim: 'Two clubs led revenue: Carbon Padel Club and Rocks Lane Chiswick.' });
+  expect(verify(narrative, source).verified).toHaveLength(1);
+  expect(verify({ ...narrative, claim: 'Three clubs led revenue.' }, source).rejected[0].reasons).toContain('narrative_number_word_not_in_quote:three');
+  expect(verify({ ...narrative, values: [{ value: 2, compare: null, unit: 'clubs', period: null }] }, source).verified).toHaveLength(0);
+});

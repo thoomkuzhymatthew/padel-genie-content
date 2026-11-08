@@ -1,0 +1,26 @@
+{
+  "actor": "assistant_editorial_review",
+  "human_approved": false,
+  "instruction": "Apply the first human steer in playbook v2; these are proposals awaiting user selection.",
+  "changes": [
+    {
+      "action": "merge",
+      "from": [
+        "idea_1",
+        "idea_3"
+      ],
+      "into": "idea_1",
+      "reason": "Covered-scheme comparison shares the Homebase example; fold that evidence into the one reuse carousel rather than repeat the site."
+    },
+    {
+      "action": "tighten",
+      "ids": [
+        "idea_4"
+      ],
+      "reason": "Use the source’s written count Two without converting it to an unquoted numeric value, and name the concrete Club X-Ray views."
+    }
+  ],
+  "model_ideas_sha256": "d6a116f125b1b5a7a12b0cea68749310fa04ed05727eab8c8eaff2e5b4f960fc",
+  "curated_ideas_sha256": "e67b2cbac26afbfcd2b832b0426f91d091c77640158321b5b1b0ed16c3f48218",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850"
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "id": "idea_2",
+    "format": "ranked-bars",
+    "template": "ranked-bars",
+    "story": "Supply per head is uneven across the UK. Northern Ireland leads at 6.52 courts per 100,000 people, while Scotland is on 2.06 and London on 3.8.",
+    "atoms": [
+      "a7",
+      "a29",
+      "a30",
+      "a31",
+      "a40"
+    ],
+    "main_atoms": [
+      "a30",
+      "a31"
+    ],
+    "named_examples": [
+      "Northern Ireland",
+      "North West",
+      "South West",
+      "East of England",
+      "London"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "regional-density-ranking",
+    "hold_back": "Use the free map for every open court and a free preview of the planning pipeline and catchment analysis across England, Scotland, Wales and Northern Ireland.",
+    "why_it_works": "It merges the regional imbalance into one clean ranking with named places and the same unit, then points readers to the map and preview layers to inspect local context.",
+    "score": 8.3,
+    "rank": 2,
+    "improve": "It would be better with a verified atom for a saved regional view or named catchment example inside the product, so the hold-back could be more specific than the general preview."
+  },
+  {
+    "id": "idea_4",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Sheffield is not waiting around. It already has 51 open courts and also approved 10 new schemes in the last year, while East Riding of Yorkshire led approvals with 12.",
+    "atoms": [
+      "a26",
+      "a28",
+      "a40"
+    ],
+    "main_atoms": [
+      "a28",
+      "a26"
+    ],
+    "named_examples": [
+      "Sheffield",
+      "East Riding of Yorkshire"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "open-courts-vs-approval-leaders",
+    "hold_back": "Use the free map for every open court, then the planning-pipeline preview and paid planning details to inspect local schemes and catchments.",
+    "why_it_works": "It pairs a named place with a hero number and a second named benchmark, showing where open supply and planning momentum are already tangible.",
+    "score": 6.2,
+    "rank": 4,
+    "improve": "It would improve with a verified atom for a named Sheffield or East Riding planning record set in Padel Genie, so the hold-back could point to a concrete application list rather than general planning details."
+  }
+]

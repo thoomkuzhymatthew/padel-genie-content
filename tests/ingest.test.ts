@@ -76,3 +76,8 @@ it('separates adjacent inline statistic labels and reads a visible publication d
 it('does not mistake a date mentioned in the body for a publication date', () => {
   expect(parseSource('<article><h1>Report</h1><p>The court opened on 1 August 2025.</p></article>', 'report.html', 'html').date).toBeNull();
 });
+
+it('separates readable SVG chart labels from numeric values', () => {
+  const result = parseSource('<article><h1>Regions</h1><svg><text>Northern Ireland</text><text>6.52</text><text>North West</text><text>6.48</text></svg></article>', 'chart.html', 'html');
+  expect(result.text).toContain('Northern Ireland 6.52 North West 6.48');
+});

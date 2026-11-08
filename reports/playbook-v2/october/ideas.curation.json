@@ -1,0 +1,28 @@
+{
+  "actor": "assistant_editorial_review",
+  "human_approved": false,
+  "instruction": "Apply the first human steer in playbook v2; these are proposals awaiting user selection.",
+  "changes": [
+    {
+      "action": "merge",
+      "from": [
+        "idea_1",
+        "idea_2"
+      ],
+      "into": "idea_2",
+      "reason": "One geographic-density angle; use a single ranked-bars view rather than council and region variants. Retain the highest contributing editorial score."
+    },
+    {
+      "action": "tighten",
+      "ids": [
+        "idea_2",
+        "idea_3",
+        "idea_4"
+      ],
+      "reason": "Name actual map layers or a club footprint in the hold-back; choose five evidenced region names for the five-bar descriptor; shorten city story to its main point."
+    }
+  ],
+  "model_ideas_sha256": "6fd72e1d1c5300cc710edb67e3d0cf4155cad25d4a39ae40d6bb29eff43ffddb",
+  "curated_ideas_sha256": "575fac66e3720166743d92ad3c15f8a8dd93ccf849fd8668f7dcbaf44e887100",
+  "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2"
+}

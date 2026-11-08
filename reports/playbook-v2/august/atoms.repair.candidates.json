@@ -1,0 +1,490 @@
+[
+  {
+    "id": "a2",
+    "claim": "In the twelve months since, 649 were approved and 1,150 were lodged.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 649,
+        "unit": "applications approved",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 1150,
+        "unit": "applications lodged",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "approved 649 with 1,150 lodged."
+  },
+  {
+    "id": "a9",
+    "claim": "The twelve months to August 2026 include a provisional August, so all three volume figures are floors.",
+    "kind": "narrative",
+    "entities": [
+      "August 2026",
+      "August"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "August 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "The twelve months to August 2026 include a provisional August, so all\nthree volume figures are floors."
+  },
+  {
+    "id": "a13",
+    "claim": "The sample was n = 173 to Aug 2025 and 352 to Aug 2026 for approved new-court schemes where the court count is stated in the application.",
+    "kind": "numeric",
+    "entities": [
+      "Aug 2025",
+      "Aug 2026"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 173,
+        "unit": "schemes sample size",
+        "compare": 352,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 2025,
+        "unit": "year",
+        "compare": null,
+        "period": "to Aug 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "to Aug 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Share of approved new-court schemes where the court count is stated in the\napplication. n = 173 (to Aug 2025) and 352 (to Aug 2026)."
+  },
+  {
+    "id": "a20",
+    "claim": "Change of use went from 22% of new-court submissions in the year to August 2025 to 29% in the year since.",
+    "kind": "numeric",
+    "entities": [
+      "August 2025"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 29,
+        "unit": "percent of new-court submissions that were change of use",
+        "compare": 22,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 2025,
+        "unit": "year",
+        "compare": null,
+        "period": "the year to August 2025",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Change of use went from 22% of new-court submissions in the year to August 2025 to\n29% in the year since"
+  },
+  {
+    "id": "a23",
+    "claim": "A scheme at Trident Trade Park, Cardiff Cardiff had 10 courts and involved Two trade park units.",
+    "kind": "numeric",
+    "entities": [
+      "Trident Trade Park, Cardiff Cardiff"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Sep 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 2025,
+        "unit": "year",
+        "compare": null,
+        "period": "Sep 2025",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Cardiff Cardiff",
+    "source_quote": "10 | Sep 2025 | Trident Trade Park, Cardiff Cardiff | Two trade park units |"
+  },
+  {
+    "id": "a24",
+    "claim": "A scheme at Belfield Hall Farm, Albert Royds Street Rochdale had 10 courts in a farm building with three-year consent.",
+    "kind": "numeric",
+    "entities": [
+      "Belfield Hall Farm, Albert Royds Street Rochdale"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Mar 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "Mar 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Rochdale",
+    "source_quote": "10 | Mar 2026 | Belfield Hall Farm, Albert Royds Street Rochdale | Farm building, three-year consent |"
+  },
+  {
+    "id": "a26",
+    "claim": "The product lists 47 approvals of five courts or more from the last twelve months, with addresses, decision dates, court counts and what the building used to be.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 47,
+        "unit": "approvals",
+        "compare": null,
+        "period": "the last twelve months",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "See all 47 approvals of five courts or more from the last twelve months, with\naddresses, decision dates, court counts and what the building used to be."
+  },
+  {
+    "id": "a29",
+    "claim": "The count filled in from 63 on 1 August to 79 by the 20th and 93 today, and it is still not finished.",
+    "kind": "numeric",
+    "entities": [
+      "August"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 63,
+        "unit": "applications",
+        "compare": null,
+        "period": "1 August",
+        "period_source": "quote"
+      },
+      {
+        "value": 1,
+        "unit": "day of month",
+        "compare": null,
+        "period": "1 August",
+        "period_source": "quote"
+      },
+      {
+        "value": 79,
+        "unit": "applications",
+        "compare": null,
+        "period": "the 20th",
+        "period_source": "quote"
+      },
+      {
+        "value": 20,
+        "unit": "day of month",
+        "compare": null,
+        "period": "the 20th",
+        "period_source": "quote"
+      },
+      {
+        "value": 93,
+        "unit": "applications",
+        "compare": null,
+        "period": "today",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "63 on 1 August, 79 by the 20th, 93 today, and it is still not finished."
+  },
+  {
+    "id": "a34",
+    "claim": "Approval rate was 81%, with 42 approved of 52 decided, against a twelve-month average of 86%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 81,
+        "unit": "percent approval rate",
+        "compare": 86,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 42,
+        "unit": "approved applications",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 52,
+        "unit": "decided applications",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "81% Approval rate 42 approved of 52 decided\nTwelve-month average: 86%"
+  },
+  {
+    "id": "a35",
+    "claim": "Median decision time was 63 days against a twelve-month median of 85.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 63,
+        "unit": "median decision days",
+        "compare": 85,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "63 Median decision, days Second fastest in the two-year series\nTwelve-month median: 85"
+  },
+  {
+    "id": "a36",
+    "claim": "One decision had 10 courts on 12 Aug with all-weather canopy and temporary consent.",
+    "kind": "numeric",
+    "entities": [
+      "Aug"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "12 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 12,
+        "unit": "day of month",
+        "compare": null,
+        "period": "12 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "London",
+    "source_quote": "10 | 12 Aug | | London | All-weather canopy. Temporary consent. |"
+  },
+  {
+    "id": "a37",
+    "claim": "One Hertfordshire decision had 9 courts on 18 Aug and was retrospective, built, then consented.",
+    "kind": "numeric",
+    "entities": [
+      "Hertfordshire",
+      "Aug"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 9,
+        "unit": "courts",
+        "compare": null,
+        "period": "18 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 18,
+        "unit": "day of month",
+        "compare": null,
+        "period": "18 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Hertfordshire",
+    "source_quote": "9 | 18 Aug | | Hertfordshire | Retrospective. Built, then consented. |"
+  },
+  {
+    "id": "a38",
+    "claim": "One Midlands decision had 6 courts on 7 Aug by converting a 22,000 sq ft shed to indoor club.",
+    "kind": "numeric",
+    "entities": [
+      "Midlands",
+      "Aug"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 6,
+        "unit": "courts",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 7,
+        "unit": "day of month",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 22000,
+        "unit": "sq ft",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Midlands",
+    "source_quote": "6 | 7 Aug | | Midlands | 22,000 sq ft shed to indoor club |"
+  },
+  {
+    "id": "a40",
+    "claim": "August's average approved scheme was 3.28 courts, and without Camden and Hertfordshire it is 2.50.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "Camden",
+      "Hertfordshire"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 3.28,
+        "unit": "average approved scheme courts",
+        "compare": 2.5,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "August's average approved scheme was 3.28 courts, the highest monthly reading in the\nseries, until you take out Camden and Hertfordshire. Without those two it is 2.50, below\nthe twelve-month average."
+  },
+  {
+    "id": "a45",
+    "claim": "Three of the ten were warehouse or industrial conversions.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3,
+        "unit": "warehouse or industrial conversions",
+        "compare": 10,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "Three of the ten were warehouse or industrial conversions"
+  },
+  {
+    "id": "a47",
+    "claim": "Carbon and Rocks Lane finished within a whisker of each other despite Carbon on seventeen courts and Rocks Lane on twelve.",
+    "kind": "numeric",
+    "entities": [
+      "Carbon",
+      "Rocks Lane"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 17,
+        "unit": "courts at Carbon",
+        "compare": 12,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Carbon on seventeen courts, Rocks Lane on twelve."
+  },
+  {
+    "id": "a50",
+    "claim": "A scheme at Former Homebase, 255 Finchley Road Camden had 10 courts and the building was a DIY superstore.",
+    "kind": "numeric",
+    "entities": [
+      "Former Homebase, 255 Finchley Road Camden"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 255,
+        "unit": "street number",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Camden",
+    "source_quote": "10 | Aug 2026 | Former Homebase, 255 Finchley Road Camden | DIY superstore |"
+  },
+  {
+    "id": "a51",
+    "claim": "The Homebase scheme was under an all-weather canopy on a temporary consent.",
+    "kind": "narrative",
+    "entities": [
+      "Homebase",
+      "Finchley Road"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": null,
+    "source_quote": "Ten courts under an all-weather canopy in a\ndead Homebase on Finchley Road, on a temporary consent"
+  },
+  {
+    "id": "a52",
+    "claim": "Club X-Ray covers every bookable club in the country, with occupancy, price and estimated revenue.",
+    "kind": "narrative",
+    "entities": [
+      "Club X-Ray"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": null,
+    "source_quote": "Club X-Ray: every bookable club in the country, with occupancy, price and\nestimated revenue."
+  }
+]

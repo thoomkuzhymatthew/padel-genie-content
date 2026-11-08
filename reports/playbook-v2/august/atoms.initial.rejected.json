@@ -1,0 +1,664 @@
+[
+  {
+    "index": 1,
+    "id": "a2",
+    "reasons": [
+      "entity_not_in_quote:UK"
+    ],
+    "atom": {
+      "id": "a2",
+      "claim": "In the twelve months since, the UK approved 649 padel planning applications with 1,150 lodged.",
+      "kind": "numeric",
+      "entities": [
+        "UK"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 649,
+          "unit": "applications approved",
+          "compare": null,
+          "period": "2026-08-31",
+          "period_source": "metadata"
+        },
+        {
+          "value": 1150,
+          "unit": "applications lodged",
+          "compare": null,
+          "period": "2026-08-31",
+          "period_source": "metadata"
+        }
+      ],
+      "place": "UK",
+      "source_quote": "In the twelve months since, it has\napproved 649 with 1,150 lodged."
+    }
+  },
+  {
+    "index": 8,
+    "id": "a9",
+    "reasons": [
+      "claim_number_not_declared:2026"
+    ],
+    "atom": {
+      "id": "a9",
+      "claim": "The twelve months to August 2026 include a provisional August, so all three volume figures are floors.",
+      "kind": "narrative",
+      "entities": [
+        "August 2026",
+        "August"
+      ],
+      "certainty": "provisional",
+      "values": [],
+      "place": null,
+      "source_quote": "The twelve months to August 2026 include a provisional August, so all\nthree volume figures are floors."
+    }
+  },
+  {
+    "index": 12,
+    "id": "a13",
+    "reasons": [
+      "claim_number_not_declared:2025",
+      "claim_number_not_declared:2026"
+    ],
+    "atom": {
+      "id": "a13",
+      "claim": "Share of approved new-court schemes where the court count is stated in the application was n = 173 to Aug 2025 and 352 to Aug 2026.",
+      "kind": "numeric",
+      "entities": [
+        "Aug 2025",
+        "Aug 2026"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 173,
+          "unit": "schemes sample size",
+          "compare": 352,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Share of approved new-court schemes where the court count is stated in the\napplication. n = 173 (to Aug 2025) and 352 (to Aug 2026)."
+    }
+  },
+  {
+    "index": 13,
+    "id": "a14",
+    "reasons": [
+      "values.0.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a14",
+      "claim": "Roughly a third of applications never name a number and are excluded.",
+      "kind": "numeric",
+      "entities": [],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 3,
+          "unit": "applications denominator in phrase a third",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Roughly a third of\napplications never name a number and are excluded."
+    }
+  },
+  {
+    "index": 19,
+    "id": "a20",
+    "reasons": [
+      "claim_number_not_declared:2025"
+    ],
+    "atom": {
+      "id": "a20",
+      "claim": "Change of use went from 22% of new-court submissions in the year to August 2025 to 29% in the year since.",
+      "kind": "numeric",
+      "entities": [
+        "August 2025"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 29,
+          "unit": "percent of new-court submissions that were change of use",
+          "compare": 22,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Change of use went from 22% of new-court submissions in the year to August 2025 to\n29% in the year since"
+    }
+  },
+  {
+    "index": 22,
+    "id": "a23",
+    "reasons": [
+      "values.2.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a23",
+      "claim": "A scheme at Trident Trade Park, Cardiff Cardiff had 10 courts and involved two trade park units.",
+      "kind": "numeric",
+      "entities": [
+        "Trident Trade Park, Cardiff Cardiff"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 10,
+          "unit": "courts",
+          "compare": null,
+          "period": "Sep 2025",
+          "period_source": "quote"
+        },
+        {
+          "value": 2025,
+          "unit": "year",
+          "compare": null,
+          "period": "Sep 2025",
+          "period_source": "quote"
+        },
+        {
+          "value": 2,
+          "unit": "trade park units",
+          "compare": null,
+          "period": "Sep 2025",
+          "period_source": "quote"
+        }
+      ],
+      "place": "Cardiff Cardiff",
+      "source_quote": "10 | Sep 2025 | Trident Trade Park, Cardiff Cardiff | Two trade park units |"
+    }
+  },
+  {
+    "index": 23,
+    "id": "a24",
+    "reasons": [
+      "values.2.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a24",
+      "claim": "A scheme at Belfield Hall Farm, Albert Royds Street Rochdale had 10 courts in a farm building with three-year consent.",
+      "kind": "numeric",
+      "entities": [
+        "Belfield Hall Farm, Albert Royds Street Rochdale"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 10,
+          "unit": "courts",
+          "compare": null,
+          "period": "Mar 2026",
+          "period_source": "quote"
+        },
+        {
+          "value": 2026,
+          "unit": "year",
+          "compare": null,
+          "period": "Mar 2026",
+          "period_source": "quote"
+        },
+        {
+          "value": 3,
+          "unit": "years consent length",
+          "compare": null,
+          "period": "Mar 2026",
+          "period_source": "quote"
+        }
+      ],
+      "place": "Rochdale",
+      "source_quote": "10 | Mar 2026 | Belfield Hall Farm, Albert Royds Street Rochdale | Farm building, three-year consent |"
+    }
+  },
+  {
+    "index": 25,
+    "id": "a26",
+    "reasons": [
+      "values.1.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a26",
+      "claim": "There were 47 approvals of five courts or more from the last twelve months, with addresses, decision dates, court counts and what the building used to be.",
+      "kind": "numeric",
+      "entities": [],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 47,
+          "unit": "approvals",
+          "compare": null,
+          "period": "the last twelve months",
+          "period_source": "quote"
+        },
+        {
+          "value": 5,
+          "unit": "courts threshold",
+          "compare": null,
+          "period": "the last twelve months",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "See all 47 approvals of five courts or more from the last twelve months, with\naddresses, decision dates, court counts and what the building used to be."
+    }
+  },
+  {
+    "index": 28,
+    "id": "a29",
+    "reasons": [
+      "entity_not_in_quote:July"
+    ],
+    "atom": {
+      "id": "a29",
+      "claim": "July filled in from 63 on 1 August, to 79 by the 20th, to 93 today, and it is still not finished.",
+      "kind": "numeric",
+      "entities": [
+        "July",
+        "August"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 63,
+          "unit": "applications",
+          "compare": null,
+          "period": "1 August",
+          "period_source": "quote"
+        },
+        {
+          "value": 1,
+          "unit": "day of month",
+          "compare": null,
+          "period": "1 August",
+          "period_source": "quote"
+        },
+        {
+          "value": 79,
+          "unit": "applications",
+          "compare": null,
+          "period": "the 20th",
+          "period_source": "quote"
+        },
+        {
+          "value": 20,
+          "unit": "day of month",
+          "compare": null,
+          "period": "the 20th",
+          "period_source": "quote"
+        },
+        {
+          "value": 93,
+          "unit": "applications",
+          "compare": null,
+          "period": "today",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "We watched it\nfill in: 63 on 1 August, 79 by the 20th, 93 today, and it is still not finished."
+    }
+  },
+  {
+    "index": 33,
+    "id": "a34",
+    "reasons": [
+      "entity_not_in_quote:August"
+    ],
+    "atom": {
+      "id": "a34",
+      "claim": "August approval rate was 81%, with 42 approved of 52 decided, against a twelve-month average of 86%.",
+      "kind": "numeric",
+      "entities": [
+        "August"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 81,
+          "unit": "percent approval rate",
+          "compare": 86,
+          "period": "August",
+          "period_source": "quote"
+        },
+        {
+          "value": 42,
+          "unit": "approved applications",
+          "compare": null,
+          "period": "August",
+          "period_source": "quote"
+        },
+        {
+          "value": 52,
+          "unit": "decided applications",
+          "compare": null,
+          "period": "August",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "81% Approval rate 42 approved of 52 decided\nTwelve-month average: 86%"
+    }
+  },
+  {
+    "index": 34,
+    "id": "a35",
+    "reasons": [
+      "entity_not_in_quote:August"
+    ],
+    "atom": {
+      "id": "a35",
+      "claim": "August median decision time was 63 days against a twelve-month median of 85.",
+      "kind": "numeric",
+      "entities": [
+        "August"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 63,
+          "unit": "median decision days",
+          "compare": 85,
+          "period": "August",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "63 Median decision, days Second fastest in the two-year series\nTwelve-month median: 85"
+    }
+  },
+  {
+    "index": 35,
+    "id": "a36",
+    "reasons": [
+      "entity_not_in_quote:August"
+    ],
+    "atom": {
+      "id": "a36",
+      "claim": "In August detail, one London decision had 10 courts on 12 Aug with an all-weather canopy and temporary consent.",
+      "kind": "numeric",
+      "entities": [
+        "August",
+        "London"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 10,
+          "unit": "courts",
+          "compare": null,
+          "period": "12 Aug",
+          "period_source": "quote"
+        },
+        {
+          "value": 12,
+          "unit": "day of month",
+          "compare": null,
+          "period": "12 Aug",
+          "period_source": "quote"
+        }
+      ],
+      "place": "London",
+      "source_quote": "10 | 12 Aug | | London | All-weather canopy. Temporary consent. |"
+    }
+  },
+  {
+    "index": 36,
+    "id": "a37",
+    "reasons": [
+      "entity_not_in_quote:August"
+    ],
+    "atom": {
+      "id": "a37",
+      "claim": "In August detail, one Hertfordshire decision had 9 courts on 18 Aug and was retrospective, built then consented.",
+      "kind": "numeric",
+      "entities": [
+        "August",
+        "Hertfordshire"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 9,
+          "unit": "courts",
+          "compare": null,
+          "period": "18 Aug",
+          "period_source": "quote"
+        },
+        {
+          "value": 18,
+          "unit": "day of month",
+          "compare": null,
+          "period": "18 Aug",
+          "period_source": "quote"
+        }
+      ],
+      "place": "Hertfordshire",
+      "source_quote": "9 | 18 Aug | | Hertfordshire | Retrospective. Built, then consented. |"
+    }
+  },
+  {
+    "index": 37,
+    "id": "a38",
+    "reasons": [
+      "entity_not_in_quote:August"
+    ],
+    "atom": {
+      "id": "a38",
+      "claim": "In August detail, one Midlands decision had 6 courts on 7 Aug by converting a 22,000 sq ft shed to an indoor club.",
+      "kind": "numeric",
+      "entities": [
+        "August",
+        "Midlands"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 6,
+          "unit": "courts",
+          "compare": null,
+          "period": "7 Aug",
+          "period_source": "quote"
+        },
+        {
+          "value": 7,
+          "unit": "day of month",
+          "compare": null,
+          "period": "7 Aug",
+          "period_source": "quote"
+        },
+        {
+          "value": 22000,
+          "unit": "sq ft",
+          "compare": null,
+          "period": "7 Aug",
+          "period_source": "quote"
+        }
+      ],
+      "place": "Midlands",
+      "source_quote": "6 | 7 Aug | | Midlands | 22,000 sq ft shed to indoor club |"
+    }
+  },
+  {
+    "index": 39,
+    "id": "a40",
+    "reasons": [
+      "values.1.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a40",
+      "claim": "August's average approved scheme was 3.28 courts; without Camden and Hertfordshire it is 2.50, below the twelve-month average.",
+      "kind": "numeric",
+      "entities": [
+        "August",
+        "Camden",
+        "Hertfordshire"
+      ],
+      "certainty": "provisional",
+      "values": [
+        {
+          "value": 3.28,
+          "unit": "average approved scheme courts",
+          "compare": 2.5,
+          "period": "August",
+          "period_source": "quote"
+        },
+        {
+          "value": 12,
+          "unit": "months in twelve-month average",
+          "compare": null,
+          "period": "August",
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "August's average approved scheme was 3.28 courts, the highest monthly reading in the\nseries, until you take out Camden and Hertfordshire. Without those two it is 2.50, below\nthe twelve-month average."
+    }
+  },
+  {
+    "index": 41,
+    "id": "a42",
+    "reasons": [
+      "values.0.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a42",
+      "claim": "Hertfordshire had nine courts at a sports ground that were consented retrospectively and were already built.",
+      "kind": "numeric",
+      "entities": [
+        "Hertfordshire"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 9,
+          "unit": "courts",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": "Hertfordshire",
+      "source_quote": "Hertfordshire is the one to think about. Nine courts at a sports ground\nthere were consented retrospectively. They were already built."
+    }
+  },
+  {
+    "index": 43,
+    "id": "a44",
+    "reasons": [
+      "values.0.value_not_in_quote",
+      "values.1.value_not_in_quote",
+      "values.2.value_not_in_quote",
+      "values.3.value_not_in_quote",
+      "values.4.value_not_in_quote"
+    ],
+    "atom": {
+      "id": "a44",
+      "claim": "There were ten refusals, including one scheme of five courts and two more of four.",
+      "kind": "numeric",
+      "entities": [],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 10,
+          "unit": "refusals",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 1,
+          "unit": "scheme count",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 5,
+          "unit": "courts",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 2,
+          "unit": "scheme count",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        },
+        {
+          "value": 4,
+          "unit": "courts",
+          "compare": null,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "ten refusals, and not marginal ones: one scheme of five courts and\ntwo more of four."
+    }
+  },
+  {
+    "index": 44,
+    "id": "a45",
+    "reasons": [
+      "values.0.value_not_in_quote",
+      "values.0.compare_not_in_quote"
+    ],
+    "atom": {
+      "id": "a45",
+      "claim": "Three of the ten refusals were warehouse or industrial conversions.",
+      "kind": "numeric",
+      "entities": [],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 3,
+          "unit": "refusals that were warehouse or industrial conversions",
+          "compare": 10,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Three of the ten were warehouse or industrial conversions"
+    }
+  },
+  {
+    "index": 46,
+    "id": "a47",
+    "reasons": [
+      "entity_not_in_quote:Carbon Padel Club",
+      "entity_not_in_quote:Rocks Lane Chiswick",
+      "values.0.value_not_in_quote",
+      "values.0.compare_not_in_quote"
+    ],
+    "atom": {
+      "id": "a47",
+      "claim": "Carbon Padel Club had seventeen courts and Rocks Lane Chiswick had twelve.",
+      "kind": "numeric",
+      "entities": [
+        "Carbon Padel Club",
+        "Rocks Lane Chiswick"
+      ],
+      "certainty": "reported",
+      "values": [
+        {
+          "value": 17,
+          "unit": "courts at Carbon Padel Club",
+          "compare": 12,
+          "period": null,
+          "period_source": "quote"
+        }
+      ],
+      "place": null,
+      "source_quote": "Carbon on seventeen courts, Rocks Lane on twelve."
+    }
+  }
+]

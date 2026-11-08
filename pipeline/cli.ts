@@ -35,7 +35,13 @@ async function main() {
     await json('source.json', source);
     console.log(`Ingested: ${source.title} (${source.text.length} characters, date ${source.date ?? 'unknown'})`);
     if (values['ingest-only']) { console.log(`Saved: runs/${runId}`); return; }
-    const { candidates, trace, prompt } = await atomise(source);
+    const { candidates, trace, prompt, initialCandidates, initialRejected, repairInput, repairCandidates } = await atomise(source);
+    await json('atoms.initial.candidates.json', initialCandidates);
+    await json('atoms.initial.rejected.json', initialRejected);
+    if (repairInput) {
+      await writeFile(join(directory, 'extract.repair.input.json'), repairInput + '\n');
+      await json('atoms.repair.candidates.json', repairCandidates);
+    }
     await json('atoms.candidates.json', candidates);
     await json('extract.trace.json', trace);
     await writeFile(join(directory, 'extract.prompt.md'), prompt);

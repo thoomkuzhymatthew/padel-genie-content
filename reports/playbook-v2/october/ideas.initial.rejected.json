@@ -1,0 +1,69 @@
+[
+  {
+    "idea": {
+      "id": "idea_2",
+      "format": "comparison",
+      "template": "comparison",
+      "story": "Northern Ireland and Scotland are worlds apart on supply density. Northern Ireland has 6.52 courts per 100,000 people; Scotland has 2.06, despite 112 courts across 40 clubs.",
+      "atoms": [
+        "a9",
+        "a31",
+        "a33",
+        "a40"
+      ],
+      "main_atoms": [
+        "a31",
+        "a9"
+      ],
+      "named_examples": [
+        "Northern Ireland",
+        "Scotland"
+      ],
+      "hold_back_atoms": [
+        "a40"
+      ],
+      "angle": "nation-density-contrast",
+      "hold_back": "The free map shows every open court, plus a free preview of the planning pipeline and catchment analysis across all 4 nations.",
+      "why_it_works": "It pairs a clean two-place contrast with named nations and hard density figures, making the imbalance easy to grasp in one frame.",
+      "score": 8.3,
+      "rank": 2,
+      "improve": "It would be stronger with a verified atom naming specific Scottish or Northern Irish catchments available to inspect in the product."
+    },
+    "reasons": [
+      "multi_region_requires_ranked_bars",
+      "unsupported_number:hold_back"
+    ]
+  },
+  {
+    "idea": {
+      "id": "idea_4",
+      "format": "stat",
+      "template": "stat-card",
+      "story": "Planning is still moving. Councils approved 85% of new padel schemes decided in the last 12 months, with 569 approvals against 99 refusals.",
+      "atoms": [
+        "a23",
+        "a24",
+        "a25",
+        "a40"
+      ],
+      "main_atoms": [
+        "a23"
+      ],
+      "named_examples": [
+        "the last 12 months"
+      ],
+      "hold_back_atoms": [
+        "a40"
+      ],
+      "angle": "planning-hit-rate",
+      "hold_back": "Use the free planning-pipeline preview, then paid planning details to inspect scheme-level records behind recent approvals and live applications.",
+      "why_it_works": "It turns a broad market claim into a concrete process stat with real volumes, which is useful to operators, suppliers and landlords alike.",
+      "score": 6.4,
+      "rank": 4,
+      "improve": "It would be better with a verified atom for a concrete planning list or named application set in Padel Genie, so the hold-back could promise a more specific record set."
+    },
+    "reasons": [
+      "named_example_not_in_selected_atoms"
+    ]
+  }
+]

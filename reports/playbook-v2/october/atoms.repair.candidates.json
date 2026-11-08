@@ -1,0 +1,380 @@
+[
+  {
+    "id": "a1",
+    "claim": "The UK now has 3,061 padel courts open across 891 clubs.",
+    "kind": "numeric",
+    "entities": [
+      "The UK"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3061,
+        "unit": "padel courts open",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 891,
+        "unit": "clubs",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "The UK now has 3,061 padel courts open across 891 clubs."
+  },
+  {
+    "id": "a2",
+    "claim": "The live map count covers England, Scotland, Wales and Northern Ireland.",
+    "kind": "narrative",
+    "entities": [
+      "England",
+      "Scotland",
+      "Wales",
+      "Northern Ireland"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": "UK",
+    "source_quote": "covering England, Scotland, Wales and Northern Ireland."
+  },
+  {
+    "id": "a11",
+    "claim": "England has 2,715 open courts, 795 open clubs, and 4.8 courts per 100,000 people.",
+    "kind": "numeric",
+    "entities": [
+      "England"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 2715,
+        "unit": "open courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 795,
+        "unit": "open clubs",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 4.8,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 100000,
+        "unit": "people denominator",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "England",
+    "source_quote": "Nation | Courts open | Clubs open | Courts per 100,000 people |\nEngland | 2,715 | 795 | 4.8 |"
+  },
+  {
+    "id": "a12",
+    "claim": "Northern Ireland has 124 open courts, 26 open clubs, and 6.5 courts per 100,000 people.",
+    "kind": "numeric",
+    "entities": [
+      "Northern Ireland"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 124,
+        "unit": "open courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 26,
+        "unit": "open clubs",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 6.5,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 100000,
+        "unit": "people denominator",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "Northern Ireland",
+    "source_quote": "Nation | Courts open | Clubs open | Courts per 100,000 people |\nNorthern Ireland | 124 | 26 | 6.5 |"
+  },
+  {
+    "id": "a13",
+    "claim": "The UK has 3,061 open courts, 891 open clubs, and 4.6 courts per 100,000 people.",
+    "kind": "numeric",
+    "entities": [
+      "UK"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3061,
+        "unit": "open courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 891,
+        "unit": "open clubs",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 4.6,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 100000,
+        "unit": "people denominator",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "Nation | Courts open | Clubs open | Courts per 100,000 people |\nUK | 3,061 | 891 | 4.6 |"
+  },
+  {
+    "id": "a28",
+    "claim": "Sheffield already has 51 open courts and ranks third among councils by open-court total.",
+    "kind": "numeric",
+    "entities": [
+      "Sheffield"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 51,
+        "unit": "open courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "Sheffield",
+    "source_quote": "Sheffield stands out: it already has 51 open courts, the third most of any council."
+  },
+  {
+    "id": "a32",
+    "claim": "Four of the five councils with the most open courts are in the North: Cheshire East, North Yorkshire, Sheffield and Leeds, with Birmingham the other.",
+    "kind": "numeric",
+    "entities": [
+      "Cheshire East",
+      "North Yorkshire",
+      "Sheffield",
+      "Leeds",
+      "Birmingham"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 4,
+        "unit": "councils in the North among top five",
+        "compare": 5,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 57,
+        "unit": "open courts at Cheshire East",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 53,
+        "unit": "open courts at North Yorkshire",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 51,
+        "unit": "open courts at Sheffield",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 45,
+        "unit": "open courts at Leeds",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 48,
+        "unit": "open courts at Birmingham",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "Four of the five councils with the most open courts are in the North: Cheshire East (57), North Yorkshire (53), Sheffield (51) and Leeds (45), with Birmingham (48) the other."
+  },
+  {
+    "id": "a33",
+    "claim": "Northern Ireland has 124 courts for about 1.9 million people, or 6.5 per 100,000, putting it level with the North West and three times Scotland.",
+    "kind": "numeric",
+    "entities": [
+      "Northern Ireland",
+      "North West",
+      "Scotland"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 124,
+        "unit": "courts",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 1.9,
+        "unit": "million people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 6.5,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 100000,
+        "unit": "people denominator",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "Northern Ireland",
+    "source_quote": "Northern Ireland punches well above its weight. It has 124 courts for about 1.9 million people, or 6.5 per 100,000. That puts it level with the North West as the best-served part of the UK, and three times Scotland."
+  },
+  {
+    "id": "a35",
+    "claim": "The chart shows Hertsmere at 26.0, Preston at 20.3, Mid Sussex at 18.3, Welwyn Hatfield at 15.0 and Broadland at 14.4 courts per 100,000 people, against a GB average of 4.5.",
+    "kind": "numeric",
+    "entities": [
+      "Hertsmere",
+      "Preston",
+      "Mid Sussex",
+      "Welwyn Hatfield",
+      "Broadland"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 26,
+        "unit": "courts per 100,000 people",
+        "compare": 4.5,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 20.3,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 18.3,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 15,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 14.4,
+        "unit": "courts per 100,000 people",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 4.5,
+        "unit": "courts per 100,000 people GB average",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 100000,
+        "unit": "people denominator",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "The most saturated councils 0 10 20 30 GB average 4.5 Hertsmere 26.0 Preston 20.3 Mid Sussex 18.3 Welwyn Hatfield 15.0 Broadland 14.4\nCourts per 100,000 people, councils with more than 100,000 residents."
+  },
+  {
+    "id": "a40",
+    "claim": "The article says you can filter any catchment for warehouses, sports clubs, schools, car parks and brownfield land, and paid plans start from £200 a month or £160 when paid annually.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 200,
+        "unit": "pounds per month",
+        "compare": 160,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      },
+      {
+        "value": 160,
+        "unit": "pounds when paid annually",
+        "compare": null,
+        "period": "2026-10-25",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "You can even source the site itself. Filter any catchment for warehouses, sports clubs, schools, car parks and brownfield land.\n\nThe live map is free to explore at map.padelgenie.io : every open court, plus a free preview of the planning pipeline and catchment analysis. Full access to catchment analysis, site finding and planning details is on our paid plans, which start from just £200 a month, or £160 when paid annually."
+  }
+]

@@ -22,3 +22,13 @@ user approvals; a full exported transcript can be added at submission.
 - Final live ideation produced eight accepted ideas per source; review bundles include stories, atom references, formats, hold-backs, scores and full traces.
 - Added one bounded repair path with offline tests; the final live runs needed no repair.
 - Stop for human review before copy-writing, HTML templates or rendering.
+
+## Playbook v2 follow-up — first human steer
+
+- User requested hero-number/named-example pairings, concrete hold-backs, merged duplicates, ranked geographic bars, meaningful score/rank separation, improvement lines and no provisional/projected hero stories.
+- Applied feedback above the unchanged LOCKED playbook block and saved v2 history; this is human editorial feedback, not performance learning.
+- Added kind/entities/certainty to extraction, exact entity and narrative-word checks, and a bounded traceable correction pass. Rejected negative named-business claims while preserving source quotes.
+- Mini extraction missed key named evidence repeatedly; switched the config to gpt-5.4 and documented the reason.
+- Re-extracted cached October/August sources with 37/46 verified atoms. Added readable SVG text boundaries for chart evidence.
+- Original model shortlists contained overlapping angles. Assistant merged/tightened them to three proposals per source and recorded those changes separately without claiming human approval.
+- Added native-format preview requirements to section 9 for milestone 5 only. No preview components or milestone 4 assets were built.

@@ -1,0 +1,94 @@
+[
+  {
+    "id": "idea_2",
+    "format": "ranked-bars",
+    "template": "ranked-bars",
+    "story": "Northern Ireland has 6.52 courts per 100,000 people; London has 3.80 and Scotland 2.06. The national headline hides a wide local spread.",
+    "atoms": [
+      "a7",
+      "a29",
+      "a30",
+      "a31",
+      "a40",
+      "a5",
+      "a6",
+      "a35"
+    ],
+    "main_atoms": [
+      "a30",
+      "a31"
+    ],
+    "named_examples": [
+      "Northern Ireland",
+      "North West",
+      "South West",
+      "London",
+      "Scotland"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "regional-density-ranking",
+    "hold_back": "Open the free court map and planning-pipeline preview for Northern Ireland, London and Scotland.",
+    "why_it_works": "It merges the regional imbalance into one clean ranking with named places and the same unit, then points readers to the map and preview layers to inspect local context.",
+    "score": 9.2,
+    "rank": 1,
+    "improve": "Label these as selected regions, not the top five, and show the verified GB average as a reference line."
+  },
+  {
+    "id": "idea_3",
+    "format": "stat",
+    "template": "stat-card",
+    "story": "Carbon Padel Club in Manchester has 17 courts. The average UK club has 3.4 and the median is 3, so the biggest sites are still outliers rather than the norm.",
+    "atoms": [
+      "a14",
+      "a15",
+      "a16",
+      "a40"
+    ],
+    "main_atoms": [
+      "a15",
+      "a14"
+    ],
+    "named_examples": [
+      "Carbon Padel Club",
+      "Manchester"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "club-size-outlier",
+    "hold_back": "Find Carbon Padel Club’s 17 courts on the free live court map, alongside the other open venues.",
+    "why_it_works": "It gives a memorable named club and a single standout number, then anchors it against the average and median so the scale is instantly clear.",
+    "score": 7.1,
+    "rank": 2,
+    "improve": "Keep 17 as the hero and 3.4 as context; a verified image of the named club would make the scale more tangible."
+  },
+  {
+    "id": "idea_4",
+    "format": "comparison",
+    "template": "comparison",
+    "story": "Sheffield already has 51 open padel courts and approved 10 new schemes in the last year.",
+    "atoms": [
+      "a26",
+      "a28",
+      "a40"
+    ],
+    "main_atoms": [
+      "a28",
+      "a26"
+    ],
+    "named_examples": [
+      "Sheffield"
+    ],
+    "hold_back_atoms": [
+      "a40"
+    ],
+    "angle": "open-courts-vs-approval-leaders",
+    "hold_back": "Explore Sheffield’s open courts on the live map, then inspect the planning-pipeline preview.",
+    "why_it_works": "It pairs a named place with a hero number and a second named benchmark, showing where open supply and planning momentum are already tangible.",
+    "score": 6.2,
+    "rank": 3,
+    "improve": "Add a verified named Sheffield approval and its decision date to connect the city totals to a real site."
+  }
+]

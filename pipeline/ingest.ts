@@ -48,7 +48,7 @@ export function parseSource(raw: string, input: string, format: Source['format']
     });
     // Insert stable block/cell separators before extracting text, preserving inline words.
     root.find('br').replaceWith('\n');
-    root.find('span,strong,b,em,i,a,small,sup,sub').before(' ').after(' ');
+    root.find('span,strong,b,em,i,a,small,sup,sub,text,tspan').before(' ').after(' ');
     root.find('th,td').append(' | ');
     root.find('p,h1,h2,h3,h4,h5,h6,li,tr,section,div,blockquote,figcaption,table').append('\n');
     text = clean(root.text());

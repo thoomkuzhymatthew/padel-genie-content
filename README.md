@@ -1,7 +1,7 @@
 # Padel Genie social intern
 
 Private Solved trial, Part 2. Milestones 2–3 implement ingestion, structured fact extraction, deterministic
-verification, the v1 playbook, a descriptor-only template catalogue and ideation.
+verification, the versioned playbook (currently v2), a descriptor-only template catalogue and ideation.
 The review inbox, rendering and learning loop are later milestones.
 
 ## Run locally
@@ -96,10 +96,13 @@ prompt and user input, and `ideate.trace.json`. A deterministic gate checks atom
 references, template/format pairs, score bounds and numerical provenance from the
 selected atoms' values, comparisons and verified periods. One bounded repair pass
 may replace rejected ideas; it cannot bypass verification. Fewer valid ideas are
-preferred to unsupported ones. Scores are editorial judgement, not measured engagement.
+preferred to unsupported ones. Scores are editorial judgement, not measured engagement. V2 adds forced ranks,
+a meaningful score spread, named examples, main-story and product-detail evidence,
+and an improvement line. Provisional/projected main stories are rejected.
 
-The final October and August ideas and their complete source/atom/prompt bundles
-are in [the milestone 3 review](reports/milestone-3/README.md), including confirmation
+The latest revised October and August shortlist is in
+[the playbook v2 review](reports/playbook-v2/README.md). The original source/atom/prompt
+bundles remain in [the milestone 3 baseline](reports/milestone-3/README.md), including confirmation
 that October's headline court count now passes. These are proposals awaiting human
 review. No copy, template HTML or graphics are generated before that review.
 
@@ -132,3 +135,23 @@ flowchart TD
 The trial uses manual "mark as posted", not real social publishing. Direct social
 posting, per-audience targeting, paid ads, WhatsApp/Slack interfaces, generative
 imagery/video and full council-level maps are deliberately out of scope.
+
+## First human steer and narrative evidence
+
+V2 pairs hero numbers with named examples, requires concrete product hold-backs,
+merges repeated angles, uses ranked-bars for geographic comparisons, and skips
+provisional/projected hero stories. `DECISIONS.md` records the first human steer;
+`ai/playbook-v1.md` and `ai/playbook-v2.md` preserve playbook history. The LOCKED
+block is unchanged. No engagement results have been invented.
+
+Atom fields now include `kind`, `entities` and `certainty`; new extraction requires
+them while legacy runs remain readable. Named number-free facts use `values: []`.
+Mixed narrative facts retain numeric quote checks. The extractor uses the stronger
+configured model after the mini repeatedly lost critical named evidence. One bounded
+correction attempt is saved, then the same verifier runs again. Narrative number
+words require lexical quote evidence and do not license implicit digit conversions.
+
+The assistant-curated shortlist retains `ideas.model.json` and a separate
+`ideas.curation.json` change log. These merges/tightenings are proposals, not human
+approval or a fabricated reviewer event. Rendering waits for the user's choices.
+Native inbox preview formats are specified in section 9 for milestone 5 only.

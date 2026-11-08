@@ -1,0 +1,1174 @@
+[
+  {
+    "id": "a1",
+    "claim": "In the twelve months to August 2025 the UK approved 312 padel planning applications with 629 lodged.",
+    "kind": "numeric",
+    "entities": [
+      "August 2025",
+      "UK"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 312,
+        "unit": "applications approved",
+        "compare": null,
+        "period": "to August 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 629,
+        "unit": "applications lodged",
+        "compare": null,
+        "period": "to August 2025",
+        "period_source": "quote"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "In the twelve months to August 2025 the UK approved 312\npadel planning applications with 629 lodged."
+  },
+  {
+    "id": "a2",
+    "claim": "In the twelve months since, the UK approved 649 padel planning applications with 1,150 lodged.",
+    "kind": "numeric",
+    "entities": [
+      "UK"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 649,
+        "unit": "applications approved",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 1150,
+        "unit": "applications lodged",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": "UK",
+    "source_quote": "In the twelve months since, it has\napproved 649 with 1,150 lodged."
+  },
+  {
+    "id": "a3",
+    "claim": "Applications approved were 649 from 312, up 108%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 649,
+        "unit": "applications approved",
+        "compare": 312,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 108,
+        "unit": "percent change",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "649 Applications approved From 312 +108%"
+  },
+  {
+    "id": "a4",
+    "claim": "Applications lodged were 1,150 from 629, up 83%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 1150,
+        "unit": "applications lodged",
+        "compare": 629,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 83,
+        "unit": "percent change",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "1,150 Applications lodged From 629 +83%"
+  },
+  {
+    "id": "a5",
+    "claim": "Courts approved were 945 from 456, up 107%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 945,
+        "unit": "courts approved",
+        "compare": 456,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      },
+      {
+        "value": 107,
+        "unit": "percent change",
+        "compare": null,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "945 Courts approved From 456 +107%"
+  },
+  {
+    "id": "a6",
+    "claim": "Approval rate was 86% from 87%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 86,
+        "unit": "percent approval rate",
+        "compare": 87,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "86% Approval rate From 87%. Unchanged."
+  },
+  {
+    "id": "a7",
+    "claim": "Median decision time was 85 days from 84 days.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 85,
+        "unit": "median decision days",
+        "compare": 84,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "85 Median decision, days From 84. Unchanged."
+  },
+  {
+    "id": "a8",
+    "claim": "Average scheme size was 2.68 courts from 2.64 courts.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 2.68,
+        "unit": "average scheme courts",
+        "compare": 2.64,
+        "period": "2026-08-31",
+        "period_source": "metadata"
+      }
+    ],
+    "place": null,
+    "source_quote": "2.68 Average scheme, courts From 2.64. Unchanged."
+  },
+  {
+    "id": "a9",
+    "claim": "The twelve months to August 2026 include a provisional August, so all three volume figures are floors.",
+    "kind": "narrative",
+    "entities": [
+      "August 2026",
+      "August"
+    ],
+    "certainty": "provisional",
+    "values": [],
+    "place": null,
+    "source_quote": "The twelve months to August 2026 include a provisional August, so all\nthree volume figures are floors."
+  },
+  {
+    "id": "a10",
+    "claim": "December alone carried 131 applications, the biggest month on record.",
+    "kind": "numeric",
+    "entities": [
+      "December"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 131,
+        "unit": "applications",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "December alone carried 131\napplications, the biggest month on record"
+  },
+  {
+    "id": "a11",
+    "claim": "In March there were 70 approvals against 115 submissions.",
+    "kind": "numeric",
+    "entities": [
+      "March"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 70,
+        "unit": "approvals",
+        "compare": 115,
+        "period": "March",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "In March there were 70\napprovals against 115 submissions."
+  },
+  {
+    "id": "a12",
+    "claim": "By July it was 72 approvals against 93 submissions.",
+    "kind": "numeric",
+    "entities": [
+      "July"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 72,
+        "unit": "approvals",
+        "compare": 93,
+        "period": "July",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "By July it was 72 against 93."
+  },
+  {
+    "id": "a13",
+    "claim": "Share of approved new-court schemes where the court count is stated in the application was n = 173 to Aug 2025 and 352 to Aug 2026.",
+    "kind": "numeric",
+    "entities": [
+      "Aug 2025",
+      "Aug 2026"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 173,
+        "unit": "schemes sample size",
+        "compare": 352,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Share of approved new-court schemes where the court count is stated in the\napplication. n = 173 (to Aug 2025) and 352 (to Aug 2026)."
+  },
+  {
+    "id": "a14",
+    "claim": "Roughly a third of applications never name a number and are excluded.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3,
+        "unit": "applications denominator in phrase a third",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Roughly a third of\napplications never name a number and are excluded."
+  },
+  {
+    "id": "a15",
+    "claim": "Three and four court schemes went from 71 approvals to 97, up 37%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 97,
+        "unit": "approvals for three and four court schemes",
+        "compare": 71,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 37,
+        "unit": "percent change",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Three and four court\nschemes went from 71 approvals to 97 , up 37%."
+  },
+  {
+    "id": "a16",
+    "claim": "Three and four court schemes fell from 41% to 28% of the mix.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 28,
+        "unit": "percent of mix",
+        "compare": 41,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "They fall from 41% to 28%\nof the mix"
+  },
+  {
+    "id": "a17",
+    "claim": "The small end grew from 88 approvals to 201.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 201,
+        "unit": "approvals",
+        "compare": 88,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "the small end grew close to four times faster, from 88 approvals\nto 201."
+  },
+  {
+    "id": "a18",
+    "claim": "Covered and indoor schemes average 3.18 courts against 2.51 outdoor.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3.18,
+        "unit": "average courts for covered and indoor schemes",
+        "compare": 2.51,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Covered and indoor schemes average 3.18\ncourts against 2.51 outdoor"
+  },
+  {
+    "id": "a19",
+    "claim": "The covered share of approvals rose from 31% to 38%.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 38,
+        "unit": "percent covered share of approvals",
+        "compare": 31,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "the covered share of approvals rose from 31% to 38%."
+  },
+  {
+    "id": "a20",
+    "claim": "Change of use went from 22% of new-court submissions in the year to August 2025 to 29% in the year since.",
+    "kind": "numeric",
+    "entities": [
+      "August 2025"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 29,
+        "unit": "percent of new-court submissions that were change of use",
+        "compare": 22,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Change of use went from 22% of new-court submissions in the year to August 2025 to\n29% in the year since"
+  },
+  {
+    "id": "a21",
+    "claim": "Conversions out of industrial, warehouse and retail stock went from 50 applications to 151.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 151,
+        "unit": "applications",
+        "compare": 50,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "conversions out of industrial, warehouse and\nretail stock went from 50 applications to 151."
+  },
+  {
+    "id": "a22",
+    "claim": "A scheme at Merlin Way, North Shields North Tyneside had 12 courts and was a B2 industrial unit.",
+    "kind": "numeric",
+    "entities": [
+      "Merlin Way, North Shields North Tyneside"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 12,
+        "unit": "courts",
+        "compare": null,
+        "period": "Dec 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 2025,
+        "unit": "year",
+        "compare": null,
+        "period": "Dec 2025",
+        "period_source": "quote"
+      }
+    ],
+    "place": "North Shields North Tyneside",
+    "source_quote": "12 | Dec 2025 | Merlin Way, North Shields North Tyneside | B2 industrial unit |"
+  },
+  {
+    "id": "a23",
+    "claim": "A scheme at Trident Trade Park, Cardiff Cardiff had 10 courts and involved two trade park units.",
+    "kind": "numeric",
+    "entities": [
+      "Trident Trade Park, Cardiff Cardiff"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Sep 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 2025,
+        "unit": "year",
+        "compare": null,
+        "period": "Sep 2025",
+        "period_source": "quote"
+      },
+      {
+        "value": 2,
+        "unit": "trade park units",
+        "compare": null,
+        "period": "Sep 2025",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Cardiff Cardiff",
+    "source_quote": "10 | Sep 2025 | Trident Trade Park, Cardiff Cardiff | Two trade park units |"
+  },
+  {
+    "id": "a24",
+    "claim": "A scheme at Belfield Hall Farm, Albert Royds Street Rochdale had 10 courts in a farm building with three-year consent.",
+    "kind": "numeric",
+    "entities": [
+      "Belfield Hall Farm, Albert Royds Street Rochdale"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Mar 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "Mar 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 3,
+        "unit": "years consent length",
+        "compare": null,
+        "period": "Mar 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Rochdale",
+    "source_quote": "10 | Mar 2026 | Belfield Hall Farm, Albert Royds Street Rochdale | Farm building, three-year consent |"
+  },
+  {
+    "id": "a25",
+    "claim": "The Former Homebase, 255 Finchley Road Camden scheme had 10 courts and was a DIY superstore.",
+    "kind": "numeric",
+    "entities": [
+      "Former Homebase, 255 Finchley Road Camden"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 2026,
+        "unit": "year",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      },
+      {
+        "value": 255,
+        "unit": "street number",
+        "compare": null,
+        "period": "Aug 2026",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Camden",
+    "source_quote": "10 | Aug 2026 | Former Homebase, 255 Finchley Road Camden | DIY superstore |"
+  },
+  {
+    "id": "a26",
+    "claim": "There were 47 approvals of five courts or more from the last twelve months, with addresses, decision dates, court counts and what the building used to be.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 47,
+        "unit": "approvals",
+        "compare": null,
+        "period": "the last twelve months",
+        "period_source": "quote"
+      },
+      {
+        "value": 5,
+        "unit": "courts threshold",
+        "compare": null,
+        "period": "the last twelve months",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "See all 47 approvals of five courts or more from the last twelve months, with\naddresses, decision dates, court counts and what the building used to be."
+  },
+  {
+    "id": "a27",
+    "claim": "Last month's issue reported 63 applications lodged in July, and the confirmed figure is 93.",
+    "kind": "numeric",
+    "entities": [
+      "July"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 93,
+        "unit": "applications lodged",
+        "compare": 63,
+        "period": "July",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Last month's issue reported 63 applications lodged in July. Now that the portals have\ncaught up, the confirmed figure is 93 ."
+  },
+  {
+    "id": "a28",
+    "claim": "Approvals moved from 69 to 72, withdrawals from 11 to 13, and refusals from 5 to 7.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 72,
+        "unit": "approvals",
+        "compare": 69,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 13,
+        "unit": "withdrawals",
+        "compare": 11,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 7,
+        "unit": "refusals",
+        "compare": 5,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Approvals moved from 69 to 72,\nwithdrawals from 11 to 13, refusals from 5 to 7."
+  },
+  {
+    "id": "a29",
+    "claim": "July filled in from 63 on 1 August, to 79 by the 20th, to 93 today, and it is still not finished.",
+    "kind": "numeric",
+    "entities": [
+      "July",
+      "August"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 63,
+        "unit": "applications",
+        "compare": null,
+        "period": "1 August",
+        "period_source": "quote"
+      },
+      {
+        "value": 1,
+        "unit": "day of month",
+        "compare": null,
+        "period": "1 August",
+        "period_source": "quote"
+      },
+      {
+        "value": 79,
+        "unit": "applications",
+        "compare": null,
+        "period": "the 20th",
+        "period_source": "quote"
+      },
+      {
+        "value": 20,
+        "unit": "day of month",
+        "compare": null,
+        "period": "the 20th",
+        "period_source": "quote"
+      },
+      {
+        "value": 93,
+        "unit": "applications",
+        "compare": null,
+        "period": "today",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "We watched it\nfill in: 63 on 1 August, 79 by the 20th, 93 today, and it is still not finished."
+  },
+  {
+    "id": "a30",
+    "claim": "On average, councils publish to their planning portals about 16 days late.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 16,
+        "unit": "days late",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "On average, councils publish to their planning portals about 16 days late"
+  },
+  {
+    "id": "a31",
+    "claim": "In August provisional counts showed 42 applications approved, with 55–65 projected for August, versus July confirmed at 72.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "July"
+    ],
+    "certainty": "projected",
+    "values": [
+      {
+        "value": 42,
+        "unit": "applications approved",
+        "compare": 72,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 55,
+        "unit": "projected applications approved",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 65,
+        "unit": "projected applications approved",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "42 Applications approved 55–65 projected for August\nJuly, confirmed: 72"
+  },
+  {
+    "id": "a32",
+    "claim": "In August provisional counts showed 59 courts approved, with about 85 projected for August, versus July confirmed at 100.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "July"
+    ],
+    "certainty": "projected",
+    "values": [
+      {
+        "value": 59,
+        "unit": "courts approved",
+        "compare": 100,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 85,
+        "unit": "projected courts approved",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "59 Courts approved ~85 projected for August\nJuly, confirmed: 100"
+  },
+  {
+    "id": "a33",
+    "claim": "In August provisional counts showed 48 applications lodged, with about 110 projected for August, versus July confirmed at 93.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "July"
+    ],
+    "certainty": "projected",
+    "values": [
+      {
+        "value": 48,
+        "unit": "applications lodged",
+        "compare": 93,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 110,
+        "unit": "projected applications lodged",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "48 Applications lodged ~110 projected for August\nJuly, confirmed: 93"
+  },
+  {
+    "id": "a34",
+    "claim": "August approval rate was 81%, with 42 approved of 52 decided, against a twelve-month average of 86%.",
+    "kind": "numeric",
+    "entities": [
+      "August"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 81,
+        "unit": "percent approval rate",
+        "compare": 86,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 42,
+        "unit": "approved applications",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 52,
+        "unit": "decided applications",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "81% Approval rate 42 approved of 52 decided\nTwelve-month average: 86%"
+  },
+  {
+    "id": "a35",
+    "claim": "August median decision time was 63 days against a twelve-month median of 85.",
+    "kind": "numeric",
+    "entities": [
+      "August"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 63,
+        "unit": "median decision days",
+        "compare": 85,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "63 Median decision, days Second fastest in the two-year series\nTwelve-month median: 85"
+  },
+  {
+    "id": "a36",
+    "claim": "In August detail, one London decision had 10 courts on 12 Aug with an all-weather canopy and temporary consent.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "London"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 10,
+        "unit": "courts",
+        "compare": null,
+        "period": "12 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 12,
+        "unit": "day of month",
+        "compare": null,
+        "period": "12 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "London",
+    "source_quote": "10 | 12 Aug | | London | All-weather canopy. Temporary consent. |"
+  },
+  {
+    "id": "a37",
+    "claim": "In August detail, one Hertfordshire decision had 9 courts on 18 Aug and was retrospective, built then consented.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "Hertfordshire"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 9,
+        "unit": "courts",
+        "compare": null,
+        "period": "18 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 18,
+        "unit": "day of month",
+        "compare": null,
+        "period": "18 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Hertfordshire",
+    "source_quote": "9 | 18 Aug | | Hertfordshire | Retrospective. Built, then consented. |"
+  },
+  {
+    "id": "a38",
+    "claim": "In August detail, one Midlands decision had 6 courts on 7 Aug by converting a 22,000 sq ft shed to an indoor club.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "Midlands"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 6,
+        "unit": "courts",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 7,
+        "unit": "day of month",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      },
+      {
+        "value": 22000,
+        "unit": "sq ft",
+        "compare": null,
+        "period": "7 Aug",
+        "period_source": "quote"
+      }
+    ],
+    "place": "Midlands",
+    "source_quote": "6 | 7 Aug | | Midlands | 22,000 sq ft shed to indoor club |"
+  },
+  {
+    "id": "a39",
+    "claim": "There were 39 more August approvals, and 48 applications lodged.",
+    "kind": "numeric",
+    "entities": [
+      "August"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 39,
+        "unit": "more approvals",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 48,
+        "unit": "applications lodged",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "39 more August approvals, and the 48 applications lodged"
+  },
+  {
+    "id": "a40",
+    "claim": "August's average approved scheme was 3.28 courts; without Camden and Hertfordshire it is 2.50, below the twelve-month average.",
+    "kind": "numeric",
+    "entities": [
+      "August",
+      "Camden",
+      "Hertfordshire"
+    ],
+    "certainty": "provisional",
+    "values": [
+      {
+        "value": 3.28,
+        "unit": "average approved scheme courts",
+        "compare": 2.5,
+        "period": "August",
+        "period_source": "quote"
+      },
+      {
+        "value": 12,
+        "unit": "months in twelve-month average",
+        "compare": null,
+        "period": "August",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "August's average approved scheme was 3.28 courts, the highest monthly reading in the\nseries, until you take out Camden and Hertfordshire. Without those two it is 2.50, below\nthe twelve-month average."
+  },
+  {
+    "id": "a41",
+    "claim": "Camden involved ten courts under an all-weather canopy in a dead Homebase on Finchley Road, on a temporary consent.",
+    "kind": "narrative",
+    "entities": [
+      "Camden",
+      "Homebase",
+      "Finchley Road"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": "Camden",
+    "source_quote": "Camden is the one to watch. Ten courts under an all-weather canopy in a\ndead Homebase on Finchley Road, on a temporary consent"
+  },
+  {
+    "id": "a42",
+    "claim": "Hertfordshire had nine courts at a sports ground that were consented retrospectively and were already built.",
+    "kind": "numeric",
+    "entities": [
+      "Hertfordshire"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 9,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": "Hertfordshire",
+    "source_quote": "Hertfordshire is the one to think about. Nine courts at a sports ground\nthere were consented retrospectively. They were already built."
+  },
+  {
+    "id": "a43",
+    "claim": "Retrospective applications have run at 3 to 6% of submissions all year.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3,
+        "unit": "percent of submissions",
+        "compare": 6,
+        "period": "all year",
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Retrospective applications\nhave run at 3 to 6% of submissions all year"
+  },
+  {
+    "id": "a44",
+    "claim": "There were ten refusals, including one scheme of five courts and two more of four.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 10,
+        "unit": "refusals",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 1,
+        "unit": "scheme count",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 5,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 2,
+        "unit": "scheme count",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      },
+      {
+        "value": 4,
+        "unit": "courts",
+        "compare": null,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "ten refusals, and not marginal ones: one scheme of five courts and\ntwo more of four."
+  },
+  {
+    "id": "a45",
+    "claim": "Three of the ten refusals were warehouse or industrial conversions.",
+    "kind": "numeric",
+    "entities": [],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 3,
+        "unit": "refusals that were warehouse or industrial conversions",
+        "compare": 10,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Three of the ten were warehouse or industrial conversions"
+  },
+  {
+    "id": "a46",
+    "claim": "The article says Carbon Padel Club and Rocks Lane Chiswick were the two highest revenue-generating padel clubs in the country in August.",
+    "kind": "narrative",
+    "entities": [
+      "Carbon Padel Club",
+      "Rocks Lane Chiswick",
+      "August"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": null,
+    "source_quote": "The two highest revenue-generating\npadel clubs in the country in August were Carbon Padel Club and\nRocks Lane Chiswick"
+  },
+  {
+    "id": "a47",
+    "claim": "Carbon Padel Club had seventeen courts and Rocks Lane Chiswick had twelve.",
+    "kind": "numeric",
+    "entities": [
+      "Carbon Padel Club",
+      "Rocks Lane Chiswick"
+    ],
+    "certainty": "reported",
+    "values": [
+      {
+        "value": 17,
+        "unit": "courts at Carbon Padel Club",
+        "compare": 12,
+        "period": null,
+        "period_source": "quote"
+      }
+    ],
+    "place": null,
+    "source_quote": "Carbon on seventeen courts, Rocks Lane on twelve."
+  },
+  {
+    "id": "a48",
+    "claim": "Club X-Ray covers every bookable club in the country, with occupancy, price and estimated revenue.",
+    "kind": "narrative",
+    "entities": [
+      "Club X-Ray"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": null,
+    "source_quote": "Club X-Ray: every bookable club in the country, with occupancy, price and\nestimated revenue."
+  },
+  {
+    "id": "a49",
+    "claim": "Padel Genie maps every UK padel venue and every padel planning application, updated daily as councils publish.",
+    "kind": "narrative",
+    "entities": [
+      "Padel Genie",
+      "UK"
+    ],
+    "certainty": "reported",
+    "values": [],
+    "place": "UK",
+    "source_quote": "Padel Genie maps every UK padel venue and every padel planning application, updated\ndaily as councils publish."
+  }
+]
