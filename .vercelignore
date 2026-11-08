@@ -1,0 +1,7 @@
+.env*
+runs/
+examples/
+ai/
+reports/
+agents.md
+.git/
