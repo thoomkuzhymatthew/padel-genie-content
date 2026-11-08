@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Padel Genie comparison</title><style>{{style}}</style></head><body><main class="graphic">
+<header><div class="wordmark"><span class="brand-mark"></span>{{wordmark}}</div><span class="edition">The Court Report</span></header>
+<section class="intro"><h1>{{headline}}</h1></section>
+<section class="comparison-panel"><div class="periods"><span>{{left.label}}</span><span>{{right.label}}</span></div>
+<div class="metric-label primary-label">{{left.context}}</div><div class="primary-pair"><strong>{{left.hero}}</strong><span class="arrow">→</span><strong>{{right.hero}}</strong></div>
+{{#each rows}}<div class="metric-row"><div class="metric-label">{{label}}</div><div class="secondary-pair"><span>{{before_display}}</span><span class="arrow">→</span><span>{{after_display}}</span></div></div>{{/each}}
+<p class="context">{{context}}</p></section>
+<footer><p class="hold-back">{{hold_back}} <span>↗</span></p><div class="source"><span>{{source_line}}</span><span>padelgenie.io</span></div></footer>
+</main></body></html>

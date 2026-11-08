@@ -66,22 +66,6 @@
       "min_items": null
     },
     {
-      "name": "content_slides[].items",
-      "type": "array",
-      "required": false,
-      "max_characters": null,
-      "max_items": 5,
-      "min_items": null
-    },
-    {
-      "name": "content_slides[].items[]",
-      "type": "string",
-      "required": false,
-      "max_characters": 50,
-      "max_items": null,
-      "min_items": null
-    },
-    {
       "name": "closing_headline",
       "type": "string",
       "required": true,
@@ -96,6 +80,54 @@
       "max_characters": 130,
       "max_items": null,
       "min_items": null
+    },
+    {
+      "name": "hook_hero",
+      "type": "string",
+      "required": true,
+      "max_characters": 18,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "hook_body",
+      "type": "string",
+      "required": true,
+      "max_characters": 120,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "hook_note",
+      "type": "string",
+      "required": true,
+      "max_characters": 120,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "content_slides[].note",
+      "type": "string",
+      "required": true,
+      "max_characters": 120,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "closing_hero",
+      "type": "string",
+      "required": true,
+      "max_characters": 18,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "closing_body",
+      "type": "string",
+      "required": true,
+      "max_characters": 120,
+      "min_items": null,
+      "max_items": null
     }
   ]
 }

@@ -1,0 +1,14 @@
+.intro { height: 255px; padding: 42px 72px 36px; }
+h1 { font-size: 69px; }
+.comparison-panel { height: 695px; padding: 35px 72px 30px; background: var(--green); color: var(--cream); }
+.periods { display: flex; justify-content: space-between; font-size: 26px; padding-bottom: 26px; border-bottom: 1px solid var(--cream); }
+.metric-label { font-size: 28px; line-height: 1.2; }
+.primary-label { margin-top: 27px; }
+.primary-pair, .secondary-pair { display: grid; grid-template-columns: 1fr 85px 1fr; align-items: center; font-variant-numeric: tabular-nums; }
+.primary-pair strong { font-family: Bricolage, sans-serif; font-size: 148px; font-weight: 600; line-height: 1.2; letter-spacing: -7px; }
+.primary-pair strong:last-child, .secondary-pair span:last-child { text-align: right; }
+.arrow { font-family: Inter, sans-serif; font-size: 47px; color: var(--terracotta); text-align: center; }
+.metric-row { border-top: 1px solid rgba(245,246,243,.4); padding-top: 18px; margin-top: 8px; }
+.secondary-pair { font-family: Bricolage, sans-serif; font-size: 67px; font-weight: 600; line-height: 1.3; }
+.secondary-pair .arrow { font-size: 35px; }
+.context { font-size: 24px; line-height: 1.35; margin: 20px 0 0; max-width: 900px; }

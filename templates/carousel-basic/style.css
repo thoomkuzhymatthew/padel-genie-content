@@ -1,0 +1,10 @@
+.intro { height: 280px; padding: 40px 72px 35px; }
+h1 { font-size: 74px; }
+.slide-panel { height: 670px; background: var(--green); color: var(--cream); padding: 44px 72px 45px; }
+.hero { font-family: Bricolage, sans-serif; font-size: 236px; line-height: 1; letter-spacing: -12px; margin: 0 0 18px -6px; font-weight: 600; }
+.slide-body { font-size: 39px; line-height: 1.2; letter-spacing: -1.1px; margin: 0; white-space: pre-line; max-width: 930px; }
+.divider { width: 76px; height: 4px; background: var(--terracotta); margin: 34px 0 24px; }
+.slide-note { margin: 0; font-size: 28px; line-height: 1.35; white-space: pre-line; max-width: 900px; }
+.carousel-navigation { display: flex; justify-content: space-between; font-size: 24px; margin: 0 0 37px; }
+.slide--closing .slide-body { font-size: 38px; }
+.slide--closing .slide-note { font-size: 27px; }

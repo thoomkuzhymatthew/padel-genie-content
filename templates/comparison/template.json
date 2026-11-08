@@ -88,6 +88,62 @@
       "max_characters": 110,
       "max_items": null,
       "min_items": null
+    },
+    {
+      "name": "comparison_atom_id",
+      "type": "string",
+      "required": true,
+      "max_characters": 20,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "rows",
+      "type": "array",
+      "required": true,
+      "max_characters": null,
+      "min_items": 1,
+      "max_items": 3
+    },
+    {
+      "name": "rows[].label",
+      "type": "string",
+      "required": true,
+      "max_characters": 45,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "rows[].before",
+      "type": "number",
+      "required": true,
+      "max_characters": null,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "rows[].after",
+      "type": "number",
+      "required": true,
+      "max_characters": null,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "rows[].atom_id",
+      "type": "string",
+      "required": true,
+      "max_characters": 20,
+      "min_items": null,
+      "max_items": null
+    },
+    {
+      "name": "context",
+      "type": "string",
+      "required": true,
+      "max_characters": 120,
+      "min_items": null,
+      "max_items": null
     }
   ]
 }

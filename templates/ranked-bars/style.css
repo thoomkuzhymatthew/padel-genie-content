@@ -1,0 +1,15 @@
+.intro { height: 235px; padding: 40px 72px 28px; }
+h1 { font-size: 65px; }
+.unit { font-size: 27px; margin: 17px 0 0; }
+.chart { height: 715px; background: var(--green); color: var(--cream); padding: 32px 72px 25px; }
+.legend { font-size: 24px; display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+.legend i { width: 35px; border-top: 4px dashed var(--terracotta); }
+.plot { position: relative; }
+.bar-row { display: grid; grid-template-columns: 324px 1fr 76px; align-items: center; height: 47px; gap: 18px; }
+.row-label { font-size: 23px; line-height: 1.15; letter-spacing: -.5px; }
+.bar-track { height: 24px; }
+.bar { height: 24px; background: var(--cream); }
+.bar-value { font-size: 25px; font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.average-column { position: absolute; pointer-events: none; left: 342px; right: 94px; top: 0; height: 100%; }
+.average-line { position: absolute; top: 0; bottom: 0; width: 0; border-left: 4px dashed var(--terracotta); z-index: 2; }
+.chart-context { margin: 28px 0 0; font-size: 21px; }

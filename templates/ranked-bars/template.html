@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Padel Genie regions</title><style>{{style}}</style></head><body><main class="graphic">
+<header><div class="wordmark"><span class="brand-mark"></span>{{wordmark}}</div><span class="edition">The Court Report</span></header>
+<section class="intro"><h1>{{headline}}</h1><p class="unit">{{unit}}</p></section>
+<section class="chart"><div class="legend"><i></i> GB average {{average}}</div><div class="plot">
+<div class="average-column"><div class="average-line" style="left:{{average_position}}%"></div></div>
+{{#each items}}<div class="bar-row"><div class="row-label">{{label}}</div><div class="bar-track"><div class="bar" style="width:{{width}}%"></div></div><div class="bar-value">{{formatted}}</div></div>{{/each}}
+</div><p class="chart-context">{{context}}</p></section>
+<footer><p class="hold-back">{{hold_back}} <span>↗</span></p><div class="source"><span>{{source_line}}</span><span>padelgenie.io</span></div></footer>
+</main></body></html>
