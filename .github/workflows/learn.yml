@@ -40,3 +40,14 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           INBOX_URL: https://padel-genie-content.vercel.app
+      - name: Record setup or job failure
+        if: failure() && inputs.learning_run_id != ''
+        env:
+          LEARNING_RUN_ID: ${{ inputs.learning_run_id }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+        run: |
+          node --input-type=module <<'JS'
+          const {SUPABASE_URL,SUPABASE_SECRET_KEY,LEARNING_RUN_ID}=process.env;
+          if(SUPABASE_URL&&SUPABASE_SECRET_KEY&&LEARNING_RUN_ID)await fetch(`${SUPABASE_URL}/rest/v1/learning_runs?id=eq.${LEARNING_RUN_ID}&status=in.(queued,running)`,{method:'PATCH',headers:{apikey:SUPABASE_SECRET_KEY,Authorization:'Bearer '+SUPABASE_SECRET_KEY,'Content-Type':'application/json'},body:JSON.stringify({status:'failed',stage:'Workflow failed',error:'The workflow failed before completion. Check its GitHub Actions log.'})});
+          JS

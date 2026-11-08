@@ -212,3 +212,9 @@ before marking the artwork current. Caption-only changes need no re-render.
 
 See [milestone 5 verification](reports/milestone-5.md) for live checks. Verification
 uses only the configured test account and temporary posts, removed afterwards.
+
+## Next inbox improvement
+
+Add a “Request changes” action for mobile: a short reviewer note prompts a revised
+draft, with the note and before/after diff stored as an edit event and the result
+returned for approval. Deferred to keep milestone 6 focused on the verified learning loop.

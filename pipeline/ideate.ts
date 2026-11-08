@@ -79,18 +79,18 @@ export async function ideateRun(directory: string, playbookOverride?:string) {
   await json('ideas.initial.candidates.json', candidates);
   await json('ideas.initial.rejected.json', checked.rejected);
   const attempts = [result.trace];
-  if (checked.rejected.length) {
+  for(let repairAttempt=0;repairAttempt<2 && checked.rejected.length && checked.verified.length<6 && (repairAttempt===0||checked.verified.length>0);repairAttempt++) {
     const repairInput = JSON.stringify({
       source_and_atoms: JSON.parse(assembled.input),
       accepted_ideas: checked.verified,
       rejected_ideas: checked.rejected,
-      instruction: 'Return replacements ONLY for rejected ideas, preserving their IDs. Keep distinct ranks, scores and angles, including a score spread of at least 2.5 when proposing four or more. Fix validation reasons using exact supported numbers and valid catalogue formats. Do not round 3061 to 3000 or convert spelled-out source numbers into unsupported digits. Do not repeat accepted ideas. Fewer ideas are allowed if evidence is insufficient.',
+      instruction: 'Return replacements ONLY for rejected ideas, preserving their IDs. Every main_atoms and hold_back_atoms reference MUST ALSO appear in the idea’s atoms array; include the full declared evidence set. Keep distinct ranks, scores and angles, including a score spread of at least 2.5 when proposing four or more. Fix validation reasons using exact supported numbers and valid catalogue formats. Do not round 3061 to 3000 or convert spelled-out source numbers into unsupported digits. Do not repeat accepted ideas. Fewer ideas are allowed if evidence is insufficient.',
     });
-    await writeFile(join(directory, 'ideate.repair.input.json'), repairInput + '\n');
+    await writeFile(join(directory, repairAttempt ? 'ideate.repair-2.input.json' : 'ideate.repair.input.json'), repairInput + '\n');
     const repairSchema = schema.extend({ ideas: z.array(schema.shape.ideas.element).max(8) });
     const repair = await generateJson('ideate', repairSchema, assembled.system, repairInput);
     attempts.push(repair.trace);
-    await json('ideas.repair.candidates.json', repair.data.ideas);
+    await json(repairAttempt ? 'ideas.repair-2.candidates.json' : 'ideas.repair.candidates.json', repair.data.ideas);
     candidates = [...checked.verified, ...repair.data.ideas.slice(0, 8 - checked.verified.length)];
     checked = validateIdeas(candidates, assembled.atoms, assembled.catalogue);
   }

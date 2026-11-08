@@ -72,3 +72,4 @@
 - Replay retains both full idea catalogues and one controlled selected-story draft per source, regenerating copy on both sides; differences may include model variability.
 - Generated replay previews are committed to the repository and verified at the live URL before the run is marked done.
 - Email sends are independently logged and idempotent; failed delivery never changes the result of a pipeline or learning job.
+- When the proposal leaves the playbook unchanged, replay shows the same generated control on both sides; do not manufacture differences from stochastic calls.

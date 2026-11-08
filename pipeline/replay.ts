@@ -13,6 +13,7 @@ export async function replay(runId:string,current:string,proposed:string,posts:a
  for(const [index,url]of sources.entries()){
   const seed=posts.find(p=>p.source_url===url&&p.template==='stat-card')||posts.find(p=>p.source_url===url);const pair:any={source_title:seed.source_title,source_url:url,story:seed.story};
   for(const [side,playbook]of [['current',current],['proposed',proposed]]){
+   if(side==='proposed'&&current===proposed){pair.proposed={...pair.current,reused_unchanged_control:true};continue;}
    const folder=join(root,String(index),side);await mkdir(folder,{recursive:true});
    for(const name of ['source.json','atoms.verified.json'])await writeFile(join(folder,name),await readFile(join(projectRoot,seed.trace.source_bundle,name)));
    await ideateRun(folder,playbook);
