@@ -85,3 +85,5 @@
 - Keep the rejected reserve in the historical report archive, outside the five approved submission examples.
 - Export the locally available Part 2 session with credential/email redactions and no private reasoning; describe the snapshot cutoff instead of reconstructing missing dialogue.
 - Record the section 18 URL-to-inbox command and automatic pipeline notification as incomplete; the current pipeline command ends at verification, so shipping documentation must not claim otherwise.
+
+- UI polish: present learning findings, review counts and mock metrics as readable sections; retain the exact original report and evidence references in a disclosure. Apply consistent responsive spacing and controls across the inbox and Settings without changing editorial content or approvals.

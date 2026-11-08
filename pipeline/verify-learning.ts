@@ -17,7 +17,7 @@ const browser=await chromium.launch();try{
   await page.reload();await page.getByRole('heading',{name:'Keep me in the loop.'}).waitFor();check(!await recipient.getByLabel('New drafts ready',{exact:true}).isChecked(),'Settings add and per-type toggle persist');
   await recipient.getByRole('button',{name:'Remove recipient'}).click();await recipient.waitFor({state:'detached'});check(true,'Settings removes notification recipients');
   await page.getByRole('button',{name:'Learning',exact:true}).click();await page.getByRole('heading',{name:'What I’m learning.'}).waitFor();
-  const response=page.waitForResponse(r=>r.url().endsWith('/api/learn')&&r.request().method()==='POST');await page.getByRole('button',{name:'Update intern',exact:true}).click();const dispatched=await response;check(dispatched.status()===202,'real Update intern click dispatches GitHub Actions');const created=await db.from('learning_runs').select('id').order('created_at',{ascending:false}).limit(1).single();const run=created.data!;await page.getByRole('status').filter({hasText:/queued|running/}).waitFor();
+  const response=page.waitForResponse(r=>r.url().endsWith('/api/learn')&&r.request().method()==='POST');await page.getByRole('button',{name:'Update intern',exact:true}).click();const dispatched=await response;check(dispatched.status()===202,'real Update intern click dispatches GitHub Actions');const created=await db.from('learning_runs').select('id').order('created_at',{ascending:false}).limit(1).single();const run=created.data!;await page.getByRole('status').filter({hasText:/Queued|In progress/}).waitFor();
   check(await page.getByRole('button',{name:'Update intern',exact:true}).isDisabled(),'active workflow disables duplicate trigger');
   await writeFile(join(directory,'learning-live-state.json'),JSON.stringify({id:run.id,checks},null,2));console.log('Learning run '+run.id);
  }else{
@@ -25,11 +25,11 @@ const browser=await chromium.launch();try{
   await page.getByRole('navigation',{name:'Draft status'}).getByRole('button',{name:/Rejected/}).click();
   await page.locator('.finding strong').filter({hasText:'template/layout'}).waitFor();check(true,'original rejection displays template/layout classification');
   const corrected=page.locator('[data-post-id="db54769c-8d47-4f63-a64a-c563bbce735c"] img');await corrected.scrollIntoViewIfNeeded();await corrected.evaluate(i=>(i as HTMLImageElement).decode());check(await corrected.evaluate(i=>(i as HTMLImageElement).naturalWidth===1080),'corrected reserve image is live in its original rejected post');
-  await page.getByRole('button',{name:'Learning',exact:true}).click();await page.getByRole('status').filter({hasText:/done/}).waitFor();
+  await page.getByRole('button',{name:'Learning',exact:true}).click();await page.getByRole('status').filter({hasText:/Up to date/}).waitFor();
   check(await page.getByRole('link',{name:'Review proposal PR ↗'}).getAttribute('href')===run.data.pr_url,'Learning tab links to actual proposal PR');
   check(await page.locator('.replay-pair').count()===2,'both sources have current/proposed replay drafts');
   for(const image of await page.locator('.replay-pair img').all()){await image.scrollIntoViewIfNeeded();await image.evaluate(i=>(i as HTMLImageElement).decode());check(await image.evaluate(i=>(i as HTMLImageElement).naturalWidth===1080),'live replay PNG loads at full resolution');}
-  check(await page.locator('.report-copy').first().innerText()===run.data.report,'latest report is the persisted workflow report');
+  check(await page.locator('.report-original').textContent()===run.data.report,'latest report is the persisted workflow report');
   await page.screenshot({path:join(directory,'learning-live-mobile.png'),fullPage:true});
   check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Learning view has no mobile horizontal overflow');check(errors.length===0,'no browser runtime errors');
   if(phase!=='finish-ui'){const delivery=await db.from('notification_deliveries').select('type,status').like('dedupe_key',saved.id+':%');check(delivery.data?.length===2&&delivery.data.every(d=>d.status==='sent'),'learning and replay emails accepted by Resend');}

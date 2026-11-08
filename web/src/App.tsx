@@ -16,6 +16,7 @@ export default function App(){
  const[session,setSession]=useState<Session|null>(null),[initializing,setInitializing]=useState(true),[loading,setLoading]=useState(false);
  const[posts,setPosts]=useState<Post[]>([]),[events,setEvents]=useState<PostEvent[]>([]),[reviewers,setReviewers]=useState<Reviewer[]>([]);
  const[page,setPage]=useState(location.hash==='#learning'?'learning':location.hash==='#settings'?'settings':'inbox');
+ useEffect(()=>{const navigate=()=>setPage(location.hash==='#learning'?'learning':location.hash==='#settings'?'settings':'inbox');window.addEventListener('hashchange',navigate);return()=>window.removeEventListener('hashchange',navigate);},[]);
  const[status,setStatus]=useState<Status>('proposed'),[error,setError]=useState(''),[notice,setNotice]=useState('');
  useEffect(()=>{let active=true;supabase.auth.getSession().then(({data})=>{if(active){setSession(data.session);setInitializing(false);}});const{data}=supabase.auth.onAuthStateChange((_event,next)=>{setSession(next);setInitializing(false);if(!next){setPosts([]);setEvents([]);setReviewers([]);}});return()=>{active=false;data.subscription.unsubscribe();};},[]);
  const refresh=useCallback(async()=>{
