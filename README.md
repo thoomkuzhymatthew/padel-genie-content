@@ -2,7 +2,7 @@
 
 Private Solved trial, Part 2. Milestones 2–3 implement ingestion, structured fact extraction, deterministic
 verification, the versioned playbook (currently v3), a descriptor-only template catalogue and ideation.
-Rendering is implemented; the review inbox and learning loop are later milestones.
+Rendering and the authenticated review inbox are implemented. Learning, Settings and emails remain milestone 6.
 
 ## Run locally
 
@@ -27,8 +27,7 @@ npm run pipeline -- --source runs/<run-id>/source.json
 
 The pipeline command ends after verification; ideation is a separate explicit review step. The final stages 1–6 command will
 be completed in later approved milestones. It does not yet render or queue posts.
-`npm run build` checks TypeScript and builds a minimal, noindex web shell; it is
-not the authenticated inbox and exposes no source data or credentials.
+`npm run build` checks TypeScript and builds the noindex, authenticated inbox. Only the public Supabase URL and anon key enter the browser bundle.
 
 ## Inspect a run
 
@@ -106,8 +105,7 @@ bundles remain in [the milestone 3 baseline](reports/milestone-3/README.md), inc
 that October's headline court count now passes. These are proposals awaiting human
 review. No copy, template HTML or graphics are generated before that review.
 
-Next: select ideas, then milestone 4's copy and rendering. Supabase schema, RLS and
-the login-protected inbox remain milestone 5. No database changes have been made.
+Milestones 4–5 now provide rendered examples, the Supabase queue and authenticated review inbox.
 
 ## Intended system
 
@@ -160,7 +158,7 @@ Native inbox preview formats are specified in section 9 for milestone 5 only.
 
 The second human steer requires 6–8 distinct ideas after merging true duplicates.
 The user-selected five-post batch is recorded in `reports/milestone-4-plan.md`.
-Only the first stat card is rendered, pending visual approval. Reproduce it with
+The first stat card established the subsequently approved style. Reproduce it with
 `npm run render -- --draft reports/milestone-4/first-stat.draft.json`.
 See `reports/milestone-4/README.md` for output paths and verification details.
 
@@ -174,3 +172,43 @@ uses the configured copy model for editorial text while preserving numerical fie
 The remaining three templates now have HTML/CSS, including all published regions
 with a GB-average line, paired year-on-year metrics and a five-slide carousel.
 See `reports/milestone-4/README.md` for provenance, commands and validation.
+
+## Milestone 5 inbox
+
+Production: https://padel-genie-content.vercel.app
+
+Email/password login is restricted to the existing James and Matthew reviewers. Public
+sign-ups are disabled. RLS requires an authenticated reviewer; writes go through an
+atomic RPC with actor attribution, version checks and server-generated diffs.
+The six rendered posts, including reserve A2, are queued as proposed with full traces
+and their originating playbook version. Queueing again preserves review decisions.
+
+```sh
+npm run db:migrate
+npm run queue
+npm run dev
+```
+
+Commands derive the content project from `.env`; never point them at the Part 1
+project. The browser uses only the public URL/anon key. Admin keys and test login
+credentials stay local. Vercel builds and deploys from GitHub.
+
+The inbox supports Proposed, Approved, Posted and Rejected tabs; inline caption and
+artwork wording edits with a note; reason chips/free text for rejection; and named,
+timestamped action history. Verified figures and source lines are fixed. Native
+previews include 4:5 images and swipeable carousels; the 9:16 looping video viewer
+is ready for future clips. Mark as posted records a manual action, not publishing.
+
+Artwork edits hide the outdated preview and block approval until re-rendered:
+
+```sh
+npm run render -- --post <uuid>
+# Commit/push the generated web/public/outputs/inbox files; wait for Vercel.
+npm run render:confirm -- --post <uuid>
+```
+
+Playwright runs locally. Confirmation verifies deployed file hashes at `INBOX_URL`
+before marking the artwork current. Caption-only changes need no re-render.
+
+See [milestone 5 verification](reports/milestone-5.md) for live checks. Verification
+uses only the configured test account and temporary posts, removed afterwards.

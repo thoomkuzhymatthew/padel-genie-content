@@ -19,6 +19,10 @@ const fixture=await admin.from('posts').insert({...copy,id,slug:'verification-'+
 try{
  const direct=await anon.from('posts').update({status:'posted'}).eq('id',id);check(Boolean(direct.error),'direct client writes denied');
  const rpc=(action:string,extra:Record<string,unknown>={})=>anon.rpc('review_post',{p_post_id:id,p_action:action,p_expected_version:version,...extra}).retry(false).abortSignal(AbortSignal.timeout(20000));
+ const nullVersion=await rpc('approve',{p_expected_version:null});check(nullVersion.error?.code==='PT409','null review version rejected');
+ const locked=structuredClone(copy.content);locked.hero='891';
+ const figureEdit=await rpc('edit',{p_caption:copy.caption,p_content:locked});check(Boolean(figureEdit.error),'verified hero figures locked during edits');
+ const renderWrite=await anon.rpc('complete_post_render',{p_post_id:id,p_content_version:1,p_assets:copy.asset_paths,p_render_trace:{}}).retry(false);check(renderWrite.error?.code==='42501','reviewer cannot confirm artwork through admin RPC');
  const noReason=await rpc('reject');check(Boolean(noReason.error),'rejection needs a reason');
  const unsupported=await rpc('edit',{p_caption:'987654321 courts.',p_content:copy.content});check(Boolean(unsupported.error),'unverified edit numbers rejected');
  const edit=await rpc('edit',{p_caption:copy.caption+' Verification copy.',p_content:copy.content,p_note:'Verification note'});

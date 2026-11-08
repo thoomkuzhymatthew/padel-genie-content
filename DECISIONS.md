@@ -58,3 +58,4 @@
 - Only the public Supabase URL and anon key are configured for Vercel's browser build. Queue/admin/test credentials stay local and are never shipped.
 - Use HTTP 409 for optimistic review conflicts rather than a database serialization error, so an expected stale-edit conflict is not retried as a transient database fault.
 - Test live actions on a temporary verification post using the configured test account, then remove that fixture and its events; the six real drafts remain proposed without synthetic feedback polluting the learning history.
+- Keep verified numeric fields fixed during inbox edits; reviewers can change wording, while factual figure changes require the evidence pipeline.
