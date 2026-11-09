@@ -1,0 +1,93 @@
+{
+  "draft_id": "replay-0b667ae7-e3f8-4d4c-9f05-68b0f5dd20ad-1-current",
+  "format": "stat",
+  "atoms": [
+    "a6",
+    "a40"
+  ],
+  "source_url": "https://padelgenie.io/blog/uk-passes-3000-padel-courts/",
+  "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "809c20df24d071cc2f9121f344439d039f64b44ddbf6219f9e20d8078341ce9d",
+  "content_sha256": "c407e059d283fd4a26c3c7ff59898aa76f931f1e836b524e0f0f7833bbd77c76",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 13
+    }
+  ],
+  "assets": [
+    "/outputs/learning/0b667ae7-e3f8-4d4c-9f05-68b0f5dd20ad/replay-0b667ae7-e3f8-4d4c-9f05-68b0f5dd20ad-1-current.png"
+  ],
+  "caption": "38 councils with more than 100,000 residents have no open padel court inside their boundary, as reported in October. Check nearby courts and the planning-pipeline preview on Padel Genie’s live map.",
+  "content_origin": "configured_copy_model",
+  "copy_generation": {
+    "playbook_version": "v3",
+    "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+    "learnings_sha256": "a0d8364dd92c563b4e1153d14f90f417b752b19c7f6aafe6544f7d3b6a98ec11",
+    "catalogue_sha256": "8ab3451f0925dec200652d580294a924e559289e4590b8e916840b4db702ed33",
+    "atoms_sha256": "8bfc6934b3891aef5374abcbf07a898b5aca48e28ae927a3c7fbfde98fbaa11d",
+    "source_sha256": "d50d384cc31aa7cf51e00cb037b13a939d406e6b20f8bc4090b955c8771dcec2",
+    "system_prompt_sha256": "3bcb190f1c7effcae20cf1881afb6a4707cf3ffd0d17db8eb608ceaa121023fc",
+    "input_sha256": "b2a1eef1bf5fefcef9b75ed552d4a4f1766c5001305507552f6a518ee1a101ff",
+    "stage": "copy",
+    "provider": "openai",
+    "requested_model": "gpt-5.4",
+    "returned_model": "gpt-5.4-2026-03-05",
+    "response_id": "resp_0d5934673db8889f016af212d7a4b487d19f30dbd985603036",
+    "usage": {
+      "input_tokens": 4768,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 3840
+      },
+      "output_tokens": 113,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 4881
+    },
+    "created_at": "2026-11-09T18:37:13.652Z",
+    "context_input_sha256": "fae419e2124fbfe3737301e65a927ec28a03ebb58f57b153cedd07146d9cac52",
+    "attempts": [
+      {
+        "stage": "copy",
+        "provider": "openai",
+        "requested_model": "gpt-5.4",
+        "returned_model": "gpt-5.4-2026-03-05",
+        "response_id": "resp_0d5934673db8889f016af212d7a4b487d19f30dbd985603036",
+        "usage": {
+          "input_tokens": 4768,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 3840
+          },
+          "output_tokens": 113,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 4881
+        },
+        "system_prompt_sha256": "3bcb190f1c7effcae20cf1881afb6a4707cf3ffd0d17db8eb608ceaa121023fc",
+        "input_sha256": "b2a1eef1bf5fefcef9b75ed552d4a4f1766c5001305507552f6a518ee1a101ff",
+        "created_at": "2026-11-09T18:37:13.652Z"
+      }
+    ],
+    "editable_paths": [
+      "headline",
+      "hold_back",
+      "comparison"
+    ],
+    "status": "draft_not_approved"
+  },
+  "renderer_sha256": "946e77542048c80247c9f1d20cb1899c86ba6ebd464ed57a1a15181059109456",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}
