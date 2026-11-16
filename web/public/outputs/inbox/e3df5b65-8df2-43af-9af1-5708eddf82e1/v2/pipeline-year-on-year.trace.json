@@ -1,0 +1,39 @@
+{
+  "draft_id": "pipeline-year-on-year",
+  "format": "comparison",
+  "atoms": [
+    "a1",
+    "a3",
+    "a4",
+    "a5",
+    "a49",
+    "a9"
+  ],
+  "source_url": "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "3892192f26c4745c124619e45483d2da15542ae34c292bcc182387eb21c87d46",
+  "content_sha256": "dd6426aa5f2ed86ea5713bdffe6f3676cb526657b7a2c276fe5ebbd3c77db0cc",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 27
+    }
+  ],
+  "assets": [
+    "/outputs/inbox/e3df5b65-8df2-43af-9af1-5708eddf82e1/v2/pipeline-year-on-year.png"
+  ],
+  "caption": "Polished the editable copy for clarity and a touch more colour, while keeping the approved angle, caveat and hold-back intact.",
+  "content_origin": "assistant_editorial_draft",
+  "copy_generation": null,
+  "renderer_sha256": "946e77542048c80247c9f1d20cb1899c86ba6ebd464ed57a1a15181059109456",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}

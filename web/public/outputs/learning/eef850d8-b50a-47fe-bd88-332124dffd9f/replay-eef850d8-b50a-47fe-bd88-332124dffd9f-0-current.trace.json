@@ -1,0 +1,105 @@
+{
+  "draft_id": "replay-eef850d8-b50a-47fe-bd88-332124dffd9f-0-current",
+  "format": "comparison",
+  "atoms": [
+    "a1",
+    "a3",
+    "a4",
+    "a5",
+    "a49",
+    "a9"
+  ],
+  "source_url": "https://padelgenie.io/blog/august-2026-uk-padel-market-recap/",
+  "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+  "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+  "template_sha256": "3892192f26c4745c124619e45483d2da15542ae34c292bcc182387eb21c87d46",
+  "content_sha256": "dd6426aa5f2ed86ea5713bdffe6f3676cb526657b7a2c276fe5ebbd3c77db0cc",
+  "size": {
+    "width": 1080,
+    "height": 1350
+  },
+  "checks": [
+    {
+      "fonts_ready": true,
+      "failures": [],
+      "minimum_margin": 60,
+      "minimum_text_size": 20,
+      "checked_elements": 27
+    }
+  ],
+  "assets": [
+    "/outputs/learning/eef850d8-b50a-47fe-bd88-332124dffd9f/replay-eef850d8-b50a-47fe-bd88-332124dffd9f-0-current.png"
+  ],
+  "caption": "Kept the selected comparison sharp and cautious, preserving the provisional August caveat and the planning-map hold-back.",
+  "content_origin": "configured_copy_model",
+  "copy_generation": {
+    "playbook_version": "v3",
+    "playbook_sha256": "f0accb37e35a4ac23b7ab313d9079e391a0b0e767318f282b219aa6d0eb9aefe",
+    "learnings_sha256": "a0d8364dd92c563b4e1153d14f90f417b752b19c7f6aafe6544f7d3b6a98ec11",
+    "catalogue_sha256": "8ab3451f0925dec200652d580294a924e559289e4590b8e916840b4db702ed33",
+    "atoms_sha256": "fe2c8751c07f93e62401a0f47af8758270a5e7c67d4fd1a35b59473887700cba",
+    "source_sha256": "4dbbaac015cdf6d4a4dc1b98e98f7feb4e906e389a179cd4d1643f8c6731b850",
+    "system_prompt_sha256": "3bcb190f1c7effcae20cf1881afb6a4707cf3ffd0d17db8eb608ceaa121023fc",
+    "input_sha256": "81bbf82250ff80ba4aa054840a9383e6d39c0a0c296e3ef7cc2bb6cfd9c941b3",
+    "stage": "copy",
+    "provider": "openai",
+    "requested_model": "gpt-5.4",
+    "returned_model": "gpt-5.4-2026-03-05",
+    "response_id": "resp_098a32ec4cab6ce9016afb47b2445887d2b6b4e7258d972e36",
+    "usage": {
+      "input_tokens": 5213,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cache_write_tokens_details": {
+          "ttl_12h_tokens": 0,
+          "ttl_30m_tokens": 0
+        },
+        "cached_tokens": 3840
+      },
+      "output_tokens": 91,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 5304
+    },
+    "created_at": "2026-11-16T18:13:08.296Z",
+    "context_input_sha256": "0153f7279946b17ca131504f38dcb5b5735952b49249de657e2c09c5da6388f1",
+    "attempts": [
+      {
+        "stage": "copy",
+        "provider": "openai",
+        "requested_model": "gpt-5.4",
+        "returned_model": "gpt-5.4-2026-03-05",
+        "response_id": "resp_098a32ec4cab6ce9016afb47b2445887d2b6b4e7258d972e36",
+        "usage": {
+          "input_tokens": 5213,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            },
+            "cached_tokens": 3840
+          },
+          "output_tokens": 91,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 5304
+        },
+        "system_prompt_sha256": "3bcb190f1c7effcae20cf1881afb6a4707cf3ffd0d17db8eb608ceaa121023fc",
+        "input_sha256": "81bbf82250ff80ba4aa054840a9383e6d39c0a0c296e3ef7cc2bb6cfd9c941b3",
+        "created_at": "2026-11-16T18:13:08.296Z"
+      }
+    ],
+    "editable_paths": [
+      "context",
+      "headline",
+      "hold_back"
+    ],
+    "status": "draft_not_approved"
+  },
+  "renderer_sha256": "946e77542048c80247c9f1d20cb1899c86ba6ebd464ed57a1a15181059109456",
+  "style_approved": true,
+  "status": "rendered_for_review"
+}
